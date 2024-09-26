@@ -7,9 +7,12 @@
 	"files": ["dist", "README.md"],
 	"type": "module",
 	"scripts": {
+		"lint": "bunx @biomejs/biome lint",
+		"format": "bunx @biomejs/biome format . --write",
 		"list:build": "bun ./scripts/index.ts",
 		"list:bundle": "rimraf ./dist && bun tsup && bun copy-tokenlist",
-		"copy-tokenlist": "shx cp ./*.tokenlist.json ./dist"
+		"copy-tokenlist": "shx cp ./*.tokenlist.json ./dist",
+		"release": "bunx semantic-release branches --main"
 	},
 	"dependencies": {
 		"@uniswap/token-lists": "^1.0.0-beta.34"
@@ -17,11 +20,11 @@
 	"devDependencies": {
 		"@biomejs/biome": "1.9.2",
 		"@types/bun": "latest",
-		"@uniswap/token-lists": "^1.0.0-beta.34",
 		"ajv": "^8.17.1",
 		"ajv-formats": "^3.0.1",
 		"lodash": "^4.17.21",
 		"rimraf": "^6.0.1",
+		"semantic-release": "^24.1.1",
 		"shx": "^0.3.4",
 		"tsup": "^8.3.0",
 		"viem": "^2.21.14"

@@ -12,9 +12,8 @@ export const matchTokens = async (tokenlist: IndexTokenList) => {
 			const client = staticClients[token.chainId];
 
 			// If there is no contract deployed, list the token's Symbol in the ValidationExceptions
-			if (validationExceptions) {
-				validationExceptions.includes(token.symbol);
-
+			if (validationExceptions.includes(token.symbol)) {
+				console.log(`ℹ️ ${token.symbol} is exempt from onchain validation.`);
 				return [token.symbol, token.symbol];
 			}
 
