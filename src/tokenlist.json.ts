@@ -397,5 +397,21 @@ export default {
       logoURI: 'https://placeholder.com/token.ong',
       tags: ['index', 'yield'],
     },
+    {
+      address: '0x37e7c051dc5a24313ceec581222882648ba537aa',
+      name: 'Diversified Staked ETH Index',
+      symbol: 'dsETH',
+      decimals: 18,
+      chainId: 8453,
+      extensions: {
+        status: 'Active',
+        coingeckoId: 'diversified-staked-eth',
+        yield: {
+          theme: 'ETH',
+        },
+      },
+      logoURI: 'https://placeholder.com/token.ong',
+      tags: ['index', 'yield'],
+    },
   ],
 } as const;
