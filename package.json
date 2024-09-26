@@ -1,5 +1,5 @@
 {
-  "name": "@nsorcell/indexcoop-tokenlist",
+  "name": "@nsorcell/tokenlist",
   "version": "0.0.1",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
