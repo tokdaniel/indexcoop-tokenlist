@@ -19,8 +19,6 @@ jobs:
     env:
       ALCHEMY_ID: ${{ secrets.ALCHEMY_ID }}
     runs-on: ubuntu-latest
-    container:
-      image: node:alpine
     steps:
       - uses: actions/checkout@v4
         with:
@@ -39,25 +37,22 @@ jobs:
 
   publish:
     runs-on: ubuntu-latest
-    container:
-      image: node:alpine
     if: ${{ github.ref == 'refs/heads/main' }}
     needs: [build]
     permissions:
       contents: write
+
       issues: write
       pull-requests: write
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - uses: oven-sh/setup-bun@v2
-        with:
-          bun-version: latest
+      - uses: actions/setup-node@v4
       - name: Install Dependencies
-        run: bun install --frozen-lockfile
+        run: npm ci
       - name: Release
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: bunx semantic-release --branches main
+        run: npx semantic-release --branches main
