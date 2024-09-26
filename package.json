@@ -20,6 +20,7 @@
   "release": {
     "branches": ["main"],
     "plugins": [
+      "@semantic-release/npm",
       [
         "@semantic-release/commit-analyzer",
         {
