@@ -20,6 +20,9 @@
   "release": {
     "branches": ["main"]
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "@biomejs/biome": "1.9.2",
     "@types/bun": "latest",
