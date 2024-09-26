@@ -1,5 +1,5 @@
 {
-  "name": "@nsorcell/test-tokenlist",
+  "name": "@nsorcell/exp-tokenlist",
   "version": "0.0.1",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
@@ -21,6 +21,8 @@
     "branches": ["main"],
     "plugins": [
       "@semantic-release/npm",
+      "@semantic-release/release-notes-generator",
+
       [
         "@semantic-release/github",
         {
