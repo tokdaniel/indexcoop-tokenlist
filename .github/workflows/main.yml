@@ -15,10 +15,15 @@ permissions:
   pull-requests: write
 
 jobs:
-  build:
+  build_and_publish:
+    runs-on: ubuntu-latest
+    if: ${{ github.ref == 'refs/heads/main' }}
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
     env:
       ALCHEMY_ID: ${{ secrets.ALCHEMY_ID }}
-    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
