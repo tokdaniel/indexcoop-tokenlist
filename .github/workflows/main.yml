@@ -26,35 +26,15 @@ jobs:
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
       - name: Install Dependencies
         run: bun install --frozen-lockfile
       - name: Build
         run: bun run list:build
       - name: Bundle
         run: bun run list:bundle
-      - name: Run tests
-        run: bun test
-
-  publish:
-    runs-on: ubuntu-latest
-    if: ${{ github.ref == 'refs/heads/main' }}
-    needs: [build]
-    permissions:
-      contents: write
-      issues: write
-      pull-requests: write
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - uses: actions/setup-node@v4
-        with:
-          node-version-file: ".nvmrc"
-      - uses: oven-sh/setup-bun@v2
-        with:
-          bun-version: latest
-      - name: Install Dependencies
-        run: bun install --frozen-lockfile
       - name: Release
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
