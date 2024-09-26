@@ -41,7 +41,6 @@ jobs:
     needs: [build]
     permissions:
       contents: write
-
       issues: write
       pull-requests: write
     steps:
@@ -49,8 +48,11 @@ jobs:
         with:
           fetch-depth: 0
       - uses: actions/setup-node@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
       - name: Install Dependencies
-        run: npm ci
+        run: bun install --frozen-lockfile
       - name: Release
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
