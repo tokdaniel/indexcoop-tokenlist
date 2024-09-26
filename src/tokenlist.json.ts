@@ -31,6 +31,19 @@ export default {
     },
   },
   tokens: [
+    {
+      address: '0x0954906da0Bf32d5479e25f46056d22f08464cab',
+      name: 'Index Token',
+      symbol: 'INDEX',
+      decimals: 18,
+      chainId: 1,
+      extensions: {
+        status: 'Active',
+        coingeckoId: 'index-cooperative',
+      },
+      logoURI: 'https://placeholder.com/token.png',
+      tags: ['index'],
+    },
     // --------------- Sector Tokens ---------------
     {
       address: '0x1494ca1f11d487c2bbe4543e90080aeba4ba3c2b',
@@ -412,6 +425,301 @@ export default {
       },
       logoURI: 'https://placeholder.com/token.ong',
       tags: ['index', 'yield'],
+    },
+    {
+      address: '0x36c833eed0d376f75d1ff9dfdee260191336065e',
+      name: 'Gitcoin Staked ETH Index',
+      symbol: 'gtcETH',
+      decimals: 18,
+      chainId: 1,
+      extensions: {
+        status: 'Active',
+        yield: {
+          theme: 'ETH',
+        },
+      },
+      logoURI: 'https://placeholder.com/token.ong',
+      tags: ['index', 'yield'],
+    },
+    {
+      address: '0xc4506022fb8090774e8a628d5084eed61d9b99ee',
+      name: 'High Yield ETH Index',
+      symbol: 'hyETH',
+      decimals: 18,
+      chainId: 1,
+      extensions: {
+        status: 'Active',
+        yield: {
+          theme: 'ETH',
+        },
+      },
+      logoURI: 'https://placeholder.com/token.ong',
+      tags: ['index', 'yield'],
+    },
+    {
+      address: '0x8b5d1d8b3466ec21f8ee33ce63f319642c026142',
+      name: 'High Yield ETH Index',
+      symbol: 'hyETH',
+      decimals: 18,
+      chainId: 42161,
+      extensions: {
+        status: 'Active',
+        yield: {
+          theme: 'ETH',
+        },
+      },
+      logoURI: 'https://placeholder.com/token.ong',
+      tags: ['index', 'yield'],
+    },
+    {
+      address: '0xc73e76aa9f14c1837cdb49bd028e8ff5a0a71dad',
+      name: 'High Yield ETH Index',
+      symbol: 'hyETH',
+      decimals: 18,
+      chainId: 8453,
+      extensions: {
+        status: 'Active',
+        yield: {
+          theme: 'ETH',
+        },
+      },
+      logoURI: 'https://placeholder.com/token.ong',
+      tags: ['index', 'yield'],
+    },
+    {
+      address: '0x55b2cfcfe99110c773f00b023560dd9ef6c8a13b',
+      name: 'CoinDesk ETH Trend Index',
+      symbol: 'cdETI',
+      decimals: 18,
+      chainId: 8453,
+      extensions: {
+        status: 'Active',
+        yield: {
+          theme: 'ETH',
+        },
+      },
+      logoURI: 'https://placeholder.com/token.ong',
+      tags: ['index', 'yield'],
+    },
+    // --------------- Currency Tokens ---------------
+    {
+      name: 'Dai Stablecoin',
+      address: '0x6b175474e89094c44da98b954eedeac495271d0f',
+      symbol: 'DAI',
+      decimals: 18,
+      chainId: 1,
+      logoURI:
+        'https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x6B175474E89094C44Da98b954EedeAC495271d0F/logo.png',
+      extensions: {
+        coinGeckoId: 'dai',
+        bridgeInfo: {
+          '8453': {
+            tokenAddress: '0x50c5725949a6f0c72e6c4a641f24049a917db0cb',
+          },
+        },
+      },
+      tags: ['currency'],
+    },
+    {
+      name: 'Dai Stablecoin',
+      address: '0x50c5725949a6f0c72e6c4a641f24049a917db0cb',
+      symbol: 'DAI',
+      decimals: 18,
+      chainId: 8453,
+      logoURI: 'https://ethereum-optimism.github.io/data/DAI/logo.svg',
+      extensions: {
+        coinGeckoId: 'dai',
+        bridgeInfo: {
+          '1': {
+            tokenAddress: '0x6b175474e89094c44da98b954eedeac495271d0f',
+          },
+        },
+      },
+      tags: ['currency'],
+    },
+    {
+      name: 'USDCoin',
+      address: '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
+      symbol: 'USDC',
+      decimals: 6,
+      chainId: 1,
+      logoURI:
+        'https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png',
+      extensions: {
+        coingeckoId: 'usd-coin',
+        bridgeInfo: {
+          '8453': {
+            tokenAddress: '0x833589fcd6edb6e08f4c7c32d4f71b54bda02913',
+          },
+          '42161': {
+            tokenAddress: '0xaf88d065e77c8cc2239327c5edb3a432268e5831',
+          },
+        },
+      },
+      tags: ['currency'],
+    },
+    {
+      name: 'USD Coin',
+      address: '0x833589fcd6edb6e08f4c7c32d4f71b54bda02913',
+      symbol: 'USDC',
+      decimals: 6,
+      chainId: 8453,
+      logoURI: 'https://ethereum-optimism.github.io/data/USDC/logo.png',
+      extensions: {
+        coingeckoId: 'usd-coin',
+        bridgeInfo: {
+          '1': {
+            tokenAddress: '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
+          },
+        },
+      },
+      tags: ['currency'],
+    },
+    {
+      name: 'USDCoin',
+      address: '0xaf88d065e77c8cC2239327C5EDb3A432268e5831',
+      symbol: 'USDC',
+      decimals: 6,
+      chainId: 42161,
+      logoURI:
+        'https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png',
+      extensions: {
+        coingeckoId: 'usd-coin',
+        bridgeInfo: {
+          '1': {
+            tokenAddress: '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
+          },
+        },
+      },
+      tags: ['currency'],
+    },
+    {
+      name: 'Tether USD',
+      address: '0xdac17f958d2ee523a2206206994597c13d831ec7',
+      symbol: 'USDT',
+      decimals: 6,
+      chainId: 1,
+      logoURI:
+        'https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xdAC17F958D2ee523a2206206994597C13D831ec7/logo.png',
+      extensions: {
+        coingeckoId: 'tether',
+        bridgeInfo: {
+          '42161': {
+            tokenAddress: '0xfd086bc7cd5c481dcc9c85ebe478a1c0b69fcbb9',
+          },
+        },
+      },
+      tags: ['currency'],
+    },
+    {
+      name: 'Tether USD',
+      address: '0xfd086bc7cd5c481dcc9c85ebe478a1c0b69fcbb9',
+      symbol: 'USDT',
+      decimals: 6,
+      chainId: 42161,
+      logoURI:
+        'https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xdAC17F958D2ee523a2206206994597C13D831ec7/logo.png',
+      extensions: {
+        coingeckoId: 'tether',
+        bridgeInfo: {
+          '1': {
+            tokenAddress: '0xdac17f958d2ee523a2206206994597c13d831ec7',
+          },
+        },
+      },
+      tags: ['currency'],
+    },
+    {
+      name: 'Wrapped Ether',
+      address: '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2',
+      symbol: 'WETH',
+      decimals: 18,
+      chainId: 1,
+      logoURI:
+        'https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2/logo.png',
+      extensions: {
+        coingeckoId: 'weth',
+        bridgeInfo: {
+          '8453': {
+            tokenAddress: '0x4200000000000000000000000000000000000006',
+          },
+          '42161': {
+            tokenAddress: '0x82af49447d8a07e3bd95bd0d56f35241523fbab1',
+          },
+        },
+      },
+      tags: ['currency'],
+    },
+    {
+      name: 'Wrapped Ether',
+      address: '0x4200000000000000000000000000000000000006',
+      symbol: 'WETH',
+      decimals: 18,
+      chainId: 8453,
+      logoURI: 'https://ethereum-optimism.github.io/data/WETH/logo.png',
+      extensions: {
+        coingeckoId: 'weth',
+        bridgeInfo: {
+          '1': {
+            tokenAddress: '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2',
+          },
+        },
+      },
+      tags: ['currency'],
+    },
+    {
+      name: 'Wrapped Ether',
+      address: '0x82af49447d8a07e3bd95bd0d56f35241523fbab1',
+      symbol: 'WETH',
+      decimals: 18,
+      chainId: 42161,
+      logoURI:
+        'https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2/logo.png',
+      extensions: {
+        coingeckoId: 'weth',
+        bridgeInfo: {
+          '1': {
+            tokenAddress: '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2',
+          },
+        },
+      },
+      tags: ['currency'],
+    },
+    {
+      name: 'Wrapped BTC',
+      address: '0x2260fac5e5542a773aa44fbcfedf7c193bc2c599',
+      symbol: 'WBTC',
+      decimals: 8,
+      chainId: 1,
+      logoURI:
+        'https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599/logo.png',
+      extensions: {
+        coingeckoId: 'wrapped-bitcoin',
+        bridgeInfo: {
+          '42161': {
+            tokenAddress: '0x2f2a2543b76a4166549f7aab2e75bef0aefc5b0f',
+          },
+        },
+      },
+      tags: ['currency'],
+    },
+    {
+      name: 'Wrapped BTC',
+      address: '0x2f2a2543b76a4166549f7aab2e75bef0aefc5b0f',
+      symbol: 'WBTC',
+      decimals: 8,
+      chainId: 42161,
+      logoURI:
+        'https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599/logo.png',
+      extensions: {
+        coingeckoId: 'wrapped-bitcoin',
+        bridgeInfo: {
+          '1': {
+            tokenAddress: '0x2260fac5e5542a773aa44fbcfedf7c193bc2c599',
+          },
+        },
+      },
+      tags: ['currency'],
     },
   ],
 } as const;

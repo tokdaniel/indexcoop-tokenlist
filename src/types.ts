@@ -11,7 +11,6 @@ export type ListedToken = (typeof InternalTokenList.tokens)[number];
 export type ChainId = ListedToken['chainId'];
 export type Symbol_ = ListedToken['symbol'];
 export type Extensions = ListedToken['extensions'];
-export type Status = Extensions['status'];
 
 type GetExt<T, K extends 'leverage' | 'sector' | 'yield'> = T extends {
   extensions: { [key in K]: infer L };
