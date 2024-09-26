@@ -491,7 +491,7 @@ export default {
       name: 'CoinDesk ETH Trend Index',
       symbol: 'cdETI',
       decimals: 18,
-      chainId: 8453,
+      chainId: 1,
       extensions: {
         status: 'Active',
         yield: {
