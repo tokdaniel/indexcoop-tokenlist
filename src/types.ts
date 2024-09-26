@@ -1,10 +1,10 @@
 import type InternalTokenList from './tokenlist.json';
 
 export type U2I<U> = (U extends unknown ? (arg: U) => void : never) extends (
-	arg: infer I,
+  arg: infer I,
 ) => void
-	? I
-	: never;
+  ? I
+  : never;
 
 export type Tags = keyof typeof InternalTokenList.tags;
 export type ListedToken = (typeof InternalTokenList.tokens)[number];
@@ -14,16 +14,16 @@ export type Extensions = ListedToken['extensions'];
 export type Status = Extensions['status'];
 
 type GetExt<T, K extends 'leverage' | 'sector' | 'yield'> = T extends {
-	extensions: { [key in K]: infer L };
+  extensions: { [key in K]: infer L };
 }
-	? L
-	: never;
+  ? L
+  : never;
 
 type TokenCat<T, K extends 'leverage' | 'sector' | 'yield'> = T extends {
-	extensions: { [key in K]: infer S };
+  extensions: { [key in K]: infer S };
 }
-	? T
-	: never;
+  ? T
+  : never;
 
 export type Leverage = GetExt<ListedToken, 'leverage'>;
 export type LeverageType = Leverage['type'];
@@ -44,16 +44,16 @@ export type YieldToken = TokenCat<ListedToken, 'yield'>;
 export type IndexToken = LeverageToken | SectorToken | YieldToken;
 
 export type TokenByChain<T, Id extends ChainId> = T extends { chainId: Id }
-	? T
-	: never;
+  ? T
+  : never;
 
 export type TokenMap<C extends ChainId> = {
-	[S in Extract<ListedToken, { chainId: C }>['symbol']]: Extract<
-		ListedToken,
-		{ chainId: C; symbol: S }
-	>;
+  [S in Extract<ListedToken, { chainId: C }>['symbol']]: Extract<
+    ListedToken,
+    { chainId: C; symbol: S }
+  >;
 };
 
 export type TokenMapByChain = {
-	[K in ListedToken['chainId']]: TokenMap<K>;
+  [K in ListedToken['chainId']]: TokenMap<K>;
 };

@@ -6,14 +6,14 @@ import tokenlistBase from '../indexcoop.tokenlist.json';
 import { updateTokenListVersion } from './version';
 
 const run = async () => {
-	await validate(tokenlistUpdate);
+  await validate(tokenlistUpdate);
 
-	const updated = updateTokenListVersion(tokenlistBase, tokenlistUpdate);
+  const updated = updateTokenListVersion(tokenlistBase, tokenlistUpdate);
 
-	fs.writeFileSync(
-		path.resolve(__dirname, '../indexcoop.tokenlist.json'),
-		JSON.stringify(updated, null, 2),
-	);
+  fs.writeFileSync(
+    path.resolve(__dirname, '../indexcoop.tokenlist.json'),
+    JSON.stringify(updated, null, 2),
+  );
 };
 
 run();
