@@ -16,7 +16,7 @@ export const updateTokenListVersion = (
 
     return Object.assign(tokenlistUpdate, {
       version: {
-        major: 1,
+        major: tokenlistBase.version.major + 1,
         minor: 0,
         patch: 0,
       },
@@ -28,8 +28,8 @@ export const updateTokenListVersion = (
 
     return Object.assign(tokenlistUpdate, {
       version: {
-        major: tokenlistUpdate.version.major,
-        minor: tokenlistUpdate.version.minor + 1,
+        major: tokenlistBase.version.major,
+        minor: tokenlistBase.version.minor + 1,
         patch: 0,
       },
     });
@@ -41,8 +41,8 @@ export const updateTokenListVersion = (
 
     return Object.assign(tokenlistUpdate, {
       version: {
-        ...tokenlistUpdate.version,
-        patch: tokenlistUpdate.version.patch + 1,
+        ...tokenlistBase.version,
+        patch: tokenlistBase.version.patch + 1,
       },
     });
   }
