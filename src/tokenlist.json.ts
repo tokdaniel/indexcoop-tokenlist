@@ -1,21 +1,25 @@
-import tokenlist from 'indexcoop.tokenlist.json';
+import tokenlist from '@/indexcoop.tokenlist.json';
 
 export default {
   name: 'IndexCoop Token List',
   version: tokenlist.version,
   timestamp: new Date().toISOString(),
   tags: {
+    stablecoin: {
+      name: 'Stablecoin',
+      description: 'This is a stablecoin.',
+    },
     index: {
       name: 'Index Token',
-      description: 'This is an Index token that represents a basket of tokens.',
+      description: 'This is an Index Coop token.',
     },
     sector: {
-      name: 'Index Token',
-      description: 'This is an Index token that represents a basket of tokens.',
+      name: 'Sector Token',
+      description: 'This token represents a basket of tokens.',
     },
     leverage: {
       name: 'Leverage Token',
-      description: 'This is a token that provides leverage.',
+      description: 'This token provides leveraged exposure.',
     },
     yield: {
       name: 'Yield Token',
@@ -23,7 +27,7 @@ export default {
     },
     currency: {
       name: 'Currency Token',
-      description: 'This is a token that is used to pay.',
+      description: 'This token is used to pay for index tokens.',
     },
     dangerous: {
       name: 'Dangerous Token',
@@ -41,7 +45,7 @@ export default {
         status: 'Active',
         coingeckoId: 'index-cooperative',
       },
-      logoURI: 'https://placeholder.com/token.png',
+      logoURI: 'https://cdn.indexcoop.com/index.svg',
       tags: ['index'],
     },
     // --------------- Sector Tokens ---------------
@@ -58,7 +62,7 @@ export default {
           theme: 'DeFi',
         },
       },
-      logoURI: 'https://placeholder.com/token.png',
+      logoURI: 'https://cdn.indexcoop.com/dpi.svg',
       tags: ['index', 'sector'],
     },
     {
@@ -74,7 +78,7 @@ export default {
           theme: 'DeFi',
         },
       },
-      logoURI: 'https://placeholder.com/token.ong',
+      logoURI: 'https://cdn.indexcoop.com/dpi.svg',
       tags: ['index', 'sector'],
     },
     {
@@ -90,7 +94,7 @@ export default {
           theme: 'DeFi',
         },
       },
-      logoURI: 'https://placeholder.com/token.ong',
+      logoURI: 'https://cdn.indexcoop.com/dpi.svg',
       tags: ['index', 'sector'],
     },
     {
@@ -106,7 +110,7 @@ export default {
           theme: 'Metaverse',
         },
       },
-      logoURI: 'https://placeholder.com/token.ong',
+      logoURI: 'https://cdn.indexcoop.com/mvi.svg',
       tags: ['index', 'sector'],
     },
     {
@@ -122,7 +126,7 @@ export default {
           theme: 'Metaverse',
         },
       },
-      logoURI: 'https://placeholder.com/token.ong',
+      logoURI: 'https://cdn.indexcoop.com/mvi.svg',
       tags: ['index', 'sector'],
     },
     {
@@ -138,7 +142,7 @@ export default {
           theme: 'Metaverse',
         },
       },
-      logoURI: 'https://placeholder.com/token.ong',
+      logoURI: 'https://cdn.indexcoop.com/mvi.svg',
       tags: ['index', 'sector'],
     },
     {
@@ -154,7 +158,7 @@ export default {
           theme: 'Metaverse',
         },
       },
-      logoURI: 'https://placeholder.com/token.ong',
+      logoURI: 'https://cdn.indexcoop.com/bed.svg',
       tags: ['index', 'sector'],
     },
     {
@@ -169,8 +173,8 @@ export default {
           theme: 'Large Cap',
         },
       },
-      logoURI: 'https://placeholder.com/token.ong',
-      tags: ['index', 'sector'],
+      logoURI: 'https://cdn.indexcoop.com/ic21.svg',
+      tags: ['index', 'sector', 'dangerous'],
     },
     // --------------- Leverage Tokens ---------------
     {
@@ -186,8 +190,24 @@ export default {
           type: 'Long2x',
         },
       },
-      logoURI: 'https://placeholder.com/token.ong',
-      tags: ['index', 'leverage'],
+      logoURI: 'https://cdn.indexcoop.com/eth2x.svg',
+      tags: ['index', 'leverage', 'dangerous'],
+    },
+    {
+      address: '0xccdae12162566e3f29fefa7bf7f5b24c644493b5',
+      name: 'Leveraged rETH Staking Yield',
+      symbol: 'icRETH',
+      decimals: 18,
+      chainId: 1,
+      extensions: {
+        status: 'Deprecated',
+        coingeckoId: 'eleveraged-reth-staking-yield',
+        leverage: {
+          type: 'Long2x',
+        },
+      },
+      logoURI: 'https://cdn.indexcoop.com/icreth.svg',
+      tags: ['index', 'leverage', 'dangerous'],
     },
     {
       address: '0x0b498ff89709d3838a063f1dfa463091f9801c2b',
@@ -202,8 +222,8 @@ export default {
           type: 'Long2x',
         },
       },
-      logoURI: 'https://placeholder.com/token.ong',
-      tags: ['index', 'leverage'],
+      logoURI: 'https://cdn.indexcoop.com/btc2x.svg',
+      tags: ['index', 'leverage', 'dangerous'],
     },
     {
       address: '0x65c4c0517025ec0843c9146af266a2c5a2d148a2',
@@ -218,8 +238,8 @@ export default {
           type: 'Long2x',
         },
       },
-      logoURI: 'https://placeholder.com/token.ong',
-      tags: ['index', 'leverage'],
+      logoURI: 'https://cdn.indexcoop.com/eth2x.svg',
+      tags: ['index', 'leverage', 'dangerous'],
     },
     {
       address: '0xd2ac55ca3bbd2dd1e9936ec640dcb4b745fde759',
@@ -234,8 +254,8 @@ export default {
           type: 'Long2x',
         },
       },
-      logoURI: 'https://placeholder.com/token.ong',
-      tags: ['index', 'leverage'],
+      logoURI: 'https://cdn.indexcoop.com/btc2x.svg',
+      tags: ['index', 'leverage', 'dangerous'],
     },
     {
       address: '0x26d7d3728c6bb762a5043a1d0cef660988bca43c',
@@ -250,8 +270,8 @@ export default {
           type: 'Long2x',
         },
       },
-      logoURI: 'https://placeholder.com/token.ong',
-      tags: ['index', 'leverage'],
+      logoURI: 'https://cdn.indexcoop.com/btc2x.svg',
+      tags: ['index', 'leverage', 'dangerous'],
     },
     {
       address: '0xa0a17b2a015c14be846c5d309d076379ccdfa543',
@@ -265,8 +285,8 @@ export default {
           type: 'Long3x',
         },
       },
-      logoURI: 'https://placeholder.com/token.ong',
-      tags: ['index', 'leverage'],
+      logoURI: 'https://cdn.indexcoop.com/eth3x.svg',
+      tags: ['index', 'leverage', 'dangerous'],
     },
     {
       address: '0x749654601a286833ad30357246400d2933b1c89b',
@@ -280,8 +300,8 @@ export default {
           type: 'Short1x',
         },
       },
-      logoURI: 'https://placeholder.com/token.ong',
-      tags: ['index', 'leverage'],
+      logoURI: 'https://cdn.indexcoop.com/ieth1x.svg',
+      tags: ['index', 'leverage', 'dangerous'],
     },
     {
       address: '0xeb5be62e6770137beaa0cc712741165c594f59d7',
@@ -296,7 +316,7 @@ export default {
           type: 'Long2x',
         },
       },
-      logoURI: 'https://placeholder.com/token.ong',
+      logoURI: 'https://cdn.indexcoop.com/btc2x.svg',
       tags: ['index', 'leverage'],
     },
     {
@@ -312,8 +332,8 @@ export default {
           type: 'Long3x',
         },
       },
-      logoURI: 'https://placeholder.com/token.ong',
-      tags: ['index', 'leverage'],
+      logoURI: 'https://cdn.indexcoop.com/btc3x.svg',
+      tags: ['index', 'leverage', 'dangerous'],
     },
     {
       address: '0x80e58aea88bccaae19bca7f0e420c1387cc087fc',
@@ -327,8 +347,8 @@ export default {
           type: 'Short1x',
         },
       },
-      logoURI: 'https://placeholder.com/token.ong',
-      tags: ['index', 'leverage'],
+      logoURI: 'https://cdn.indexcoop.com/ibtc1x.svg',
+      tags: ['index', 'leverage', 'dangerous'],
     },
     {
       address: '0xc884646e6c88d9b172a23051b38b0732cc3e35a6',
@@ -343,7 +363,7 @@ export default {
           type: 'Long2x',
         },
       },
-      logoURI: 'https://placeholder.com/token.ong',
+      logoURI: 'https://cdn.indexcoop.com/btc2x.svg',
       tags: ['index', 'leverage'],
     },
     {
@@ -358,8 +378,8 @@ export default {
           type: 'Long3x',
         },
       },
-      logoURI: 'https://placeholder.com/token.ong',
-      tags: ['index', 'leverage'],
+      logoURI: 'https://cdn.indexcoop.com/eth3x.svg',
+      tags: ['index', 'leverage', 'dangerous'],
     },
     // --------------- Yield Tokens ---------------
     {
@@ -375,7 +395,7 @@ export default {
           theme: 'ETH',
         },
       },
-      logoURI: 'https://placeholder.com/token.ong',
+      logoURI: 'https://cdn.indexcoop.com/iceth.svg',
       tags: ['index', 'yield'],
     },
     {
@@ -391,7 +411,7 @@ export default {
           theme: 'ETH',
         },
       },
-      logoURI: 'https://placeholder.com/token.ong',
+      logoURI: 'https://cdn.indexcoop.com/dseth.svg',
       tags: ['index', 'yield'],
     },
     {
@@ -407,7 +427,7 @@ export default {
           theme: 'ETH',
         },
       },
-      logoURI: 'https://placeholder.com/token.ong',
+      logoURI: 'https://cdn.indexcoop.com/dseth.svg',
       tags: ['index', 'yield'],
     },
     {
@@ -423,7 +443,7 @@ export default {
           theme: 'ETH',
         },
       },
-      logoURI: 'https://placeholder.com/token.ong',
+      logoURI: 'https://cdn.indexcoop.com/dseth.svg',
       tags: ['index', 'yield'],
     },
     {
@@ -438,8 +458,8 @@ export default {
           theme: 'ETH',
         },
       },
-      logoURI: 'https://placeholder.com/token.ong',
-      tags: ['index', 'yield'],
+      logoURI: 'https://cdn.indexcoop.com/gtceth.svg',
+      tags: ['index', 'yield', 'dangerous'],
     },
     {
       address: '0xc4506022fb8090774e8a628d5084eed61d9b99ee',
@@ -453,8 +473,8 @@ export default {
           theme: 'ETH',
         },
       },
-      logoURI: 'https://placeholder.com/token.ong',
-      tags: ['index', 'yield'],
+      logoURI: 'https://cdn.indexcoop.com/hyeth.svg',
+      tags: ['index', 'yield', 'dangerous'],
     },
     {
       address: '0x8b5d1d8b3466ec21f8ee33ce63f319642c026142',
@@ -468,8 +488,8 @@ export default {
           theme: 'ETH',
         },
       },
-      logoURI: 'https://placeholder.com/token.ong',
-      tags: ['index', 'yield'],
+      logoURI: 'https://cdn.indexcoop.com/hyeth.svg',
+      tags: ['index', 'yield', 'dangerous'],
     },
     {
       address: '0xc73e76aa9f14c1837cdb49bd028e8ff5a0a71dad',
@@ -483,8 +503,8 @@ export default {
           theme: 'ETH',
         },
       },
-      logoURI: 'https://placeholder.com/token.ong',
-      tags: ['index', 'yield'],
+      logoURI: 'https://cdn.indexcoop.com/hyeth.svg',
+      tags: ['index', 'yield', 'dangerous'],
     },
     {
       address: '0x55b2cfcfe99110c773f00b023560dd9ef6c8a13b',
@@ -498,8 +518,8 @@ export default {
           theme: 'ETH',
         },
       },
-      logoURI: 'https://placeholder.com/token.ong',
-      tags: ['index', 'yield'],
+      logoURI: 'https://cdn.indexcoop.com/cdeti.svg',
+      tags: ['index', 'yield', 'dangerous'],
     },
     // --------------- Currency Tokens ---------------
     {
@@ -518,7 +538,7 @@ export default {
           },
         },
       },
-      tags: ['currency'],
+      tags: ['currency', 'stablecoin'],
     },
     {
       name: 'Dai Stablecoin',
@@ -535,7 +555,7 @@ export default {
           },
         },
       },
-      tags: ['currency'],
+      tags: ['currency', 'stablecoin'],
     },
     {
       name: 'USDCoin',
@@ -556,7 +576,7 @@ export default {
           },
         },
       },
-      tags: ['currency'],
+      tags: ['currency', 'stablecoin'],
     },
     {
       name: 'USD Coin',
@@ -573,7 +593,7 @@ export default {
           },
         },
       },
-      tags: ['currency'],
+      tags: ['currency', 'stablecoin'],
     },
     {
       name: 'USDCoin',
@@ -591,7 +611,7 @@ export default {
           },
         },
       },
-      tags: ['currency'],
+      tags: ['currency', 'stablecoin'],
     },
     {
       name: 'Tether USD',
@@ -609,7 +629,7 @@ export default {
           },
         },
       },
-      tags: ['currency'],
+      tags: ['currency', 'stablecoin'],
     },
     {
       name: 'Tether USD',
@@ -627,7 +647,7 @@ export default {
           },
         },
       },
-      tags: ['currency'],
+      tags: ['currency', 'stablecoin'],
     },
     {
       name: 'Wrapped Ether',
