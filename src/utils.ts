@@ -10,6 +10,7 @@ import type {
   TokenMap,
   TokenMapByChain,
   IndexToken,
+  SymbolsByChain,
 } from './types';
 import tokenlist from './tokenlist.json';
 
@@ -40,14 +41,6 @@ export const isSectorToken = (token: unknown): token is SectorToken =>
 export const isYieldToken = (token: unknown): token is YieldToken =>
   isIndexToken(token) && 'yield' in token.extensions;
 
-export const getChainTokenList = <T extends ChainId>(
-  chainId: T,
-): TokenByChain<ListedToken, T>[] =>
-  tokenlist.tokens.filter((t) => t.chainId === chainId) as TokenByChain<
-    ListedToken,
-    T
-  >[];
-
 export const tokenMap = tokenlist.tokens.reduce((acc, token) => {
   const { chainId, symbol } = token;
 
@@ -60,3 +53,42 @@ export const tokenMap = tokenlist.tokens.reduce((acc, token) => {
 
   return acc;
 }, {} as TokenMapByChain);
+
+export function getChainTokenList<C extends ChainId>(
+  chainId: C,
+): TokenByChain<ListedToken, C>[];
+export function getChainTokenList(chainId: number): ListedToken[];
+export function getChainTokenList(chainId: number): ListedToken[] {
+  if (chainId in tokenMap) {
+    return tokenlist.tokens.filter(
+      (t) => t.chainId === chainId,
+    ) as ListedToken[];
+  }
+  return [];
+}
+
+export function getTokenBySymbolAndChain<
+  C extends ChainId,
+  S extends SymbolsByChain<C>,
+>(symbol: S, chainId: C): Extract<ListedToken, { chainId: C; symbol: S }>;
+export function getTokenBySymbolAndChain(
+  symbol: string,
+  chainId: number,
+): ListedToken | null;
+
+export function getTokenBySymbolAndChain(
+  symbol: string,
+  chainId: number,
+): ListedToken | null {
+  if (chainId in tokenMap) {
+    const tokenMapByChain = tokenMap[chainId as ChainId];
+
+    if (symbol in tokenMapByChain) {
+      return tokenMapByChain[
+        symbol as keyof typeof tokenMapByChain
+      ] as ListedToken;
+    }
+  }
+
+  return null;
+}

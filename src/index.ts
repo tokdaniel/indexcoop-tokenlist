@@ -28,5 +28,6 @@ export {
   isSectorToken,
   isYieldToken,
   getChainTokenList,
+  getTokenBySymbolAndChain,
   tokenMap,
 } from './utils';

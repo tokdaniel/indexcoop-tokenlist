@@ -10,6 +10,10 @@ export type Tags = keyof typeof InternalTokenList.tags;
 export type ListedToken = (typeof InternalTokenList.tokens)[number];
 export type ChainId = ListedToken['chainId'];
 export type Symbol_ = ListedToken['symbol'];
+export type SymbolsByChain<C extends ChainId> = Extract<
+  ListedToken,
+  { chainId: C }
+>['symbol'];
 export type Extensions = ListedToken['extensions'];
 
 type GetExt<T, K extends 'leverage' | 'sector' | 'yield'> = T extends {
