@@ -14,6 +14,7 @@ export type SymbolsByChain<C extends ChainId> = Extract<
   ListedToken,
   { chainId: C }
 >['symbol'];
+
 export type Extensions = ListedToken['extensions'];
 
 type GetExt<T, K extends 'leverage' | 'sector' | 'yield'> = T extends {

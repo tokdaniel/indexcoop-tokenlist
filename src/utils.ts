@@ -92,5 +92,3 @@ export function getTokenByChainAndSymbol(
 
   return null;
 }
-
-const token = getTokenByChainAndSymbol(1, 'BTC2X');

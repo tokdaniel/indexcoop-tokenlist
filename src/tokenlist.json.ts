@@ -169,6 +169,7 @@ export default {
       chainId: 1,
       extensions: {
         status: 'Hybernated',
+        coingeckoId: null,
         sector: {
           theme: 'LCap',
         },
@@ -184,6 +185,7 @@ export default {
       chainId: 1,
       extensions: {
         status: 'Deprecated',
+        coingeckoId: null,
         sector: {
           theme: 'Real World',
         },
@@ -296,6 +298,7 @@ export default {
       chainId: 42161,
       extensions: {
         status: 'Active',
+        coingeckoId: null,
         leverage: {
           type: 'Long3x',
         },
@@ -311,6 +314,7 @@ export default {
       chainId: 42161,
       extensions: {
         status: 'Active',
+        coingeckoId: null,
         leverage: {
           type: 'Short1x',
         },
@@ -342,7 +346,7 @@ export default {
       chainId: 42161,
       extensions: {
         status: 'Active',
-
+        coingeckoId: null,
         leverage: {
           type: 'Long3x',
         },
@@ -358,6 +362,7 @@ export default {
       chainId: 42161,
       extensions: {
         status: 'Active',
+        coingeckoId: null,
         leverage: {
           type: 'Short1x',
         },
@@ -389,6 +394,7 @@ export default {
       chainId: 8453,
       extensions: {
         status: 'Active',
+        coingeckoId: null,
         leverage: {
           type: 'Long3x',
         },
@@ -469,6 +475,7 @@ export default {
       chainId: 1,
       extensions: {
         status: 'Active',
+        coingeckoId: null,
         yield: {
           theme: 'ETH',
         },
@@ -484,6 +491,7 @@ export default {
       chainId: 1,
       extensions: {
         status: 'Active',
+        coingeckoId: null,
         yield: {
           theme: 'ETH',
         },
@@ -499,6 +507,7 @@ export default {
       chainId: 42161,
       extensions: {
         status: 'Active',
+        coingeckoId: null,
         yield: {
           theme: 'ETH',
         },
@@ -514,6 +523,7 @@ export default {
       chainId: 8453,
       extensions: {
         status: 'Active',
+        coingeckoId: null,
         yield: {
           theme: 'ETH',
         },
@@ -529,6 +539,7 @@ export default {
       chainId: 1,
       extensions: {
         status: 'Active',
+        coingeckoId: null,
         yield: {
           theme: 'ETH',
         },
@@ -546,7 +557,8 @@ export default {
       logoURI:
         'https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x6B175474E89094C44Da98b954EedeAC495271d0F/logo.png',
       extensions: {
-        coinGeckoId: 'dai',
+        status: 'Active',
+        coingeckoId: 'dai',
         bridgeInfo: {
           '8453': {
             tokenAddress: '0x50c5725949a6f0c72e6c4a641f24049a917db0cb',
@@ -563,7 +575,8 @@ export default {
       chainId: 8453,
       logoURI: 'https://ethereum-optimism.github.io/data/DAI/logo.svg',
       extensions: {
-        coinGeckoId: 'dai',
+        status: 'Active',
+        coingeckoId: 'dai',
         bridgeInfo: {
           '1': {
             tokenAddress: '0x6b175474e89094c44da98b954eedeac495271d0f',
@@ -581,6 +594,7 @@ export default {
       logoURI:
         'https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png',
       extensions: {
+        status: 'Active',
         coingeckoId: 'usd-coin',
         bridgeInfo: {
           '8453': {
@@ -601,6 +615,7 @@ export default {
       chainId: 8453,
       logoURI: 'https://ethereum-optimism.github.io/data/USDC/logo.png',
       extensions: {
+        status: 'Active',
         coingeckoId: 'usd-coin',
         bridgeInfo: {
           '1': {
@@ -619,6 +634,7 @@ export default {
       logoURI:
         'https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png',
       extensions: {
+        status: 'Active',
         coingeckoId: 'usd-coin',
         bridgeInfo: {
           '1': {
@@ -637,6 +653,7 @@ export default {
       logoURI:
         'https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xdAC17F958D2ee523a2206206994597C13D831ec7/logo.png',
       extensions: {
+        status: 'Active',
         coingeckoId: 'tether',
         bridgeInfo: {
           '42161': {
@@ -655,6 +672,7 @@ export default {
       logoURI:
         'https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xdAC17F958D2ee523a2206206994597C13D831ec7/logo.png',
       extensions: {
+        status: 'Active',
         coingeckoId: 'tether',
         bridgeInfo: {
           '1': {
@@ -673,6 +691,7 @@ export default {
       logoURI:
         'https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2/logo.png',
       extensions: {
+        status: 'Active',
         coingeckoId: 'weth',
         bridgeInfo: {
           '8453': {
@@ -693,6 +712,7 @@ export default {
       chainId: 8453,
       logoURI: 'https://ethereum-optimism.github.io/data/WETH/logo.png',
       extensions: {
+        status: 'Active',
         coingeckoId: 'weth',
         bridgeInfo: {
           '1': {
@@ -711,6 +731,7 @@ export default {
       logoURI:
         'https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2/logo.png',
       extensions: {
+        status: 'Active',
         coingeckoId: 'weth',
         bridgeInfo: {
           '1': {
@@ -729,6 +750,7 @@ export default {
       logoURI:
         'https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599/logo.png',
       extensions: {
+        status: 'Active',
         coingeckoId: 'wrapped-bitcoin',
         bridgeInfo: {
           '42161': {
@@ -747,6 +769,7 @@ export default {
       logoURI:
         'https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599/logo.png',
       extensions: {
+        status: 'Active',
         coingeckoId: 'wrapped-bitcoin',
         bridgeInfo: {
           '1': {
@@ -765,6 +788,7 @@ export default {
       logoURI:
         'https://assets.coingecko.com/coins/images/5992/thumb/gemini-dollar-gusd.png?1536745278',
       extensions: {
+        status: 'Active',
         coingeckoId: 'gemini-dollar',
       },
       tags: ['currency', 'stablecoin'],
@@ -778,12 +802,13 @@ export default {
       logoURI:
         'https://tokens.1inch.io/0xae78736cd615f374d3085123a210448e74fc6393.png',
       extensions: {
+        status: 'Active',
         coingeckoId: 'rocket-pool-eth',
       },
       tags: ['currency'],
     },
     {
-      address: '0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84',
+      address: '0xae7ab96520de3a18e5e111b5eaab095312d7fe84',
       chainId: 1,
       name: 'Lido Staked Ether',
       symbol: 'stETH',
@@ -791,6 +816,7 @@ export default {
       logoURI:
         'https://tokens.1inch.io/0xae7ab96520de3a18e5e111b5eaab095312d7fe84.png',
       extensions: {
+        status: 'Active',
         coingeckoId: 'staked-ether',
       },
       tags: ['currency'],
@@ -804,6 +830,7 @@ export default {
       logoURI:
         'https://tokens.1inch.io/0xfe2e637202056d30016725477c5da089ab0a043a.png',
       extensions: {
+        status: 'Active',
         coingeckoId: 'seth2',
       },
       tags: ['currency'],
@@ -817,6 +844,7 @@ export default {
       logoURI:
         'https://tokens.1inch.io/0x7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0.png',
       extensions: {
+        status: 'Active',
         coingeckoId: 'wrapped-steth',
       },
       tags: ['currency'],
