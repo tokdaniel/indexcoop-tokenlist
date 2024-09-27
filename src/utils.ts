@@ -30,7 +30,7 @@ export const isListedToken = (token: unknown): token is ListedToken =>
   Boolean(tokenlist.tokens.find((t) => t.address === token.address));
 
 export const isIndexToken = (token: unknown): token is IndexToken =>
-  isListedToken(token) && 'extensions' in token;
+  isListedToken(token) && Boolean(token.tags.find((t) => t === 'index'));
 
 export const isLeverageToken = (token: unknown): token is LeverageToken =>
   isIndexToken(token) && 'leverage' in token.extensions;
@@ -70,15 +70,15 @@ export function getChainTokenList(chainId: number): ListedToken[] {
 export function getTokenByChainAndSymbol<
   C extends ChainId,
   S extends SymbolsByChain<C>,
->(symbol: S, chainId: C): Extract<ListedToken, { chainId: C; symbol: S }>;
+>(chainId: C, symbol: S): Extract<ListedToken, { chainId: C; symbol: S }>;
 export function getTokenByChainAndSymbol(
-  symbol: string,
   chainId: number,
+  symbol: string,
 ): ListedToken | null;
 
 export function getTokenByChainAndSymbol(
-  symbol: string,
   chainId: number,
+  symbol: string,
 ): ListedToken | null {
   if (chainId in tokenMap) {
     const tokenMapByChain = tokenMap[chainId as ChainId];
@@ -92,3 +92,5 @@ export function getTokenByChainAndSymbol(
 
   return null;
 }
+
+const token = getTokenByChainAndSymbol(1, 'BTC2X');

@@ -41,10 +41,15 @@ export type IndexTokenList = typeof InternalTokenList;
 
 // Helper Types
 
+export type IndexCoopToken = Extract<ListedToken, { symbol: 'INDEX' }>;
 export type LeverageToken = TokenCat<ListedToken, 'leverage'>;
 export type SectorToken = TokenCat<ListedToken, 'sector'>;
 export type YieldToken = TokenCat<ListedToken, 'yield'>;
-export type IndexToken = LeverageToken | SectorToken | YieldToken;
+export type IndexToken =
+  | IndexCoopToken
+  | LeverageToken
+  | SectorToken
+  | YieldToken;
 
 export type TokenByChain<T, Id extends ChainId> = T extends { chainId: Id }
   ? T
