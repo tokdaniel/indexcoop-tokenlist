@@ -67,16 +67,16 @@ export function getChainTokenList(chainId: number): ListedToken[] {
   return [];
 }
 
-export function getTokenBySymbolAndChain<
+export function getTokenByChainAndSymbol<
   C extends ChainId,
   S extends SymbolsByChain<C>,
 >(symbol: S, chainId: C): Extract<ListedToken, { chainId: C; symbol: S }>;
-export function getTokenBySymbolAndChain(
+export function getTokenByChainAndSymbol(
   symbol: string,
   chainId: number,
 ): ListedToken | null;
 
-export function getTokenBySymbolAndChain(
+export function getTokenByChainAndSymbol(
   symbol: string,
   chainId: number,
 ): ListedToken | null {
