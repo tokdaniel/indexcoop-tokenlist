@@ -1,10 +1,8 @@
+import tokenlist from '@/indexcoop.tokenlist.json';
+
 export default {
   name: 'IndexCoop Token List',
-  version: {
-    major: 0,
-    minor: 2,
-    patch: 0,
-  },
+  version: tokenlist.version,
   timestamp: new Date().toISOString(),
   tags: {
     stablecoin: {
