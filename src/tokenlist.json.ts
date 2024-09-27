@@ -1,8 +1,10 @@
-import tokenlist from '@/indexcoop.tokenlist.json';
-
 export default {
   name: 'IndexCoop Token List',
-  version: tokenlist.version,
+  version: {
+    major: 0,
+    minor: 1,
+    patch: 0,
+  },
   timestamp: new Date().toISOString(),
   tags: {
     stablecoin: {
@@ -170,10 +172,25 @@ export default {
       extensions: {
         status: 'Hybernated',
         sector: {
-          theme: 'Large Cap',
+          theme: 'LCap',
         },
       },
       logoURI: 'https://cdn.indexcoop.com/ic21.svg',
+      tags: ['index', 'sector', 'dangerous'],
+    },
+    {
+      address: '0x7f5f1a44dd6f88ccb54fe879e144df644a4ada24',
+      name: 'Real World Asset Index',
+      symbol: 'RWA',
+      decimals: 18,
+      chainId: 1,
+      extensions: {
+        status: 'Deprecated',
+        sector: {
+          theme: 'Real World',
+        },
+      },
+      logoURI: 'https://cdn.indexcoop.com/rwa.svg',
       tags: ['index', 'sector', 'dangerous'],
     },
     // --------------- Leverage Tokens ---------------
