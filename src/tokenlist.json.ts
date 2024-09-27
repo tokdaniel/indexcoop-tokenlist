@@ -756,5 +756,70 @@ export default {
       },
       tags: ['currency'],
     },
+    {
+      chainId: 1,
+      address: '0x056fd409e1d7a124bd7017459dfea2f387b6d5cd',
+      name: 'Gemini Dollar',
+      symbol: 'GUSD',
+      decimals: 2,
+      logoURI:
+        'https://assets.coingecko.com/coins/images/5992/thumb/gemini-dollar-gusd.png?1536745278',
+      extensions: {
+        coingeckoId: 'gemini-dollar',
+      },
+      tags: ['currency', 'stablecoin'],
+    },
+    {
+      address: '0xae78736cd615f374d3085123a210448e74fc6393',
+      chainId: 1,
+      name: 'Rocket Pool ETH',
+      symbol: 'rETH',
+      decimals: 18,
+      logoURI:
+        'https://tokens.1inch.io/0xae78736cd615f374d3085123a210448e74fc6393.png',
+      extensions: {
+        coingeckoId: 'rocket-pool-eth',
+      },
+      tags: ['currency'],
+    },
+    {
+      address: '0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84',
+      chainId: 1,
+      name: 'Lido Staked Ether',
+      symbol: 'stETH',
+      decimals: 18,
+      logoURI:
+        'https://tokens.1inch.io/0xae7ab96520de3a18e5e111b5eaab095312d7fe84.png',
+      extensions: {
+        coingeckoId: 'staked-ether',
+      },
+      tags: ['currency'],
+    },
+    {
+      address: '0xfe2e637202056d30016725477c5da089ab0a043a',
+      chainId: 1,
+      name: 'sETH2',
+      symbol: 'sETH2',
+      decimals: 18,
+      logoURI:
+        'https://tokens.1inch.io/0xfe2e637202056d30016725477c5da089ab0a043a.png',
+      extensions: {
+        coingeckoId: 'seth2',
+      },
+      tags: ['currency'],
+    },
+    {
+      address: '0x7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0',
+      chainId: 1,
+      name: 'WrappedliquidstakedEther2.0',
+      symbol: 'wstETH',
+      decimals: 18,
+      logoURI:
+        'https://tokens.1inch.io/0x7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0.png',
+      extensions: {
+        coingeckoId: 'wrapped-steth',
+      },
+      tags: ['currency'],
+    },
   ],
 } as const;

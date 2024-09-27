@@ -39,8 +39,9 @@
           "preset": "angular",
           "releaseRules": [
             { "type": "remove", "release": "major" },
+            { "type": "list", "release": "minor" },
+            { "type": "change", "release": "patch" },
             { "type": "feat", "release": "minor" },
-            { "type": "fix", "release": "patch" },
             { "type": "chore", "release": "patch" },
             { "type": "docs", "release": "patch" },
             { "type": "refactor", "release": "patch" },
