@@ -547,6 +547,38 @@ export default {
       logoURI: 'https://cdn.indexcoop.com/cdeti.svg',
       tags: ['index', 'yield', 'dangerous'],
     },
+    {
+      address: '0x54ee8a49155f701f0d5ff088cd36fbbf1a5b9f44',
+      chainId: 1,
+      name: 'The USDC Yield Index',
+      symbol: 'icUSD',
+      decimals: 18,
+      logoURI: 'https://cdn.indexcoop.com/icusd.svg',
+      extensions: {
+        status: 'Active',
+        coingeckoId: null,
+        yield: {
+          theme: 'USDC',
+        },
+      },
+      tags: ['index', 'yield'],
+    },
+    {
+      address: '0x098471190d131d9e6215dd195fedf4bcc0426c8a',
+      chainId: 8453,
+      name: 'The USDC Yield Index',
+      symbol: 'icUSD',
+      decimals: 18,
+      logoURI: 'https://cdn.indexcoop.com/icusd.svg',
+      extensions: {
+        status: 'Active',
+        coingeckoId: null,
+        yield: {
+          theme: 'USDC',
+        },
+      },
+      tags: ['index', 'yield'],
+    },
     // --------------- Currency Tokens ---------------
     {
       name: 'Dai Stablecoin',
