@@ -32,39 +32,39 @@ import tokenlist, {
   isYieldToken,
   getTokenByChainAndAddress, 
   getTokenByChainAndSymbol, 
-  getChainTokens, 
+  getChainTokenList, 
   tokenSymbolMap,
   tokenAddressMap 
 } from '@indexcoop/tokenlist'
 
 tokenSymbolMap[1].BTC2X.extensions.leverage.type // 'Long2x'
-tokenAddressMap[1]['0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48'].symbol // DAI
+tokenAddressMap[1]['0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48'].symbol // USDC
 
 
-isAddressEqual('adress1', 'address2') // returns false, these are not addresses
-isAddressEqual('0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48', '0xA0B86991C6218B36C1D19D4A2E9EB0CE3606EB48') // returns true, casing doesn't matter
+isAddressEqual('address1', 'address2') // returns false, these are not addresses
+isAddressEqual(tokenSymbolMap[1].BTC2X.address, tokenSymbolMap[1].BTC2X.address) // returns true, casing doesn't matter
 
-isTokenEqual(tokenA, tokenB) // Returns true, if both tokens have the same chainId and address
+isTokenEqual(tokenSymbolMap[1].BTC2X, tokenSymbolMap[1].BTC2X) // Returns true, if both tokens have the same chainId and address
 
-isToken(token) // Returns true, if the token adheres to Uniswap's TokenInfo interface.
-isListedToken(token) // Returns true, if isToken(token) is true, and the token is in the tokenlist
-isIndexToken(token) // Returns true, if isListedToken(token) is true, and the token's tags contain 'index'
-isLeverageToken(token) // Returns true if isIndexToken(token) is true, and 'leverage' is in the extensions
-isSectorToken(token) // Returns true if isIndexToken(token) is true, and 'sector' is in the extensions
-isYieldToken(token) // Returns true if isIndexToken(token) is true, and 'yield' is in the extensions
+isToken(tokenSymbolMap[1].BTC2X) // Returns true, if the token adheres to Uniswap's TokenInfo interface.
+isListedToken(tokenSymbolMap[1].BTC2X) // Returns true, if isToken(token) is true, and the token is in the tokenlist
+isIndexToken(tokenSymbolMap[1].BTC2X) // Returns true, if isListedToken(token) is true, and the token's tags contain 'index'
+isLeverageToken(tokenSymbolMap[1].BTC2X) // Returns true if isIndexToken(token) is true, and 'leverage' is in the extensions
+isSectorToken(tokenSymbolMap[1].MVI) // Returns true if isIndexToken(token) is true, and 'sector' is in the extensions
+isYieldToken(tokenSymbolMap[1].hyETH) // Returns true if isIndexToken(token) is true, and 'yield' is in the extensions
 
 getTokenByChainAndAddress(1, '0x6b175474e89094c44da98b954eedeac495271d0f') // returns DAI on mainnet
 
 getTokenByChainAndSymbol(1, 'USDC') // returns USDC on mainnet
 
-getChainTokens(1) // All tokens listed/used on mainnet
-getChainTokens(1, ['currency']) // All tokens listed/used on mainnet, where the tags include 'currency'
-getChainTokens(1, ['currency', 'stablecoin']) // All tokens listed/used on mainnet, where the tags include 'currecny' or 'stablecoin'
-getChainTokens(1, ['index']) // All tokens listed/used IndexCoop product tokens on mainnet
+getChainTokenList(1) // All tokens listed/used on mainnet
+getChainTokenList(1, ['currency']) // All tokens listed/used on mainnet, where the tags include 'currency'
+getChainTokenList(1, ['currency', 'stablecoin']) // All tokens listed/used on mainnet, where the tags include 'currecny' or 'stablecoin'
+getChainTokenList(1, ['index']) // All tokens listed/used IndexCoop product tokens on mainnet
 
 // for something more specific like, all currency tokens by chainId and symbol
-const mainnetCurrencyTokens = getChainTokens(1, ['currency'])
-mainnetCurrencyTokens.filter(({symbol} => symbol === 'USDC')
+const mainnetCurrencyTokens = getChainTokenList(1, ['currency'])
+mainnetCurrencyTokens.filter((({symbol}) => symbol === 'USDC'))
 
 ```
 | util | returns | description |
