@@ -15,7 +15,7 @@ export type {
   LeverageToken,
   SectorToken,
   YieldToken,
-  TokenByChain,
+  TokensByChain,
   TokenMap,
   TokenMapByChain,
 } from './types';

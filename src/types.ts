@@ -52,7 +52,7 @@ export type IndexToken =
   | SectorToken
   | YieldToken;
 
-export type TokenByChain<T, Id extends ChainId> = T extends { chainId: Id }
+export type TokensByChain<T, Id extends ChainId> = T extends { chainId: Id }
   ? T
   : never;
 

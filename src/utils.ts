@@ -1,7 +1,7 @@
 import type { TokenInfo } from '@uniswap/token-lists';
 import type {
   ListedToken,
-  TokenByChain,
+  TokensByChain,
   SectorToken,
   LeverageToken,
   YieldToken,
@@ -56,7 +56,7 @@ export const tokenMap = tokenlist.tokens.reduce((acc, token) => {
 
 export function getChainTokenList<C extends ChainId>(
   chainId: C,
-): TokenByChain<ListedToken, C>[];
+): TokensByChain<ListedToken, C>[];
 export function getChainTokenList(chainId: number): ListedToken[];
 export function getChainTokenList(chainId: number): ListedToken[] {
   if (chainId in tokenMap) {
