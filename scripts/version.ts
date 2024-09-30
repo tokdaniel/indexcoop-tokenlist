@@ -37,8 +37,7 @@ export const updateTokenListVersion = (
 
   const onlyExtensionsChanged = Object.values(diff.changed)
     .flatMap((change) => Object.values(change).flat())
-    .every((change) => change === 'extensions
-    ');
+    .every((change) => change === 'extensions');
 
   if (!isEmpty(diff.changed) && !onlyExtensionsChanged) {
     console.info('bump version: patch');
