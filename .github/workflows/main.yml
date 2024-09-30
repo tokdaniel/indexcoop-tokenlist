@@ -47,7 +47,7 @@ jobs:
       - uses: peter-evans/create-pull-request@v7
         with:
           commit-message: |
-            Auto: Update versions to latest
+            ignore(update): Auto update versions to the latest
 
             Update indexcoop.tokenlist.json to latest
             Update package.json to latest
