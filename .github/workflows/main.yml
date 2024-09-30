@@ -58,4 +58,4 @@ jobs:
           signoff: true
           branch: "auto/update-versions"
           title: "Auto: Update versions to latest"
-          token: ${{ secrets.GITHUB_EXT_TOKEN }}
+          token: ${{ secrets.GH_EXTENDED_TOKEN }}
