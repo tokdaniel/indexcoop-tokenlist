@@ -7,17 +7,38 @@ import type {
   YieldToken,
   ChainId,
   U2I,
-  TokenMap,
-  TokenMapByChain,
+  TokenAddressMap,
+  TokenAddressMapByChain,
+  TokenSymbolMap,
+  TokenSymbolMapByChain,
   IndexToken,
   SymbolsByChain,
+  Tags,
+  AddressByChain,
 } from './types';
 import tokenlist from './tokenlist.json';
+import { isAddress } from 'viem';
 
 /**
- * Check if the given parameter is a {@link TokenInfo}
- * @param token - an unknown value, to be tested if it adheres to **Uniswap's** {@link TokenInfo} interface
- * @returns boolean
+ * Compare two Ethereum addresses case-insensitively.
+ * @param a - First address to compare.
+ * @param b - Second address to compare.
+ * @returns Returns true if both addresses are valid and equal, false otherwise.
+ * @example
+ * isAddressEqual('0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48', '0xA0B86991C6218B36C1D19D4A2E9EB0CE3606EB48')
+ * // Returns true.
+ */
+export const isAddressEqual = (a: unknown, b: unknown) =>
+  typeof a === 'string' &&
+  typeof b === 'string' &&
+  isAddress(a, { strict: true }) &&
+  isAddress(b, { strict: true }) &&
+  a.toLowerCase() === b.toLowerCase();
+
+/**
+ * Validates if the given parameter adheres to the Uniswap's {@link TokenInfo} interface.
+ * @param token - The value to test.
+ * @returns Returns true if the parameter is a valid Uniswap standard {@link TokenInfo} object.
  */
 export const isToken = (token: unknown): token is TokenInfo => {
   if (typeof token !== 'object' || !token) return false;
@@ -31,132 +52,194 @@ export const isToken = (token: unknown): token is TokenInfo => {
 };
 
 /**
- * Check if the given parameter is a {@link ListedToken}
- * @param token - an unknown value, to be tested if it adheres to the {@link ListedToken} interface
- * @returns boolean
- * @note {@link ListedToken} is a subset of {@link TokenInfo}
+ * Compares two tokens based on their chainId and address.
+ * @param a - First token to compare.
+ * @param b - Second token to compare.
+ * @returns Returns true if the tokens are equal.
+ * @example
+ * isTokenEqual(tokenA, tokenB)
+ * // Returns true if both tokens have the same chainId and address.
+ */
+export const isTokenEqual = (a: unknown, b: unknown) => {
+  if (isToken(a) && isToken(b)) {
+    return a.chainId === b.chainId && isAddressEqual(a.address, b.address);
+  }
+
+  return false;
+};
+
+/**
+ * Checks if the provided parameter adheres to the {@link ListedToken} interface.
+ * @param token - Value to validate.
+ * @returns True if the token is listed.
  */
 export const isListedToken = (token: unknown): token is ListedToken =>
   isToken(token) &&
-  Boolean(tokenlist.tokens.find((t) => t.address === token.address));
+  Boolean(
+    tokenlist.tokens.find((t) => isAddressEqual(t.address, token.address)),
+  );
 
 /**
- * Check if the given parameter is an {@link IndexToken}
- * @param token - an unknown value, to be tested if it adheres to the {@link IndexToken} interface
- * @returns boolean
- * @note {@link IndexToken} is a union of {@link IndexCoopToken}, {@link LeverageToken}, {@link SectorToken}, and {@link YieldToken}
- * @note {@link IndexToken} is a subset {@link ListedToken}
+ * Validates if the given token is an {@link IndexToken}.
+ * @param token - Token to validate.
+ * @returns Returns true if the token is an IndexToken.
  */
 export const isIndexToken = (token: unknown): token is IndexToken =>
   isListedToken(token) && Boolean(token.tags.find((t) => t === 'index'));
 
 /**
- * Check if the given parameter is an {@link LeverageToken}
- * @param token - an unknown value, to be tested if it adheres to the {@link LeverageToken} interface
- * @returns boolean
- * @note {@link LeverageToken} is a subset {@link IndexToken}
+ * Validates if the given token is a {@link LeverageToken}.
+ * @param token - Token to check.
+ * @returns True if the token is a LeverageToken.
  */
 export const isLeverageToken = (token: unknown): token is LeverageToken =>
   isIndexToken(token) && 'leverage' in token.extensions;
 
 /**
- * Check if the given parameter is an {@link SectorToken}
- * @param token - an unknown value, to be tested if it adheres to the {@link SectorToken} interface
- * @returns boolean
- * @note {@link SectorToken} is a subset {@link IndexToken}
+ * Checks if the token is a {@link SectorToken}.
+ * @param token - Token to validate.
+ * @returns Returns true if the token is a SectorToken.
  */
 export const isSectorToken = (token: unknown): token is SectorToken =>
   isIndexToken(token) && 'sector' in token.extensions;
 
 /**
- * Check if the given parameter is an {@link YieldToken}
- * @param token - an unknown value, to be tested if it adheres to the {@link YieldToken} interface
- * @returns boolean
- * @note {@link YieldToken} is a subset {@link IndexToken}
+ * Checks if the token is a {@link YieldToken}.
+ * @param token - Token to check.
+ * @returns True if the token is a YieldToken.
  */
 export const isYieldToken = (token: unknown): token is YieldToken =>
   isIndexToken(token) && 'yield' in token.extensions;
 
 /**
- * {@link tokenMap} is a nested map, where the key is the {@link ChainId},
- * and the secondary key is {@link SymbolsByChain} of the token
- * Symbols are not unique amongst themselves, but they are unique within a chain
- * @example tokenMap[1].USDC // returns USDC token on Ethereum
- * tokenMap[56].USDC // TypeError, as Binance Smart Chain is not supported
+ * Generates a nested map with {@link ChainId} as key and address as secondary key.
+ * @example
+ * tokenAddressMap[1]['0x6b175474e89094c44da98b954eedeac495271d0f']
+ * // Returns DAI token on Ethereum.
  */
-export const tokenMap = tokenlist.tokens.reduce((acc, token) => {
+export const tokenAddressMap = tokenlist.tokens.reduce((acc, token) => {
+  const { chainId, address } = token;
+
+  if (!acc[chainId]) {
+    acc[chainId] = {} as U2I<{ [C in ChainId]: TokenAddressMap<C> }[ChainId]>;
+  }
+
+  //@ts-ignore - Symbol type is too broad for this, thus typescript cannot infer, since chainId and address are not linked
+  acc[chainId][address] = token;
+
+  return acc;
+}, {} as TokenAddressMapByChain);
+
+/**
+ * Retrieve a token by its chainId and address.
+ * @param {C} chainId - the {@link ChainId} on which the token is expected to be found.
+ * @param {A} address - the address of the token to look for
+ * @returns {ListedToken | null} The token, or null if not found.
+ * @example
+ * getTokenByChainAndAddress(1, '0x54ee8a49155f701f0d5ff088cd36fbbf1a5b9f44'); // Returns USDC token on Ethereum.
+ * const network: number = 5/5 // resolves to 1
+ * getTokenByChainAndSymbol(network, '0x54ee8a49155f701f0d5ff088cd36fbbf1a5b9f44');
+ * // Returns USDC token on Ethereum, but the type will be a union of all possible tokens with the same addres.
+ */
+export function getTokenByChainAndAddress<
+  C extends ChainId,
+  A extends AddressByChain<C>,
+>(chainId: C, symbol: A): Extract<ListedToken, { chainId: C; address: A }>;
+
+export function getTokenByChainAndAddress<C extends ChainId>(
+  chainId: C,
+  address: unknown,
+): Extract<ListedToken, { chainId: C }> | null;
+
+export function getTokenByChainAndAddress<A extends AddressByChain<ChainId>>(
+  chainId: unknown,
+  address: A,
+): Extract<ListedToken, { address: A }> | null;
+
+export function getTokenByChainAndAddress(
+  chainId: unknown,
+  address: unknown,
+): ListedToken | null;
+
+export function getTokenByChainAndAddress(
+  chainId: unknown,
+  address: unknown,
+): ListedToken | null {
+  if (
+    typeof chainId === 'number' &&
+    typeof address === 'string' &&
+    chainId in tokenAddressMap &&
+    isAddress(address)
+  ) {
+    const tokenMapByChain = tokenAddressMap[chainId as ChainId];
+
+    const addr = address.toLowerCase();
+
+    if (addr in tokenMapByChain) {
+      return tokenMapByChain[
+        addr as keyof typeof tokenMapByChain
+      ] as ListedToken;
+    }
+  }
+
+  return null;
+}
+
+/**
+ * Generates a nested map with {@link ChainId} as key and {@link SymbolsByChain} as secondary key.
+ */
+export const tokenSymbolMap = tokenlist.tokens.reduce((acc, token) => {
   const { chainId, symbol } = token;
 
   if (!acc[chainId]) {
-    acc[chainId] = {} as U2I<{ [C in ChainId]: TokenMap<C> }[ChainId]>;
+    acc[chainId] = {} as U2I<{ [C in ChainId]: TokenSymbolMap<C> }[ChainId]>;
   }
 
   //@ts-ignore - Symbol type is too broad for this, thus typescript cannot infer, since chainId and symbol are not linked
   acc[chainId][symbol] = token;
 
   return acc;
-}, {} as TokenMapByChain);
+}, {} as TokenSymbolMapByChain);
 
 /**
- * Get all tokens of a specific chain, by giving a recognized chainId
- * @param chainId: {@link ChainId}
- * @returns:{@link ListedToken}[]
- * @example getChainTokenList(1) // returns all tokens of Ethereum
- */
-export function getChainTokenList<C extends ChainId>(
-  chainId: C,
-): TokensByChain<ListedToken, C>[];
-
-/**
- * Get all tokens of an unknown chainId
- * @param chainId:number
- * @returns:{@link ListedToken}[], could be an empty array
- * @example getChainTokenList(10) // Optimism is not supported, returns []
- */
-export function getChainTokenList(chainId: number): ListedToken[];
-export function getChainTokenList(chainId: number): ListedToken[] {
-  if (chainId in tokenMap) {
-    return tokenlist.tokens.filter(
-      (t) => t.chainId === chainId,
-    ) as ListedToken[];
-  }
-  return [];
-}
-
-/**
- * Get exact token by giving a recognized chainId and symbol
- * @param chainId:{@link ChainId}
- * @param symbol:{@link SymbolsByChain}
- * @returns:{@link ListedToken}
- * @example getTokenByChainAndSymbol(1, 'USDC') // returns USDC token on Ethereum
- * getTokenByChainAndSymbol(10, 'USDC') // TypeError as Optimism is not supported
+ * Retrieve a token by its chainId and symbol.
+ * @param {C} chainId - the {@link ChainId} on which the token is expected to be found.
+ * @param {S} symbol - the symbol of the token to look for
+ * @returns {ListedToken | null} The token, or null if not found.
+ * @example
+ * getTokenByChainAndSymbol(1, 'USDC'); // Returns USDC token on Ethereum.
+ *
+ * const network: number = 5/5 // resolves to 1
+ * getTokenByChainAndSymbol(network, 'USDC');
+ * // Returns USDT token on Ethereum, but the type will be a union of all possible USDC tokens.
  */
 export function getTokenByChainAndSymbol<
   C extends ChainId,
   S extends SymbolsByChain<C>,
 >(chainId: C, symbol: S): Extract<ListedToken, { chainId: C; symbol: S }>;
 
-/**
- * Get token if exists by giving an unknown chainId and symbol
- * @param chainId:number
- * @param symbol:string
- * @returns:{@link ListedToken} | null
- * @example
- * const x: number = 5/5 // is 1
- * getTokenByChainAndSymbol(x, 'USDC') // returns a {@link ListedToken} or null, but it will be resolved to USDC on Ethereum
- * getTokenByChainAndSymbol(10, 'USDC') // Allowed but returns null as Optimism is not supported
- */
-export function getTokenByChainAndSymbol(
-  chainId: number,
-  symbol: string,
-): ListedToken | null;
+export function getTokenByChainAndSymbol<C extends ChainId>(
+  chainId: C,
+  symbol: unknown,
+): Extract<ListedToken, { chainId: C }> | null;
+
+export function getTokenByChainAndSymbol<S extends SymbolsByChain<ChainId>>(
+  chainId: unknown,
+  symbol: S,
+): Extract<ListedToken, { symbol: S }> | null;
 
 export function getTokenByChainAndSymbol(
-  chainId: number,
-  symbol: string,
-): ListedToken | null {
-  if (chainId in tokenMap) {
-    const tokenMapByChain = tokenMap[chainId as ChainId];
+  chainId: unknown,
+  symbol: unknown,
+): ListedToken | null;
+
+export function getTokenByChainAndSymbol(chainId: unknown, symbol: unknown) {
+  if (
+    typeof chainId === 'number' &&
+    typeof symbol === 'string' &&
+    chainId in tokenSymbolMap
+  ) {
+    const tokenMapByChain = tokenSymbolMap[chainId as ChainId];
 
     if (symbol in tokenMapByChain) {
       return tokenMapByChain[
@@ -166,4 +249,39 @@ export function getTokenByChainAndSymbol(
   }
 
   return null;
+}
+
+/**
+ * Fetches the list of all tokens for a specific chain.
+ * @param chainId - The {@link ChainId} to filter tokens.
+ * @param [tags] - Optional {@link Tags}[] to filter tokens by tags.
+ * @returns - {@link ListedToken}[]
+ * @example
+ * getChainTokenList(1)
+ * // Returns all tokens for Ethereum chain.
+ * getChainTokenList(1, ['currency'])
+ * // Returns all currency tokens for Ethereum chain.
+ */
+export function getChainTokenList<C extends ChainId>(
+  chainId: C,
+  tags?: Tags[],
+): TokensByChain<ListedToken, C>[];
+
+export function getChainTokenList(
+  chainId: unknown,
+  tags?: Tags[],
+): ListedToken[];
+
+export function getChainTokenList(
+  chainId: unknown,
+  tags: Tags[] = [],
+): ListedToken[] {
+  if (typeof chainId === 'number' && chainId in tokenSymbolMap) {
+    return tokenlist.tokens.filter(
+      (t) =>
+        t.chainId === chainId &&
+        (tags.length === 0 || t.tags.some((tag) => tags.includes(tag))),
+    ) as ListedToken[];
+  }
+  return [];
 }

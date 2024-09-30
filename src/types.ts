@@ -42,6 +42,15 @@ export type ChainId = ListedToken['chainId'];
  * {@link Symbol_} - A union of all possible symbols in the tokenlist
  */
 export type Symbol_ = ListedToken['symbol'];
+
+/**
+ * {@link AddressByChain}<{@link ChainId}> - A union of all addresses in the tokenlist for a given chainId
+ */
+export type AddressByChain<C extends ChainId> = Extract<
+  ListedToken,
+  { chainId: C }
+>['address'];
+
 /**
  * {@link SymbolsByChain}<{@link ChainId}> - A union of all symbols in the tokenlist for a given chainId
  */
@@ -113,9 +122,9 @@ export type TokensByChain<T, Id extends ChainId> = T extends { chainId: Id }
   : never;
 
 /**
- * {@link TokenMap}<{@link ChainId}> - A map of all tokens in the tokenlist for a given chainId by symbol
+ * {@link TokenSymbolMap}<{@link ChainId}> - A map of all tokens in the tokenlist for a given chainId by symbol
  */
-export type TokenMap<C extends ChainId> = {
+export type TokenSymbolMap<C extends ChainId> = {
   [S in Extract<ListedToken, { chainId: C }>['symbol']]: Extract<
     ListedToken,
     { chainId: C; symbol: S }
@@ -123,8 +132,25 @@ export type TokenMap<C extends ChainId> = {
 };
 
 /**
- * {@link TokenMapByChain} - A nested map of all possible chains, with a map of all tokens in the tokenlist for a given chainId by symbol
+ * {@link TokenAddressMap}<{@link ChainId}> - A map of all tokens in the tokenlist for a given chainId by address
  */
-export type TokenMapByChain = {
-  [K in ListedToken['chainId']]: TokenMap<K>;
+export type TokenAddressMap<C extends ChainId> = {
+  [A in Extract<ListedToken, { chainId: C }>['address']]: Extract<
+    ListedToken,
+    { chainId: C; address: A }
+  >;
+};
+
+/**
+ * {@link TokenSymbolMapByChain} - A nested map of all possible chains, with a map of all tokens in the tokenlist for a given chainId by symbol
+ */
+export type TokenSymbolMapByChain = {
+  [K in ListedToken['chainId']]: TokenSymbolMap<K>;
+};
+
+/**
+ * {@link TokenAddressMapByChain} - A nested map of all possible chains, with a map of all tokens in the tokenlist for a given chainId by address
+ */
+export type TokenAddressMapByChain = {
+  [K in ListedToken['chainId']]: TokenAddressMap<K>;
 };

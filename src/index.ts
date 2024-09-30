@@ -15,18 +15,24 @@ export type {
   SectorToken,
   YieldToken,
   TokensByChain,
-  TokenMap,
-  TokenMapByChain,
+  TokenAddressMap,
+  TokenAddressMapByChain,
+  TokenSymbolMap,
+  TokenSymbolMapByChain,
 } from './types';
 export { default as tokenlist } from './tokenlist.json';
 export {
+  isAddressEqual,
+  isTokenEqual,
   isToken,
   isListedToken,
   isIndexToken,
   isLeverageToken,
   isSectorToken,
   isYieldToken,
-  getChainTokenList,
+  tokenAddressMap,
+  getTokenByChainAndAddress,
+  tokenSymbolMap,
   getTokenByChainAndSymbol,
-  tokenMap,
+  getChainTokenList,
 } from './utils';
