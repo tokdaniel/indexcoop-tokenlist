@@ -1,10 +1,13 @@
 {
   "name": "@nsorcell/exp-tokenlist",
-  "version": "1.14.0",
+  "version": "1.15.0",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "typings": "dist/index.d.ts",
-  "files": ["dist", "README.md"],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "type": "module",
   "scripts": {
     "lint": "bunx @biomejs/biome lint",
@@ -18,7 +21,9 @@
     "@uniswap/token-lists": "^1.0.0-beta.34"
   },
   "release": {
-    "branches": ["main"],
+    "branches": [
+      "main"
+    ],
     "plugins": [
       [
         "@semantic-release/commit-analyzer",
