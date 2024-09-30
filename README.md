@@ -67,6 +67,8 @@ const mainnetCurrencyTokens = getChainTokenList(1, ['currency'])
 mainnetCurrencyTokens.filter((({symbol}) => symbol === 'USDC'))
 
 ```
+try yourself by visiting this [StackBlitz url](https://stackblitz.com/edit/vitejs-vite-qwridj?file=src%2Findex.ts)
+
 | util | returns | description |
 |---|---|---|
 | `is[Type]Token` | `:is [TokenType]` | typeguard to safely cast into the necessary tokentype: `TokenInfo`, `ListedToken`, `IndexToken`, `LeverageToken`, `SectorToken`, `YieldToken` |
