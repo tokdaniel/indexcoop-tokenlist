@@ -33,10 +33,13 @@ import tokenlist, {
   getTokenByChainAndAddress, 
   getTokenByChainAndSymbol, 
   getChainTokens, 
-  tokenMap 
+  tokenSymbolMap,
+  tokenAddressMap 
 } from '@indexcoop/tokenlist'
 
-tokenMap[1].BTC2X.extensions.leverage.type // 'Long2x'
+tokenSymbolMap[1].BTC2X.extensions.leverage.type // 'Long2x'
+tokenAddressMap[1]['0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48'].symbol // DAI
+
 
 isAddressEqual('adress1', 'address2') // returns false, these are not addresses
 isAddressEqual('0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48', '0xA0B86991C6218B36C1D19D4A2E9EB0CE3606EB48') // returns true, casing doesn't matter
