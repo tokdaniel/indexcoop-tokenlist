@@ -42,3 +42,20 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npx semantic-release --branches main
+  create_pr:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: |
+            Auto: Update versions to latest
+
+            Update indexcoop.tokenlist.json to latest
+            Update package.json to latest
+          signoff: true
+          branch: "auto/update-versions"
+          title: "Auto: Update versions to latest"
+          token: ${{ secrets.GITHUB_EXT_TOKEN }}
