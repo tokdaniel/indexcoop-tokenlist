@@ -72,9 +72,11 @@ try yourself by visiting this [StackBlitz url](https://stackblitz.com/edit/vitej
 | util | returns | description |
 |---|---|---|
 | `is[Type]Token` | `:is [TokenType]` | typeguard to safely cast into the necessary tokentype: `TokenInfo`, `ListedToken`, `IndexToken`, `LeverageToken`, `SectorToken`, `YieldToken` |
-| `tokenMap` | `:TokenMapByChain` | a strict map of `Record<chainId, Record<symbol, token>>`, provides safe access to strictly typed token data based on chainId and token symbol. | 
+| `tokenSymbolMap` | `:TokenSymbolMapByChain` | a strict map of `Record<chainId, Record<symbol, ListedToken>>`, provides safe access to strictly typed token data based on chainId and token symbol. | 
+| `tokenAddressMap` | `:TokenAddressMapByChain` | a strict map of `Record<chainId, Record<address, ListedToken>>`, provides safe access to strictly typed token data based on chainId and token address. | 
 | `getChainTokenList` | `:TokensByChain` | a function requiring a `chainId` of type `number` or `ChainId`. Returns all listed tokens in an array on the provided chain. If the chain is unsupported it will return an empty array, hovewer if the provided types of the values are exact, it will return the right tokens by type. |
-| `getTokenByChainAndSymbol` | `:ListedToken \| null` | An extension of `tokenMap` which accepts any number as `chainId`, and any string as `symbol`. Returns either a `ListedToken` or `null`. If the `symbol` and the `chainId` is matching by type the returned token will be exact. |
+| `getTokenByChainAndSymbol` | `:ListedToken \| null` | An extension of `tokenSymbolMap` which accepts any number as `chainId`, and any string as `symbol`. Returns either a `ListedToken` or `null`. If the `symbol` and the `chainId` is matching by type the returned token will be exact. |
+| `getTokenByChainAndAddress` | `:isListedToken \| null` | An extension of `tokenAddressMap` which accepts any number as `chainId` and any addresslike string as `address`. Returns either a `ListedToken` or `null`. If the `address` and the `chainId` is matching by type the returned token will be exact. |
 
 ## Build
 
