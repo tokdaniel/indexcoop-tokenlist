@@ -1,3 +1,5 @@
+import { getTokenByChainAndSymbol } from './utils';
+
 export type {
   IndexTokenList,
   IndexToken,
@@ -6,11 +8,8 @@ export type {
   ChainId,
   Symbol_,
   Extensions,
-  Leverage,
   LeverageType,
-  Sector,
   SectorTheme,
-  Yield,
   YieldTheme,
   LeverageToken,
   SectorToken,

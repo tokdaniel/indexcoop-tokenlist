@@ -48,9 +48,7 @@
         "coingeckoId": "index-cooperative"
       },
       "logoURI": "https://cdn.indexcoop.com/index.svg",
-      "tags": [
-        "index"
-      ]
+      "tags": ["index"]
     },
     {
       "address": "0x1494ca1f11d487c2bbe4543e90080aeba4ba3c2b",
@@ -66,10 +64,7 @@
         }
       },
       "logoURI": "https://cdn.indexcoop.com/dpi.svg",
-      "tags": [
-        "index",
-        "sector"
-      ]
+      "tags": ["index", "sector"]
     },
     {
       "address": "0x9737c658272e66faad39d7ad337789ee6d54f500",
@@ -85,10 +80,7 @@
         }
       },
       "logoURI": "https://cdn.indexcoop.com/dpi.svg",
-      "tags": [
-        "index",
-        "sector"
-      ]
+      "tags": ["index", "sector"]
     },
     {
       "address": "0xc6955b85b622369a54cc8c6dbecb8e03c0885bd8",
@@ -104,10 +96,7 @@
         }
       },
       "logoURI": "https://cdn.indexcoop.com/dpi.svg",
-      "tags": [
-        "index",
-        "sector"
-      ]
+      "tags": ["index", "sector"]
     },
     {
       "address": "0x72e364f2abdc788b7e918bc238b21f109cd634d7",
@@ -123,10 +112,7 @@
         }
       },
       "logoURI": "https://cdn.indexcoop.com/mvi.svg",
-      "tags": [
-        "index",
-        "sector"
-      ]
+      "tags": ["index", "sector"]
     },
     {
       "address": "0x0104a6fa30540dc1d9f45d2797f05eea79304525",
@@ -142,10 +128,7 @@
         }
       },
       "logoURI": "https://cdn.indexcoop.com/mvi.svg",
-      "tags": [
-        "index",
-        "sector"
-      ]
+      "tags": ["index", "sector"]
     },
     {
       "address": "0xea8954de7607b90f5ec81a5e2e673d0f60bb7596",
@@ -161,10 +144,7 @@
         }
       },
       "logoURI": "https://cdn.indexcoop.com/mvi.svg",
-      "tags": [
-        "index",
-        "sector"
-      ]
+      "tags": ["index", "sector"]
     },
     {
       "address": "0x2af1df3ab0ab157e1e2ad8f88a7d04fbea0c7dc6",
@@ -180,10 +160,7 @@
         }
       },
       "logoURI": "https://cdn.indexcoop.com/bed.svg",
-      "tags": [
-        "index",
-        "sector"
-      ]
+      "tags": ["index", "sector"]
     },
     {
       "address": "0x1b5e16c5b20fb5ee87c61fe9afe735cca3b21a65",
@@ -199,11 +176,7 @@
         }
       },
       "logoURI": "https://cdn.indexcoop.com/ic21.svg",
-      "tags": [
-        "index",
-        "sector",
-        "dangerous"
-      ]
+      "tags": ["index", "sector", "dangerous"]
     },
     {
       "address": "0x7f5f1a44dd6f88ccb54fe879e144df644a4ada24",
@@ -219,11 +192,7 @@
         }
       },
       "logoURI": "https://cdn.indexcoop.com/rwa.svg",
-      "tags": [
-        "index",
-        "sector",
-        "dangerous"
-      ]
+      "tags": ["index", "sector", "dangerous"]
     },
     {
       "address": "0xaa6e8127831c9de45ae56bb1b0d4d4da6e5665bd",
@@ -239,11 +208,7 @@
         }
       },
       "logoURI": "https://cdn.indexcoop.com/eth2x.svg",
-      "tags": [
-        "index",
-        "leverage",
-        "dangerous"
-      ]
+      "tags": ["index", "leverage", "dangerous"]
     },
     {
       "address": "0xccdae12162566e3f29fefa7bf7f5b24c644493b5",
@@ -259,11 +224,7 @@
         }
       },
       "logoURI": "https://cdn.indexcoop.com/icreth.svg",
-      "tags": [
-        "index",
-        "leverage",
-        "dangerous"
-      ]
+      "tags": ["index", "leverage", "dangerous"]
     },
     {
       "address": "0x0b498ff89709d3838a063f1dfa463091f9801c2b",
@@ -279,11 +240,7 @@
         }
       },
       "logoURI": "https://cdn.indexcoop.com/btc2x.svg",
-      "tags": [
-        "index",
-        "leverage",
-        "dangerous"
-      ]
+      "tags": ["index", "leverage", "dangerous"]
     },
     {
       "address": "0x65c4c0517025ec0843c9146af266a2c5a2d148a2",
@@ -299,11 +256,7 @@
         }
       },
       "logoURI": "https://cdn.indexcoop.com/eth2x.svg",
-      "tags": [
-        "index",
-        "leverage",
-        "dangerous"
-      ]
+      "tags": ["index", "leverage", "dangerous"]
     },
     {
       "address": "0xd2ac55ca3bbd2dd1e9936ec640dcb4b745fde759",
@@ -319,11 +272,7 @@
         }
       },
       "logoURI": "https://cdn.indexcoop.com/btc2x.svg",
-      "tags": [
-        "index",
-        "leverage",
-        "dangerous"
-      ]
+      "tags": ["index", "leverage", "dangerous"]
     },
     {
       "address": "0x26d7d3728c6bb762a5043a1d0cef660988bca43c",
@@ -339,11 +288,7 @@
         }
       },
       "logoURI": "https://cdn.indexcoop.com/btc2x.svg",
-      "tags": [
-        "index",
-        "leverage",
-        "dangerous"
-      ]
+      "tags": ["index", "leverage", "dangerous"]
     },
     {
       "address": "0xa0a17b2a015c14be846c5d309d076379ccdfa543",
@@ -359,11 +304,7 @@
         }
       },
       "logoURI": "https://cdn.indexcoop.com/eth3x.svg",
-      "tags": [
-        "index",
-        "leverage",
-        "dangerous"
-      ]
+      "tags": ["index", "leverage", "dangerous"]
     },
     {
       "address": "0x749654601a286833ad30357246400d2933b1c89b",
@@ -379,11 +320,7 @@
         }
       },
       "logoURI": "https://cdn.indexcoop.com/ieth1x.svg",
-      "tags": [
-        "index",
-        "leverage",
-        "dangerous"
-      ]
+      "tags": ["index", "leverage", "dangerous"]
     },
     {
       "address": "0xeb5be62e6770137beaa0cc712741165c594f59d7",
@@ -399,10 +336,7 @@
         }
       },
       "logoURI": "https://cdn.indexcoop.com/btc2x.svg",
-      "tags": [
-        "index",
-        "leverage"
-      ]
+      "tags": ["index", "leverage"]
     },
     {
       "address": "0x3bdd0d5c0c795b2bf076f5c8f177c58e42bec0e6",
@@ -418,11 +352,7 @@
         }
       },
       "logoURI": "https://cdn.indexcoop.com/btc3x.svg",
-      "tags": [
-        "index",
-        "leverage",
-        "dangerous"
-      ]
+      "tags": ["index", "leverage", "dangerous"]
     },
     {
       "address": "0x80e58aea88bccaae19bca7f0e420c1387cc087fc",
@@ -438,11 +368,7 @@
         }
       },
       "logoURI": "https://cdn.indexcoop.com/ibtc1x.svg",
-      "tags": [
-        "index",
-        "leverage",
-        "dangerous"
-      ]
+      "tags": ["index", "leverage", "dangerous"]
     },
     {
       "address": "0xc884646e6c88d9b172a23051b38b0732cc3e35a6",
@@ -458,10 +384,7 @@
         }
       },
       "logoURI": "https://cdn.indexcoop.com/btc2x.svg",
-      "tags": [
-        "index",
-        "leverage"
-      ]
+      "tags": ["index", "leverage"]
     },
     {
       "address": "0x329f6656792c7d34d0fbb9762fa9a8f852272acb",
@@ -477,11 +400,7 @@
         }
       },
       "logoURI": "https://cdn.indexcoop.com/eth3x.svg",
-      "tags": [
-        "index",
-        "leverage",
-        "dangerous"
-      ]
+      "tags": ["index", "leverage", "dangerous"]
     },
     {
       "address": "0x7c07f7abe10ce8e33dc6c5ad68fe033085256a84",
@@ -497,10 +416,7 @@
         }
       },
       "logoURI": "https://cdn.indexcoop.com/iceth.svg",
-      "tags": [
-        "index",
-        "yield"
-      ]
+      "tags": ["index", "yield"]
     },
     {
       "address": "0x341c05c0e9b33c0e38d64de76516b2ce970bb3be",
@@ -516,10 +432,7 @@
         }
       },
       "logoURI": "https://cdn.indexcoop.com/dseth.svg",
-      "tags": [
-        "index",
-        "yield"
-      ]
+      "tags": ["index", "yield"]
     },
     {
       "address": "0x95b11aca35d35ac8b8a88e1f7792873bbea7cebb",
@@ -535,10 +448,7 @@
         }
       },
       "logoURI": "https://cdn.indexcoop.com/dseth.svg",
-      "tags": [
-        "index",
-        "yield"
-      ]
+      "tags": ["index", "yield"]
     },
     {
       "address": "0x37e7c051dc5a24313ceec581222882648ba537aa",
@@ -554,10 +464,7 @@
         }
       },
       "logoURI": "https://cdn.indexcoop.com/dseth.svg",
-      "tags": [
-        "index",
-        "yield"
-      ]
+      "tags": ["index", "yield"]
     },
     {
       "address": "0x36c833eed0d376f75d1ff9dfdee260191336065e",
@@ -573,11 +480,7 @@
         }
       },
       "logoURI": "https://cdn.indexcoop.com/gtceth.svg",
-      "tags": [
-        "index",
-        "yield",
-        "dangerous"
-      ]
+      "tags": ["index", "yield", "dangerous"]
     },
     {
       "address": "0xc4506022fb8090774e8a628d5084eed61d9b99ee",
@@ -593,11 +496,7 @@
         }
       },
       "logoURI": "https://cdn.indexcoop.com/hyeth.svg",
-      "tags": [
-        "index",
-        "yield",
-        "dangerous"
-      ]
+      "tags": ["index", "yield", "dangerous"]
     },
     {
       "address": "0x8b5d1d8b3466ec21f8ee33ce63f319642c026142",
@@ -613,11 +512,7 @@
         }
       },
       "logoURI": "https://cdn.indexcoop.com/hyeth.svg",
-      "tags": [
-        "index",
-        "yield",
-        "dangerous"
-      ]
+      "tags": ["index", "yield", "dangerous"]
     },
     {
       "address": "0xc73e76aa9f14c1837cdb49bd028e8ff5a0a71dad",
@@ -633,11 +528,7 @@
         }
       },
       "logoURI": "https://cdn.indexcoop.com/hyeth.svg",
-      "tags": [
-        "index",
-        "yield",
-        "dangerous"
-      ]
+      "tags": ["index", "yield", "dangerous"]
     },
     {
       "address": "0x55b2cfcfe99110c773f00b023560dd9ef6c8a13b",
@@ -653,11 +544,7 @@
         }
       },
       "logoURI": "https://cdn.indexcoop.com/cdeti.svg",
-      "tags": [
-        "index",
-        "yield",
-        "dangerous"
-      ]
+      "tags": ["index", "yield", "dangerous"]
     },
     {
       "address": "0x54ee8a49155f701f0d5ff088cd36fbbf1a5b9f44",
@@ -673,10 +560,7 @@
           "theme": "USDC"
         }
       },
-      "tags": [
-        "index",
-        "yield"
-      ]
+      "tags": ["index", "yield"]
     },
     {
       "address": "0x098471190d131d9e6215dd195fedf4bcc0426c8a",
@@ -692,10 +576,7 @@
           "theme": "USDC"
         }
       },
-      "tags": [
-        "index",
-        "yield"
-      ]
+      "tags": ["index", "yield"]
     },
     {
       "name": "Dai Stablecoin",
@@ -713,10 +594,7 @@
           }
         }
       },
-      "tags": [
-        "currency",
-        "stablecoin"
-      ]
+      "tags": ["currency", "stablecoin"]
     },
     {
       "name": "Dai Stablecoin",
@@ -734,10 +612,7 @@
           }
         }
       },
-      "tags": [
-        "currency",
-        "stablecoin"
-      ]
+      "tags": ["currency", "stablecoin"]
     },
     {
       "name": "USDCoin",
@@ -758,10 +633,7 @@
           }
         }
       },
-      "tags": [
-        "currency",
-        "stablecoin"
-      ]
+      "tags": ["currency", "stablecoin"]
     },
     {
       "name": "USD Coin",
@@ -779,10 +651,7 @@
           }
         }
       },
-      "tags": [
-        "currency",
-        "stablecoin"
-      ]
+      "tags": ["currency", "stablecoin"]
     },
     {
       "name": "USDCoin",
@@ -800,10 +669,7 @@
           }
         }
       },
-      "tags": [
-        "currency",
-        "stablecoin"
-      ]
+      "tags": ["currency", "stablecoin"]
     },
     {
       "name": "Tether USD",
@@ -821,10 +687,7 @@
           }
         }
       },
-      "tags": [
-        "currency",
-        "stablecoin"
-      ]
+      "tags": ["currency", "stablecoin"]
     },
     {
       "name": "Tether USD",
@@ -842,10 +705,7 @@
           }
         }
       },
-      "tags": [
-        "currency",
-        "stablecoin"
-      ]
+      "tags": ["currency", "stablecoin"]
     },
     {
       "name": "Wrapped Ether",
@@ -866,9 +726,7 @@
           }
         }
       },
-      "tags": [
-        "currency"
-      ]
+      "tags": ["currency"]
     },
     {
       "name": "Wrapped Ether",
@@ -886,9 +744,7 @@
           }
         }
       },
-      "tags": [
-        "currency"
-      ]
+      "tags": ["currency"]
     },
     {
       "name": "Wrapped Ether",
@@ -906,9 +762,7 @@
           }
         }
       },
-      "tags": [
-        "currency"
-      ]
+      "tags": ["currency"]
     },
     {
       "name": "Wrapped BTC",
@@ -926,9 +780,7 @@
           }
         }
       },
-      "tags": [
-        "currency"
-      ]
+      "tags": ["currency"]
     },
     {
       "name": "Wrapped BTC",
@@ -946,9 +798,7 @@
           }
         }
       },
-      "tags": [
-        "currency"
-      ]
+      "tags": ["currency"]
     },
     {
       "chainId": 1,
@@ -961,10 +811,7 @@
         "status": "Active",
         "coingeckoId": "gemini-dollar"
       },
-      "tags": [
-        "currency",
-        "stablecoin"
-      ]
+      "tags": ["currency", "stablecoin"]
     },
     {
       "address": "0xae78736cd615f374d3085123a210448e74fc6393",
@@ -977,9 +824,7 @@
         "status": "Active",
         "coingeckoId": "rocket-pool-eth"
       },
-      "tags": [
-        "currency"
-      ]
+      "tags": ["currency"]
     },
     {
       "address": "0xae7ab96520de3a18e5e111b5eaab095312d7fe84",
@@ -992,9 +837,7 @@
         "status": "Active",
         "coingeckoId": "staked-ether"
       },
-      "tags": [
-        "currency"
-      ]
+      "tags": ["currency"]
     },
     {
       "address": "0xfe2e637202056d30016725477c5da089ab0a043a",
@@ -1007,9 +850,7 @@
         "status": "Active",
         "coingeckoId": "seth2"
       },
-      "tags": [
-        "currency"
-      ]
+      "tags": ["currency"]
     },
     {
       "address": "0x7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0",
@@ -1022,9 +863,7 @@
         "status": "Active",
         "coingeckoId": "wrapped-steth"
       },
-      "tags": [
-        "currency"
-      ]
+      "tags": ["currency"]
     }
   ]
 }
