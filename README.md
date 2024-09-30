@@ -21,10 +21,44 @@ If you want to use the typings, you can install the package via npm if you're in
 
 ## Usage
 ```typescript
-import tokenlist, { getChainTokens, tokenMap } from '@indexcoop/tokenlist'
+import tokenlist, {
+  isAddressEqual,
+  isTokenEqual,
+  isToken,
+  isListedToken,
+  isIndexToken,
+  isLeverageToken,
+  isSectorToken,
+  isYieldToken,
+  getTokenByChainAndAddress, 
+  getTokenByChainAndSymbol, 
+  getChainTokens, 
+  tokenMap 
+} from '@indexcoop/tokenlist'
+
+tokenMap[1].BTC2X.extensions.leverage.type // 'Long2x'
+
+isAddressEqual('adress1', 'address2') // returns false, these are not addresses
+isAddressEqual('0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48', '0xA0B86991C6218B36C1D19D4A2E9EB0CE3606EB48') // returns true, casing doesn't matter
+
+isTokenEqual(tokenA, tokenB) // Returns true, if both tokens have the same chainId and address
+
+isToken(token) // Returns true, if the token adheres to Uniswap's TokenInfo interface.
+isListedToken(token) // Returns true, if isToken(token) is true, and the token is in the tokenlist
+isIndexToken(token) // Returns true, if isListedToken(token) is true, and the token's tags contain 'index'
+isLeverageToken(token) // Returns true if isIndexToken(token) is true, and 'leverage' is in the extensions
+isSectorToken(token) // Returns true if isIndexToken(token) is true, and 'sector' is in the extensions
+isYieldToken(token) // Returns true if isIndexToken(token) is true, and 'yield' is in the extensions
+
+getTokenByChainAndAddress(1, '0x6b175474e89094c44da98b954eedeac495271d0f') // returns DAI on mainnet
+
+getTokenByChainAndSymbol(1, 'USDC') // returns USDC on mainnet
 
 getChainTokens(1) // All tokens listed/used on mainnet
-tokenMap[1].BTC2X.extensions.leverage.type // 'Long2x'
+getChainTokens(1, ['currency']) // All tokens listed/used on mainnet, where the tags include 'currency'
+getChainTokens(1, ['currency', 'stablecoin']) // All tokens listed/used on mainnet, where the tags include 'currecny' or 'stablecoin'
+getChainTokens(1, ['index']) // All tokens listed/used IndexCoop product tokens on mainnet
+
 ```
 | util | returns | description |
 |---|---|---|
