@@ -59,6 +59,10 @@ getChainTokens(1, ['currency']) // All tokens listed/used on mainnet, where the 
 getChainTokens(1, ['currency', 'stablecoin']) // All tokens listed/used on mainnet, where the tags include 'currecny' or 'stablecoin'
 getChainTokens(1, ['index']) // All tokens listed/used IndexCoop product tokens on mainnet
 
+// for something more specific like, all currency tokens by chainId and symbol
+const mainnetCurrencyTokens = getChainTokens(1, ['currency'])
+mainnetCurrencyTokens.filter(({symbol} => symbol === 'USDC')
+
 ```
 | util | returns | description |
 |---|---|---|
