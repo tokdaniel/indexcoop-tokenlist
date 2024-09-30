@@ -1,5 +1,3 @@
-import { getTokenByChainAndSymbol } from './utils';
-
 export type {
   IndexTokenList,
   IndexToken,
