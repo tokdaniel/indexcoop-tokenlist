@@ -35,8 +35,12 @@ export const updateTokenListVersion = (
     });
   }
 
-  // TODO: Check if diff.changed contains only "extensions" and throw that out
-  if (!isEmpty(diff.changed)) {
+  const onlyExtensionsChanged = Object.values(diff.changed)
+    .flatMap((change) => Object.values(change).flat())
+    .every((change) => change === 'extensions
+    ');
+
+  if (!isEmpty(diff.changed) && !onlyExtensionsChanged) {
     console.info('bump version: patch');
 
     return Object.assign(tokenlistUpdate, {
