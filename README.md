@@ -26,6 +26,12 @@ import tokenlist, { getChainTokens, tokenMap } from '@indexcoop/tokenlist'
 getChainTokens(1) // All tokens listed/used on mainnet
 tokenMap[1].BTC2X.extensions.leverage.type // 'Long2x'
 ```
+| util | returns | description |
+|---|---|---|
+| `is[Type]Token` | `:is [TokenType]` | typeguard to safely cast into the necessary tokentype: `TokenInfo`, `ListedToken`, `IndexToken`, `LeverageToken`, `SectorToken`, `YieldToken` |
+| `tokenMap` | `:TokenMapByChain` | a strict map of `Record<chainId, Record<symbol, token>>`, provides safe access to strictly typed token data based on chainId and token symbol. | 
+| `getChainTokenList` | `:TokensByChain` | a function requiring a `chainId` of type `number` or `ChainId`. Returns all listed tokens in an array on the provided chain. If the chain is unsupported it will return an empty array, hovewer if the provided types of the values are exact, it will return the right tokens by type. |
+| `getTokenByChainAndSymbol` | `:ListedToken \| null` | An extension of `tokenMap` which accepts any number as `chainId`, and any string as `symbol`. Returns either a `ListedToken` or `null`. If the `symbol` and the `chainId` is matching by type the returned token will be exact. |
 
 ## Build
 
