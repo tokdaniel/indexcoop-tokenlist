@@ -31,22 +31,44 @@ export const validTokenArbitrary = fc.record({
 
 export const invalidTokenArbitrary = fc.oneof(
   fc.record({
-    chainId: fc.oneof(fc.constant(null), fc.string()),
-    address: fc.oneof(
-      fc.constant(null),
-      fc.string({ minLength: 1, maxLength: 39 }),
-      fc.string({ minLength: 41 }),
-    ), // Invalid address
-    name: fc.oneof(fc.constant(null), fc.string({ minLength: 0 })),
-    symbol: fc.oneof(
-      fc.constant(null),
-      fc.string({ minLength: 0, maxLength: 0 }),
-    ), // Invalid symbol
-    decimals: fc.oneof(fc.constant(null), fc.string()),
+    chainId: fc.anything(),
+    address: fc.anything(),
+    name: fc.anything(),
+    symbol: fc.anything(),
+    decimals: fc.anything(),
   }),
-  fc.constant(null),
-  fc.constant(undefined),
-  fc.anything(),
+  fc.record({
+    chainId: fc.integer(),
+    address: fc.oneof(
+      fc.string({ minLength: 5, maxLength: 30 }),
+      fc.anything(),
+    ),
+    name: fc.string(),
+    symbol: fc.string(),
+    decimals: fc.integer(),
+  }),
+  fc.record({
+    chainId: fc.integer(),
+    address: ethAddressArbitrary(),
+    name: fc.string(),
+    symbol: fc.string(),
+    decimals: fc.oneof(fc.string(), fc.constant(null), fc.constant(undefined)),
+  }),
+
+  fc.record({
+    chainId: fc.integer(),
+    address: ethAddressArbitrary(),
+    name: fc.oneof(fc.integer(), fc.constant(null), fc.constant(undefined)),
+    symbol: fc.string(),
+    decimals: fc.integer(),
+  }),
+  fc.record({
+    chainId: fc.integer(),
+    address: ethAddressArbitrary(),
+    name: fc.string(),
+    symbol: fc.oneof(fc.integer(), fc.constant(null), fc.constant(undefined)),
+    decimals: fc.integer(),
+  }),
 );
 
 export const differentTokenArbitrary = fc
