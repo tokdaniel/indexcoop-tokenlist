@@ -33,6 +33,10 @@ export default {
   testEnvironment: 'node',
   extensionsToTreatAsEsm: ['.ts', '.tsx'],
   transformIgnorePatterns: ['/node_modules/'],
+  reporters: [
+    'default',
+    ['jest-junit', { outputDirectory: './coverage', outputName: 'junit.xml' }],
+  ],
   coverageReporters: ['html', 'text', 'text-summary', 'cobertura'],
   coveragePathIgnorePatterns: [
     '/node_modules/',
