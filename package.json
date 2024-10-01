@@ -86,6 +86,7 @@
     "@biomejs/biome": "1.9.2",
     "@types/bun": "latest",
     "@types/jest": "^29.5.13",
+    "@types/lodash": "^4.17.9",
     "ajv": "^8.17.1",
     "ajv-formats": "^3.0.1",
     "coverage-badge-creator": "^1.0.19",
