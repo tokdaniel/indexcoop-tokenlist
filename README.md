@@ -1,4 +1,5 @@
 # Index Coop Tokenlist
+[![Bun](https://img.shields.io/badge/Bun_v1.1.29-00a5a8?logo=bun&logoColor=fff)](#)
 ![release](https://img.shields.io/github/v/release/tokdaniel/indexcoop-tokenlist)
 ![license](https://img.shields.io/github/license/tokdaniel/indexcoop-tokenlist)
 ![build](https://img.shields.io/github/actions/workflow/status/tokdaniel/indexcoop-tokenlist/main.yml)
