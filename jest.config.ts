@@ -1,5 +1,6 @@
 import tsConfig from './tsconfig.json';
-const { createDefaultPreset } = require('ts-jest');
+import { createDefaultPreset } from 'ts-jest';
+import type { Config } from '@jest/types';
 import * as path from 'node:path';
 
 interface TsConfigPaths {
@@ -32,7 +33,7 @@ export default {
   testEnvironment: 'node',
   extensionsToTreatAsEsm: ['.ts', '.tsx'],
   transformIgnorePatterns: ['/node_modules/'],
-  reporters: ['default', 'jest-junit'],
+  coverageReporters: ['lcov', 'clover'],
   coveragePathIgnorePatterns: [
     '/node_modules/',
     '/src/index.ts',
@@ -43,4 +44,4 @@ export default {
   moduleNameMapper: convertTsConfigPathsToModuleNameMapper(
     tsConfig.compilerOptions.paths,
   ),
-};
+} as Config.InitialOptions;

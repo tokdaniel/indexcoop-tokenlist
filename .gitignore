@@ -33,6 +33,7 @@ lib-cov
 
 coverage
 *.lcov
+junit.xml
 
 # nyc test coverage
 
