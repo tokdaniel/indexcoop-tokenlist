@@ -76,7 +76,8 @@ export const isTokenEqual = (a: unknown, b: unknown) => {
 export const isListedToken = (token: unknown): token is ListedToken =>
   isToken(token) &&
   Boolean(
-    tokenlist.tokens.find((t) => isAddressEqual(t.address, token.address)),
+    token.chainId in tokenAddressMap &&
+      token.address in tokenAddressMap[token.chainId as ChainId],
   );
 
 /**
