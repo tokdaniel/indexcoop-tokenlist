@@ -55,7 +55,8 @@ jobs:
           branch: "auto/update-versions"
           title: "Auto: Update versions to latest"
           token: ${{ secrets.GH_EXTENDED_TOKEN }}
-      - uses: gaelgirodon/ci-badges-action@v1
+      - uses: gaelgirodon/ci-badges-action@v1.5.0
+
         with:
           gist-id: a7c9182c954b150894614d212eb54520
           token: ${{ secrets.GIST_TOKEN }}
