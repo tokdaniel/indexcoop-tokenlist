@@ -32,6 +32,8 @@ jobs:
           node-version-file: ".nvmrc"
       - name: Install Dependencies
         run: bun install --frozen-lockfile
+      - name: Test
+        run: bun test
       - name: Build
         run: bun run list:build
       - name: Bundle

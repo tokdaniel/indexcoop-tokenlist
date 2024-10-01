@@ -17,7 +17,7 @@ import type {
   AddressByChain,
 } from './types';
 import tokenlist from './tokenlist.json';
-import { isAddress } from 'viem';
+import { isAddress, zeroAddress } from 'viem';
 
 /**
  * Compare two Ethereum addresses case-insensitively.
@@ -42,11 +42,17 @@ export const isAddressEqual = (a: unknown, b: unknown) =>
  */
 export const isToken = (token: unknown): token is TokenInfo => {
   if (typeof token !== 'object' || !token) return false;
-  if (!('chainId' in token)) return false;
-  if (!('address' in token)) return false;
-  if (!('name' in token)) return false;
-  if (!('symbol' in token)) return false;
-  if (!('decimals' in token)) return false;
+  if (!('chainId' in token) || typeof token.chainId !== 'number') return false;
+  if (
+    !('address' in token) ||
+    typeof token.address !== 'string' ||
+    !isAddress(token.address, { strict: false })
+  )
+    return false;
+  if (!('name' in token) || typeof token.name !== 'string') return false;
+  if (!('symbol' in token) || typeof token.symbol !== 'string') return false;
+  if (!('decimals' in token) || typeof token.decimals !== 'number')
+    return false;
 
   return true;
 };
@@ -76,8 +82,8 @@ export const isTokenEqual = (a: unknown, b: unknown) => {
 export const isListedToken = (token: unknown): token is ListedToken =>
   isToken(token) &&
   Boolean(
-    token.chainId in tokenAddressMap &&
-      token.address.toLowerCase() in tokenAddressMap[token.chainId as ChainId],
+    token.chainId in tokenSymbolMap &&
+      token.symbol in tokenSymbolMap[token.chainId as ChainId],
   );
 
 /**
@@ -170,7 +176,7 @@ export function getTokenByChainAndAddress(
     typeof chainId === 'number' &&
     typeof address === 'string' &&
     chainId in tokenAddressMap &&
-    isAddress(address)
+    isAddress(address, { strict: false })
   ) {
     const tokenMapByChain = tokenAddressMap[chainId as ChainId];
 

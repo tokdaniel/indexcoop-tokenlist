@@ -36,7 +36,7 @@ export default {
   },
   tokens: [
     {
-      address: '0x0954906da0Bf32d5479e25f46056d22f08464cab',
+      address: '0x0954906da0bf32d5479e25f46056d22f08464cab',
       name: 'Index Token',
       symbol: 'INDEX',
       decimals: 18,
@@ -659,7 +659,7 @@ export default {
     },
     {
       name: 'USDCoin',
-      address: '0xaf88d065e77c8cC2239327C5EDb3A432268e5831',
+      address: '0xaf88d065e77c8cc2239327c5edb3a432268e5831',
       symbol: 'USDC',
       decimals: 6,
       chainId: 42161,

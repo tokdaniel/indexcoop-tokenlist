@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    // Enable latest features
     "baseUrl": ".",
     "lib": ["ESNext", "DOM"],
     "target": "ESNext",
@@ -8,18 +7,15 @@
     "moduleDetection": "force",
     "allowJs": false,
 
-    // Bundler mode
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
-    "verbatimModuleSyntax": true,
+    "verbatimModuleSyntax": false,
     "noEmit": true,
-
-    // Best practices
+    "esModuleInterop": true,
     "strict": true,
     "skipLibCheck": true,
     "noFallthroughCasesInSwitch": true,
 
-    // Some stricter flags (disabled by default)
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "noPropertyAccessFromIndexSignature": false,
