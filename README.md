@@ -1,4 +1,7 @@
 # Index Coop Tokenlist
+![release](https://img.shields.io/github/v/release/tokdaniel/indexcoop-tokenlist)
+![license](https://img.shields.io/github/license/tokdaniel/indexcoop-tokenlist)
+![build](https://img.shields.io/github/actions/workflow/status/tokdaniel/indexcoop-tokenlist/main.yml)
 
 This repository contains the **Index Coop Tokenlist**, a curated set of tokens that follow the standards for ERC20 token lists as per the [Uniswap Token Lists](https://tokenlists.org/) specification. This list is designed for use within DeFi applications that need to reference standardized token lists for indexing and displaying assets.
 

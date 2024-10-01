@@ -33,7 +33,7 @@ export default {
   testEnvironment: 'node',
   extensionsToTreatAsEsm: ['.ts', '.tsx'],
   transformIgnorePatterns: ['/node_modules/'],
-  coverageReporters: ['lcov', 'clover'],
+  coverageReporters: ['html', 'text', 'text-summary', 'cobertura'],
   coveragePathIgnorePatterns: [
     '/node_modules/',
     '/src/index.ts',
