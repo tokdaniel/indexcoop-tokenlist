@@ -77,7 +77,7 @@ export const isListedToken = (token: unknown): token is ListedToken =>
   isToken(token) &&
   Boolean(
     token.chainId in tokenAddressMap &&
-      token.address in tokenAddressMap[token.chainId as ChainId],
+      token.address.toLowerCase() in tokenAddressMap[token.chainId as ChainId],
   );
 
 /**
