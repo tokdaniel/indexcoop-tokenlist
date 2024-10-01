@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="49" failures="0" errors="0" time="6.462">
+  <testsuite name="isTokenEqual" errors="0" failures="0" skipped="0" timestamp="2024-10-01T12:48:59" time="4.662" tests="3">
+    <testcase classname="isTokenEqual should accept any value but return false for it" name="isTokenEqual should accept any value but return false for it" time="0.019">
+    </testcase>
+    <testcase classname="isTokenEqual should return true for tokens with the same chainId and address (case-insensitive)" name="isTokenEqual should return true for tokens with the same chainId and address (case-insensitive)" time="0.013">
+    </testcase>
+    <testcase classname="isTokenEqual should return false for tokens with different chainId or address" name="isTokenEqual should return false for tokens with different chainId or address" time="0.013">
+    </testcase>
+  </testsuite>
+  <testsuite name="getChainTokenList" errors="0" failures="0" skipped="0" timestamp="2024-10-01T12:48:59" time="4.656" tests="4">
+    <testcase classname="getChainTokenList should accept any value but return an empty array for it" name="getChainTokenList should accept any value but return an empty array for it" time="0.018">
+    </testcase>
+    <testcase classname="getChainTokenList should return all tokens for a valid chainId" name="getChainTokenList should return all tokens for a valid chainId" time="0.012">
+    </testcase>
+    <testcase classname="getChainTokenList should return tokens filtered by tags" name="getChainTokenList should return tokens filtered by tags" time="0.014">
+    </testcase>
+    <testcase classname="getChainTokenList should return an empty array for an invalid chainId" name="getChainTokenList should return an empty array for an invalid chainId" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="isLeverageToken" errors="0" failures="0" skipped="0" timestamp="2024-10-01T12:48:59" time="4.672" tests="5">
+    <testcase classname="isLeverageToken should accept any value but return false for it" name="isLeverageToken should accept any value but return false for it" time="0.035">
+    </testcase>
+    <testcase classname="isLeverageToken should return true for tokens that are index tokens with leverage in extensions" name="isLeverageToken should return true for tokens that are index tokens with leverage in extensions" time="0.003">
+    </testcase>
+    <testcase classname="isLeverageToken should return false for index tokens that do not have leverage in extensions" name="isLeverageToken should return false for index tokens that do not have leverage in extensions" time="0.014">
+    </testcase>
+    <testcase classname="isLeverageToken should return false for tokens that are not index tokens" name="isLeverageToken should return false for tokens that are not index tokens" time="0.002">
+    </testcase>
+    <testcase classname="isLeverageToken should return false for tokens that are not listed" name="isLeverageToken should return false for tokens that are not listed" time="0.01">
+    </testcase>
+  </testsuite>
+  <testsuite name="getTokenByChainAndAddress" errors="0" failures="0" skipped="0" timestamp="2024-10-01T12:48:59" time="4.684" tests="4">
+    <testcase classname="getTokenByChainAndAddress should return accept anything as chainId and address, but return null" name="getTokenByChainAndAddress should return accept anything as chainId and address, but return null" time="0.048">
+    </testcase>
+    <testcase classname="getTokenByChainAndAddress should return the correct token for valid chainId and address" name="getTokenByChainAndAddress should return the correct token for valid chainId and address" time="0.004">
+    </testcase>
+    <testcase classname="getTokenByChainAndAddress should return the correct token regardless of address case" name="getTokenByChainAndAddress should return the correct token regardless of address case" time="0.007">
+    </testcase>
+    <testcase classname="getTokenByChainAndAddress should return null for non-existent chainId or address" name="getTokenByChainAndAddress should return null for non-existent chainId or address" time="0.009">
+    </testcase>
+  </testsuite>
+  <testsuite name="getTokenByChainAndSymbol" errors="0" failures="0" skipped="0" timestamp="2024-10-01T12:48:59" time="4.721" tests="3">
+    <testcase classname="getTokenByChainAndSymbol should return accept anything as chainId and symbol, but return null" name="getTokenByChainAndSymbol should return accept anything as chainId and symbol, but return null" time="0.052">
+    </testcase>
+    <testcase classname="getTokenByChainAndSymbol should return the correct token for valid chainId and symbol" name="getTokenByChainAndSymbol should return the correct token for valid chainId and symbol" time="0.01">
+    </testcase>
+    <testcase classname="getTokenByChainAndSymbol should return null for non-existent chainId or symbol" name="getTokenByChainAndSymbol should return null for non-existent chainId or symbol" time="0.015">
+    </testcase>
+  </testsuite>
+  <testsuite name="isAddressEqual" errors="0" failures="0" skipped="0" timestamp="2024-10-01T12:48:59" time="4.747" tests="4">
+    <testcase classname="isAddressEqual should accept any value but return false for it" name="isAddressEqual should accept any value but return false for it" time="0.017">
+    </testcase>
+    <testcase classname="isAddressEqual should return true for identical valid addresses, ignoring case" name="isAddressEqual should return true for identical valid addresses, ignoring case" time="0.007">
+    </testcase>
+    <testcase classname="isAddressEqual should return false for different valid addresses" name="isAddressEqual should return false for different valid addresses" time="0.007">
+    </testcase>
+    <testcase classname="isAddressEqual should return false for invalid or mixed addresses" name="isAddressEqual should return false for invalid or mixed addresses" time="0.032">
+    </testcase>
+  </testsuite>
+  <testsuite name="isSectorToken" errors="0" failures="0" skipped="0" timestamp="2024-10-01T12:48:59" time="4.793" tests="5">
+    <testcase classname="isSectorToken should accept any value but return false for it" name="isSectorToken should accept any value but return false for it" time="0.022">
+    </testcase>
+    <testcase classname="isSectorToken should return true for tokens that are index tokens with sector in extensions" name="isSectorToken should return true for tokens that are index tokens with sector in extensions" time="0.004">
+    </testcase>
+    <testcase classname="isSectorToken should return false for index tokens that do not have sector in extensions" name="isSectorToken should return false for index tokens that do not have sector in extensions" time="0.004">
+    </testcase>
+    <testcase classname="isSectorToken should return false for tokens that are not index tokens" name="isSectorToken should return false for tokens that are not index tokens" time="0.003">
+    </testcase>
+    <testcase classname="isSectorToken should return false for tokens that are not listed" name="isSectorToken should return false for tokens that are not listed" time="0.007">
+    </testcase>
+  </testsuite>
+  <testsuite name="isToken" errors="0" failures="0" skipped="0" timestamp="2024-10-01T12:49:04" time="0.431" tests="3">
+    <testcase classname="isToken should accept any value but return false for it" name="isToken should accept any value but return false for it" time="0.016">
+    </testcase>
+    <testcase classname="isToken should return true for valid TokenInfo objects" name="isToken should return true for valid TokenInfo objects" time="0.008">
+    </testcase>
+    <testcase classname="isToken should return false for invalid TokenInfo objects" name="isToken should return false for invalid TokenInfo objects" time="0.01">
+    </testcase>
+  </testsuite>
+  <testsuite name="isListedToken" errors="0" failures="0" skipped="0" timestamp="2024-10-01T12:49:04" time="0.438" tests="3">
+    <testcase classname="isListedToken should accept any value but return false for it" name="isListedToken should accept any value but return false for it" time="0.013">
+    </testcase>
+    <testcase classname="isListedToken should return true for listed tokens" name="isListedToken should return true for listed tokens" time="0.005">
+    </testcase>
+    <testcase classname="isListedToken should return false for unlisted tokens" name="isListedToken should return false for unlisted tokens" time="0.006">
+    </testcase>
+  </testsuite>
+  <testsuite name="tokenSymbolMap" errors="0" failures="0" skipped="0" timestamp="2024-10-01T12:48:59" time="6.127" tests="3">
+    <testcase classname="tokenSymbolMap should generate a map with chainId as top-level key and symbol as secondary key" name="tokenSymbolMap should generate a map with chainId as top-level key and symbol as secondary key" time="0.007">
+    </testcase>
+    <testcase classname="tokenSymbolMap should map each symbol to its corresponding token" name="tokenSymbolMap should map each symbol to its corresponding token" time="0.002">
+    </testcase>
+    <testcase classname="tokenSymbolMap should handle edge cases with missing or invalid values" name="tokenSymbolMap should handle edge cases with missing or invalid values" time="0">
+    </testcase>
+  </testsuite>
+  <testsuite name="isYieldToken" errors="0" failures="0" skipped="0" timestamp="2024-10-01T12:48:59" time="6.133" tests="5">
+    <testcase classname="isYieldToken should accept any value but return false for it" name="isYieldToken should accept any value but return false for it" time="0.015">
+    </testcase>
+    <testcase classname="isYieldToken should return true for tokens that are index tokens with yield in extensions" name="isYieldToken should return true for tokens that are index tokens with yield in extensions" time="0.005">
+    </testcase>
+    <testcase classname="isYieldToken should return false for index tokens that do not have yield in extensions" name="isYieldToken should return false for index tokens that do not have yield in extensions" time="0.003">
+    </testcase>
+    <testcase classname="isYieldToken should return false for tokens that are not index tokens" name="isYieldToken should return false for tokens that are not index tokens" time="0.003">
+    </testcase>
+    <testcase classname="isYieldToken should return false for tokens that are not listed" name="isYieldToken should return false for tokens that are not listed" time="0.006">
+    </testcase>
+  </testsuite>
+  <testsuite name="isIndexToken" errors="0" failures="0" skipped="0" timestamp="2024-10-01T12:48:59" time="6.216" tests="4">
+    <testcase classname="isIndexToken should accept any value but return false for it" name="isIndexToken should accept any value but return false for it" time="0.014">
+    </testcase>
+    <testcase classname="isIndexToken should return true for tokens with the &quot;index&quot; tag" name="isIndexToken should return true for tokens with the &quot;index&quot; tag" time="0.003">
+    </testcase>
+    <testcase classname="isIndexToken should return false for tokens that do not have the &quot;index&quot; tag" name="isIndexToken should return false for tokens that do not have the &quot;index&quot; tag" time="0.004">
+    </testcase>
+    <testcase classname="isIndexToken should return false for tokens that are not listed" name="isIndexToken should return false for tokens that are not listed" time="0.006">
+    </testcase>
+  </testsuite>
+  <testsuite name="tokenAddressMap" errors="0" failures="0" skipped="0" timestamp="2024-10-01T12:48:59" time="6.244" tests="3">
+    <testcase classname="tokenAddressMap should generate a map with chainId as the top-level key and address as the secondary key" name="tokenAddressMap should generate a map with chainId as the top-level key and address as the secondary key" time="0.005">
+    </testcase>
+    <testcase classname="tokenAddressMap should map each address to its corresponding token" name="tokenAddressMap should map each address to its corresponding token" time="0.003">
+    </testcase>
+    <testcase classname="tokenAddressMap should handle edge cases with missing or invalid values" name="tokenAddressMap should handle edge cases with missing or invalid values" time="0">
+    </testcase>
+  </testsuite>
+</testsuites>

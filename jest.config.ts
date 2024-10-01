@@ -32,6 +32,7 @@ export default {
   testEnvironment: 'node',
   extensionsToTreatAsEsm: ['.ts', '.tsx'],
   transformIgnorePatterns: ['/node_modules/'],
+  reporters: ['default', 'jest-junit'],
   coveragePathIgnorePatterns: [
     '/node_modules/',
     '/src/index.ts',
