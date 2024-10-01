@@ -34,6 +34,7 @@ export default {
   transformIgnorePatterns: ['/node_modules/'],
   coveragePathIgnorePatterns: [
     '/node_modules/',
+    '/src/index.ts',
     '/dist/',
     '/types/',
     '/tests/utils.ts',

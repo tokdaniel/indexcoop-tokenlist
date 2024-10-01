@@ -33,7 +33,7 @@ jobs:
       - name: Install Dependencies
         run: bun install --frozen-lockfile
       - name: Test
-        run: bun test
+        run: bun coverage
       - name: Build
         run: bun run list:build
       - name: Bundle
@@ -55,3 +55,7 @@ jobs:
           branch: "auto/update-versions"
           title: "Auto: Update versions to latest"
           token: ${{ secrets.GH_EXTENDED_TOKEN }}
+      - uses: gaelgirodon/ci-badges-action@v1
+        with:
+          gist-id: a7c9182c954b150894614d212eb54520
+          token: ${{ secrets.GIST_TOKEN }}
