@@ -67,7 +67,7 @@ const mainnetCurrencyTokens = getChainTokenList(1, ['currency'])
 mainnetCurrencyTokens.filter((({symbol}) => symbol === 'USDC'))
 
 ```
-try yourself by visiting this [StackBlitz url](https://stackblitz.com/edit/vitejs-vite-qwridj?file=src%2Findex.ts)
+try yourself by visiting this [StackBlitz url](https://stackblitz.com/edit/vitejs-vite-qwridj?file=src%2Findex.ts), running `npm run execute` in the console after the install happens.
 
 | util | returns | description |
 |---|---|---|
