@@ -17,7 +17,7 @@ import type {
   AddressByChain,
 } from './types';
 import tokenlist from './tokenlist.json';
-import { isAddress, zeroAddress } from 'viem';
+import { Chain, isAddress, zeroAddress } from 'viem';
 
 /**
  * Compare two Ethereum addresses case-insensitively.
@@ -193,6 +193,61 @@ export function getTokenByChainAndAddress(
 }
 
 /**
+ * Retrieve a token by its chainId and address. Curried version of {@link getTokenByChainAndAddress}.
+ * @param {C} chainId - the {@link ChainId} on which the token is expected to be found.
+ * @param {A} address - the address of the token to look for
+ * @returns {ListedToken | null} The token, or null if not found.
+ * @example
+ * getTokenByChainAndAddress(1, '0x54ee8a49155f701f0d5ff088cd36fbbf1a5b9f44'); // Returns USDC token on Ethereum.
+ * const network: number = 5/5 // resolves to 1
+ * getTokenByChainAndSymbol(network, '0x54ee8a49155f701f0d5ff088cd36fbbf1a5b9f44');
+ * // Returns USDC token on Ethereum, but the type will be a union of all possible tokens with the same addres.
+ */
+export function getTokenByChainAndAddressCurried<C extends ChainId>(
+  chainId: C,
+): <A extends AddressByChain<C>>(
+  address: A,
+) => Extract<ListedToken, { chainId: C; address: A }>;
+
+export function getTokenByChainAndAddressCurried<C extends ChainId>(
+  chainId: C,
+): (address: unknown) => Extract<ListedToken, { chainId: C }> | null;
+
+export function getTokenByChainAndAddressCurried(
+  chainId: unknown,
+): <A extends AddressByChain<ChainId>>(
+  address: A,
+) => Extract<ListedToken, { address: A }> | null;
+
+export function getTokenByChainAndAddressCurried(
+  chainId: unknown,
+): (address: unknown) => ListedToken | null;
+
+// Implementation
+export function getTokenByChainAndAddressCurried(chainId: unknown) {
+  return <A extends AddressByChain<ChainId>>(
+    address: A,
+  ): ListedToken | null => {
+    if (
+      typeof chainId === 'number' &&
+      typeof address === 'string' &&
+      chainId in tokenAddressMap &&
+      isAddress(address, { strict: false })
+    ) {
+      const tokenMapByChain = tokenAddressMap[chainId as ChainId];
+      const addr = address.toLowerCase();
+
+      if (addr in tokenMapByChain) {
+        return tokenMapByChain[
+          addr as keyof typeof tokenMapByChain
+        ] as ListedToken;
+      }
+    }
+    return null;
+  };
+}
+
+/**
  * Generates a nested map with {@link ChainId} as key and {@link SymbolsByChain} as secondary key.
  */
 export const tokenSymbolMap = tokenlist.tokens.reduce((acc, token) => {
@@ -256,6 +311,57 @@ export function getTokenByChainAndSymbol(chainId: unknown, symbol: unknown) {
   }
 
   return null;
+}
+
+/**
+ * Retriveve a token by its chainId and symbol. Curried version of {@link getTokenByChainAndSymbol}
+ * @param {C} chainId - the {@link ChainId} on which the token is expected to be found.
+ * @param {S} symbol - the symbol of the token to look for
+ * @returns {ListedToken | null} The token, or null if not found.
+ * @example
+ * getTokenByChainAndSymbol(1)('USDC'); // Returns USDC token on Ethereum.
+ *
+ * const network: number = 5/5 // resolves to 1
+ * getTokenByChainAndSymbol(network)('USDC');
+ * // Returns USDT token on Ethereum, but the type will be a union of all possible USDC tokens.
+ */
+export function getTokenByChainAndSymbolCurried<C extends ChainId>(
+  chainId: C,
+): <S extends SymbolsByChain<C>>(
+  symbol: S,
+) => Extract<ListedToken, { chainId: C; symbol: S }>;
+
+export function getTokenByChainAndSymbolCurried<C extends ChainId>(
+  chainId: C,
+): (symbol: string) => Extract<ListedToken, { chainId: C }> | null;
+
+export function getTokenByChainAndSymbolCurried(
+  chainId: unknown,
+): <S extends SymbolsByChain<ChainId>>(
+  symbol: S,
+) => Extract<ListedToken, { symbol: S }> | null;
+
+export function getTokenByChainAndSymbolCurried(
+  chainId: unknown,
+): (symbol: unknown) => ListedToken | null;
+
+export function getTokenByChainAndSymbolCurried(chainId: unknown) {
+  return <S extends SymbolsByChain<ChainId>>(symbol: S): ListedToken | null => {
+    if (
+      typeof chainId === 'number' &&
+      typeof symbol === 'string' &&
+      chainId in tokenSymbolMap
+    ) {
+      const tokenMapByChain = tokenSymbolMap[chainId as ChainId];
+
+      if (symbol in tokenMapByChain) {
+        return tokenMapByChain[
+          symbol as keyof typeof tokenMapByChain
+        ] as ListedToken;
+      }
+    }
+    return null;
+  };
 }
 
 /**

@@ -30,7 +30,9 @@ export {
   isYieldToken,
   tokenAddressMap,
   getTokenByChainAndAddress,
+  getTokenByChainAndSymbolCurried,
   tokenSymbolMap,
   getTokenByChainAndSymbol,
+  getTokenByChainAndAddressCurried,
   getChainTokenList,
 } from './utils';

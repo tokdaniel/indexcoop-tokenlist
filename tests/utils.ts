@@ -71,6 +71,14 @@ export const invalidTokenArbitrary = fc.oneof(
   }),
 );
 
+export const symbolArbitrary = fc.constantFrom(
+  ...tokenlist.tokens.map((t) => t.symbol),
+);
+
+export const addressArbitrary = fc.constantFrom(
+  ...tokenlist.tokens.map((t) => t.address),
+);
+
 export const differentTokenArbitrary = fc
   .tuple(validTokenArbitrary, validTokenArbitrary)
   .filter(([tokenA, tokenB]) => {
