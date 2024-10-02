@@ -35,4 +35,5 @@ export {
   getTokenByChainAndSymbol,
   getTokenByChainAndAddressCurried,
   getChainTokenList,
+  getChainProductTokenList,
 } from './utils';

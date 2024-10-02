@@ -108,12 +108,9 @@ export type YieldToken = TokenCat<ListedToken, 'yield'>;
  * {@link IndexToken} - A union of all tokens that are Index Coop product tokens
  * @note this includes all product tokens and the governance token
  */
-export type IndexToken =
-  | IndexCoopToken
-  | LeverageToken
-  | SectorToken
-  | YieldToken;
 
+export type ProductToken = SectorToken | LeverageToken | YieldToken;
+export type IndexToken = IndexCoopToken | ProductToken;
 /**
  * {@link TokensByChain}<{@link ChainId}> - A union of all tokens in the tokenlist for a given chainId
  */

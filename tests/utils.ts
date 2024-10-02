@@ -151,6 +151,12 @@ export const yieldTokenArbitrary = fc.constantFrom(
   ),
 );
 
+export const productTokenArbitrary = fc.oneof(
+  leverageTokenArbitrary,
+  sectorTokenArbitrary,
+  yieldTokenArbitrary,
+);
+
 export const nonYieldIndexTokenArbitrary = fc.constantFrom(
   ...tokenlist.tokens.filter(
     (token) =>

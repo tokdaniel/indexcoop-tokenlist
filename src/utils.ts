@@ -15,6 +15,8 @@ import type {
   SymbolsByChain,
   Tags,
   AddressByChain,
+  IndexCoopToken,
+  ProductToken,
 } from './types';
 import tokenlist from './tokenlist.json';
 import { Chain, isAddress, zeroAddress } from 'viem';
@@ -117,6 +119,15 @@ export const isSectorToken = (token: unknown): token is SectorToken =>
  */
 export const isYieldToken = (token: unknown): token is YieldToken =>
   isIndexToken(token) && 'yield' in token.extensions;
+
+/**
+ * Checks if the token is a {@link ProductToken}.
+ * @param token - Token to check.
+ * @returns True if the token is a ProductToken  (leverage, yield or sector).
+ */
+export const isProductToken = (token: unknown): token is ProductToken => {
+  return isSectorToken(token) || isLeverageToken(token) || isYieldToken(token);
+};
 
 /**
  * Generates a nested map with {@link ChainId} as key and address as secondary key.
@@ -395,6 +406,28 @@ export function getChainTokenList(
         t.chainId === chainId &&
         (tags.length === 0 || t.tags.some((tag) => tags.includes(tag))),
     ) as ListedToken[];
+  }
+  return [];
+}
+
+/**
+ * Fetches the list of all product tokens for a specific chain.
+ * @param chainId - The {@link ChainId} to filter tokens.
+ * @returns - {@link ProductToken}[]
+ * @example
+ * getChainProductTokenList(1)
+ * // Returns all product tokens for Ethereum chain.
+ */
+export function getChainProductTokenList<C extends ChainId>(
+  chainId: C,
+): TokensByChain<ProductToken, C>[];
+
+export function getChainProductTokenList(chainId: unknown): ProductToken[];
+export function getChainProductTokenList(chainId: unknown): ProductToken[] {
+  if (typeof chainId === 'number' && chainId in tokenSymbolMap) {
+    return tokenlist.tokens.filter(
+      (t) => t.chainId === chainId && isProductToken(t),
+    ) as ProductToken[];
   }
   return [];
 }
