@@ -15,7 +15,6 @@ import type {
   SymbolsByChain,
   Tags,
   AddressByChain,
-  IndexCoopToken,
   ProductToken,
 } from './types';
 import tokenlist from './tokenlist.json';

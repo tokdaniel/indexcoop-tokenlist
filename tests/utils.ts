@@ -157,6 +157,14 @@ export const productTokenArbitrary = fc.oneof(
   yieldTokenArbitrary,
 );
 
+export const nonProductIndexTokenArbitrary = fc.constantFrom(
+  ...tokenlist.tokens.filter((token) => token.symbol === 'INDEX'),
+);
+
+export const nonProductNonIndexTokenArbitrary = fc.constantFrom(
+  tokenlist.tokens.filter((token) => token.tags.every((t) => t !== 'index')),
+);
+
 export const nonYieldIndexTokenArbitrary = fc.constantFrom(
   ...tokenlist.tokens.filter(
     (token) =>
