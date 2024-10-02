@@ -23,7 +23,6 @@ describe('getChainTokenList', () => {
         );
 
         const result = getChainProductTokenList(chainId);
-        console.log(result);
         expect(result).toEqual(expectedTokens);
       }),
     );
