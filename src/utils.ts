@@ -16,6 +16,7 @@ import type {
   Tags,
   AddressByChain,
   ProductToken,
+  CurrencyToken,
 } from './types';
 import tokenlist from './tokenlist.json';
 import { Chain, isAddress, zeroAddress } from 'viem';
@@ -93,7 +94,7 @@ export const isListedToken = (token: unknown): token is ListedToken =>
  * @returns Returns true if the token is an IndexToken.
  */
 export const isIndexToken = (token: unknown): token is IndexToken =>
-  isListedToken(token) && Boolean(token.tags.find((t) => t === 'index'));
+  isListedToken(token) && token.tags.some((tag) => tag === 'index');
 
 /**
  * Validates if the given token is a {@link LeverageToken}.
@@ -126,6 +127,10 @@ export const isYieldToken = (token: unknown): token is YieldToken =>
  */
 export const isProductToken = (token: unknown): token is ProductToken => {
   return isSectorToken(token) || isLeverageToken(token) || isYieldToken(token);
+};
+
+export const isCurrencyToken = (token: unknown): token is CurrencyToken => {
+  return isListedToken(token) && token.tags.some((tag) => tag === 'currency');
 };
 
 /**
@@ -410,7 +415,7 @@ export function getChainTokenList(
 }
 
 /**
- * Fetches the list of all product tokens for a specific chain.
+ * Returns the list of all product tokens for a specific chain.
  * @param chainId - The {@link ChainId} to filter tokens.
  * @returns - {@link ProductToken}[]
  * @example
@@ -427,6 +432,28 @@ export function getChainProductTokenList(chainId: unknown): ProductToken[] {
     return tokenlist.tokens.filter(
       (t) => t.chainId === chainId && isProductToken(t),
     ) as ProductToken[];
+  }
+  return [];
+}
+
+/**
+ * Returns the list of all currency tokens for a specific chain.
+ * @param chainId - The {@link ChainId} to filter tokens.
+ * @returns - {@link ProductToken}[]
+ * @example
+ * getChainProductTokenList(1)
+ * // Returns all product tokens for Ethereum chain.
+ */
+export function getChainCurrencyTokenList<C extends ChainId>(
+  chainId: C,
+): TokensByChain<CurrencyToken, C>[];
+
+export function getChainCurrencyTokenList(chainId: unknown): CurrencyToken[];
+export function getChainCurrencyTokenList(chainId: unknown): CurrencyToken[] {
+  if (typeof chainId === 'number' && chainId in tokenSymbolMap) {
+    return tokenlist.tokens.filter(
+      (t) => t.chainId === chainId && isCurrencyToken(t),
+    ) as CurrencyToken[];
   }
   return [];
 }

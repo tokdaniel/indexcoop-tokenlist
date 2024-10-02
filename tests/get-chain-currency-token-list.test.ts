@@ -1,13 +1,13 @@
 import * as fc from 'fast-check';
 import { existingChainIdArbitrary, invalidChainIdArbitrary } from './utils';
 import tokenlist from '../src/tokenlist.json';
-import { getChainProductTokenList } from '../src';
+import { getChainCurrencyTokenList } from '../src';
 
-describe('getChainProductTokenList', () => {
+describe('getChainCurrencyTokenList', () => {
   it('should accept any value but return an empty array for it', () => {
     fc.assert(
       fc.property(fc.anything(), (anyVal) => {
-        expect(getChainProductTokenList(anyVal)).toEqual([]);
+        expect(getChainCurrencyTokenList(anyVal)).toEqual([]);
       }),
     );
   });
@@ -18,11 +18,10 @@ describe('getChainProductTokenList', () => {
         const expectedTokens = tokenlist.tokens.filter(
           (token) =>
             token.chainId === chainId &&
-            token.symbol !== 'INDEX' &&
-            token.tags.some((t) => t === 'index'),
+            token.tags.some((t) => t === 'currency'),
         );
 
-        const result = getChainProductTokenList(chainId);
+        const result = getChainCurrencyTokenList(chainId);
         expect(result).toEqual(expectedTokens);
       }),
     );
@@ -31,7 +30,7 @@ describe('getChainProductTokenList', () => {
   it('should return an empty array for an invalid chainId', () => {
     fc.assert(
       fc.property(invalidChainIdArbitrary, (chainId) => {
-        const result = getChainProductTokenList(chainId);
+        const result = getChainCurrencyTokenList(chainId);
         expect(result).toEqual([]);
       }),
     );

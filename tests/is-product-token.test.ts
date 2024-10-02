@@ -7,7 +7,7 @@ import {
 } from './utils';
 import { isProductToken } from '@/src/utils';
 
-describe('isSectorToken', () => {
+describe('isProductToken', () => {
   it('should accept any value but return false for it', () => {
     fc.assert(
       fc.property(fc.anything(), (anyVal) => {

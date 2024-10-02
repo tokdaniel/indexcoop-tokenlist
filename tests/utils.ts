@@ -112,7 +112,7 @@ export const indexTokenArbitrary = fc.constantFrom(
 );
 
 export const nonIndexTokenArbitrary = fc.constantFrom(
-  ...tokenlist.tokens.filter((token) => !token.tags.some((t) => t === 'index')),
+  ...tokenlist.tokens.filter((token) => token.tags.every((t) => t !== 'index')),
 );
 
 export const leverageTokenArbitrary = fc.constantFrom(
@@ -159,6 +159,18 @@ export const productTokenArbitrary = fc.oneof(
 
 export const nonProductIndexTokenArbitrary = fc.constantFrom(
   ...tokenlist.tokens.filter((token) => token.symbol === 'INDEX'),
+);
+
+export const currencyTokenArbitrary = fc.constantFrom(
+  ...tokenlist.tokens.filter((token) =>
+    token.tags.some((t) => t === 'currency'),
+  ),
+);
+
+export const nonCurrencyTokenArbitrary = fc.constantFrom(
+  ...tokenlist.tokens.filter((token) =>
+    token.tags.every((t) => t !== 'currency'),
+  ),
 );
 
 export const nonProductNonIndexTokenArbitrary = fc.constantFrom(

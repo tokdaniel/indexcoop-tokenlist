@@ -104,13 +104,23 @@ export type SectorToken = TokenCat<ListedToken, 'sector'>;
  *
  */
 export type YieldToken = TokenCat<ListedToken, 'yield'>;
-/**
- * {@link IndexToken} - A union of all tokens that are Index Coop product tokens
- * @note this includes all product tokens and the governance token
- */
 
+/**
+ * {@link ProductToken} - A union of all tokens that are Index Coop product tokens
+ * @note this includes all product tokens
+ */
 export type ProductToken = SectorToken | LeverageToken | YieldToken;
+
+/**
+ * {@link IndexToken} - A union of all tokens that are Index Coop tokens
+ * @note this includes all product tokens, and the Index Coop token.
+ */
 export type IndexToken = IndexCoopToken | ProductToken;
+
+export type CurrencyToken = Extract<
+  ListedToken,
+  { tags: readonly ['currency', ...Tags[]] }
+>;
 /**
  * {@link TokensByChain}<{@link ChainId}> - A union of all tokens in the tokenlist for a given chainId
  */
