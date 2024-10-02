@@ -462,3 +462,7 @@ export function getChainCurrencyTokenList(chainId: unknown): CurrencyToken[] {
   }
   return [];
 }
+
+const x = getTokenByChainAndSymbol(8453, {
+  yo: 'I will accept whatever here too btw, but i know its base',
+});

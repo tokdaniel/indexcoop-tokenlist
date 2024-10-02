@@ -86,22 +86,18 @@ export type IndexTokenList = typeof InternalTokenList;
 
 /**
  * {@link IndexCoopToken} - The token with the symbol 'INDEX'
- * @note This is Index Coop's governance token
  */
 export type IndexCoopToken = Extract<ListedToken, { symbol: 'INDEX' }>;
 /**
  * {@link LeverageToken} - All tokens have this type, if their extensions contain the key 'leverage'
- * @note this is the Index Coop governance token
  */
 export type LeverageToken = TokenCat<ListedToken, 'leverage'>;
 /**
  * {@link SectorToken} - All tokens have this type, if their extensions contain the key 'sector'
- * @note this is an Index Coop product token
  */
 export type SectorToken = TokenCat<ListedToken, 'sector'>;
 /**
  * {@link YieldToken} - All tokens have this type, if their extensions contain the key 'yield'
- *
  */
 export type YieldToken = TokenCat<ListedToken, 'yield'>;
 
@@ -117,6 +113,9 @@ export type ProductToken = SectorToken | LeverageToken | YieldToken;
  */
 export type IndexToken = IndexCoopToken | ProductToken;
 
+/**
+ * {@link CurrencyToken} - A union of all tokens that are currency tokens
+ */
 export type CurrencyToken = Extract<
   ListedToken,
   { tags: readonly ['currency', ...Tags[]] }
