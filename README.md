@@ -3,11 +3,8 @@
 ![release](https://img.shields.io/github/v/release/tokdaniel/indexcoop-tokenlist)
 ![license](https://img.shields.io/github/license/tokdaniel/indexcoop-tokenlist)
 ![build](https://img.shields.io/github/actions/workflow/status/tokdaniel/indexcoop-tokenlist/main.yml)
-![coverage](https://img.shields.io/endpoint?url=https%3A%2F%2Fgist.githubusercontent.com%2Ftokdaniel%2Fa7c9182c954b150894614d212eb54520%2Fraw%2F5d0208d05c7e3855d352e6fc7993e79e21076d1e%2Findexcoop-tokenlist-cobertura-coverage.json
-)
-![tests passed](https://img.shields.io/endpoint?url=https%3A%2F%2Fgist.githubusercontent.com%2Ftokdaniel%2Fa7c9182c954b150894614d212eb54520%2Fraw%2Ffe026b8c8edd0410eb427f93ecda254b0b2712cf%2Findexcoop-tokenlist-junit-tests.json
-)
-
+![coverage](https://img.shields.io/endpoint?url=https%3A%2F%2Fgist.githubusercontent.com%2Ftokdaniel%2Fa7c9182c954b150894614d212eb54520%2Fraw%2Findexcoop-tokenlist-cobertura-coverage.json)
+![tests passed](https://img.shields.io/endpoint?url=https%3A%2F%2Fgist.githubusercontent.com%2Ftokdaniel%2Fa7c9182c954b150894614d212eb54520%2Fraw%2Findexcoop-tokenlist-junit-tests.json)
 This repository contains the **Index Coop Tokenlist**, a curated set of tokens that follow the standards for ERC20 token lists as per the [Uniswap Token Lists](https://tokenlists.org/) specification. This list is designed for use within DeFi applications that need to reference standardized token lists for indexing and displaying assets.
 
 ## Table of Contents
