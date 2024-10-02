@@ -79,7 +79,7 @@ try yourself by visiting this [StackBlitz url](https://stackblitz.com/edit/vitej
 |---|---|---|
 | `isAddressEqual` | `:boolean` | compare two addresses (accepts any value), and return true, if both are addresses and their lowercase representation are equal.
 | `isTokenEqual` | `:boolean` | compare two tokens (accepts any value), and return true if, both adhere to the Uniswap `TokenInfo` interface, and their address, and chainId are the same.
-| `is[Type]Token` | `:is [TokenType]` | typeguard to safely cast into the necessary tokentype: `TokenInfo`, `ListedToken`, `IndexToken`, `LeverageToken`, `SectorToken`, `YieldToken` |
+| `is[Type]Token` | `:is [TokenType]` | typeguard to safely cast into the necessary tokentype: `TokenInfo`, `ListedToken`, `IndexToken`, `ProductToken`,  `LeverageToken`, `SectorToken`, `YieldToken` |
 | `tokenSymbolMap` | `:TokenSymbolMapByChain` | a strict map of `Record<chainId, Record<symbol, ListedToken>>`, provides safe access to strictly typed token data based on chainId and token symbol. | 
 | `tokenAddressMap` | `:TokenAddressMapByChain` | a strict map of `Record<chainId, Record<address, ListedToken>>`, provides safe access to strictly typed token data based on chainId and token address. | 
 | `getChainTokenList` | `:TokensByChain` | a function requiring a `chainId` of type `number` or `ChainId`. Returns all listed tokens in an array on the provided chain. If the chain is unsupported it will return an empty array, hovewer if the provided types of the values are exact, it will return the right tokens by type. |
