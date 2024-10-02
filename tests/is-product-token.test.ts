@@ -2,11 +2,9 @@ import * as fc from 'fast-check';
 import {
   nonIndexTokenArbitrary,
   nonProductIndexTokenArbitrary,
-  nonSectorIndexTokenArbitrary,
   productTokenArbitrary,
   unlistedTokenArbitrary,
 } from './utils';
-import { isSectorToken } from '../src';
 import { isProductToken } from '@/src/utils';
 
 describe('isSectorToken', () => {
