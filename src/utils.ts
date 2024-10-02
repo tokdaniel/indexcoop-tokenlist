@@ -129,6 +129,11 @@ export const isProductToken = (token: unknown): token is ProductToken => {
   return isSectorToken(token) || isLeverageToken(token) || isYieldToken(token);
 };
 
+/**
+ * Checks if the token is a {@link CurrencyToken}.
+ * @param token - Token to check.
+ * @returns True if the token is a CurrencyToken.
+ */
 export const isCurrencyToken = (token: unknown): token is CurrencyToken => {
   return isListedToken(token) && token.tags.some((tag) => tag === 'currency');
 };
@@ -439,10 +444,10 @@ export function getChainProductTokenList(chainId: unknown): ProductToken[] {
 /**
  * Returns the list of all currency tokens for a specific chain.
  * @param chainId - The {@link ChainId} to filter tokens.
- * @returns - {@link ProductToken}[]
+ * @returns - {@link CurrencyToken}[]
  * @example
- * getChainProductTokenList(1)
- * // Returns all product tokens for Ethereum chain.
+ * getChainCurrencyTokenList(1)
+ * // Returns all currency tokens for Ethereum chain.
  */
 export function getChainCurrencyTokenList<C extends ChainId>(
   chainId: C,
