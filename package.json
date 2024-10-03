@@ -15,9 +15,6 @@
     "test": "jest",
     "coverage": "jest --coverage"
   },
-  "dependencies": {
-    "@uniswap/token-lists": "^1.0.0-beta.34"
-  },
   "release": {
     "branches": ["main"],
     "plugins": [
@@ -87,6 +84,7 @@
     "@types/bun": "latest",
     "@types/jest": "^29.5.13",
     "@types/lodash": "^4.17.9",
+    "@uniswap/token-lists": "^1.0.0-beta.34",
     "ajv": "^8.17.1",
     "ajv-formats": "^3.0.1",
     "coverage-badge-creator": "^1.0.19",
