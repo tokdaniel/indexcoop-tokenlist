@@ -10,4 +10,5 @@ export default defineConfig({
   sourcemap: true,
   dts: true,
   publicDir: './dist',
+  external: ['node:crypto'],
 });
