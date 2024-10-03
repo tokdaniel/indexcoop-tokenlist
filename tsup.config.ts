@@ -10,5 +10,4 @@ export default defineConfig({
   sourcemap: true,
   dts: true,
   publicDir: './dist',
-  noExternal: ['@uniswap/token-lists'],
 });
