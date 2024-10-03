@@ -1,10 +1,13 @@
 {
   "name": "@nsorcell/exp-tokenlist",
-  "version": "1.18.0",
+  "version": "1.20.0",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "typings": "dist/index.d.ts",
-  "files": ["dist", "README.md"],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "type": "module",
   "scripts": {
     "lint": "bunx @biomejs/biome lint",
@@ -16,7 +19,9 @@
     "coverage": "jest --coverage"
   },
   "release": {
-    "branches": ["main"],
+    "branches": [
+      "main"
+    ],
     "plugins": [
       [
         "@semantic-release/commit-analyzer",
