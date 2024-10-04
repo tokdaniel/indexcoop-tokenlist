@@ -19,7 +19,7 @@ import type {
   CurrencyToken,
 } from './types';
 import tokenlist from './tokenlist.json';
-import { Chain, isAddress, zeroAddress } from 'viem';
+import { Chain, isAddress, checksumAddress } from 'viem';
 
 /**
  * Compare two Ethereum addresses case-insensitively.
@@ -200,7 +200,7 @@ export function getTokenByChainAndAddress(
   ) {
     const tokenMapByChain = tokenAddressMap[chainId as ChainId];
 
-    const addr = address.toLowerCase();
+    const addr = checksumAddress(address);
 
     if (addr in tokenMapByChain) {
       return tokenMapByChain[
@@ -255,7 +255,7 @@ export function getTokenByChainAndAddressCurried(chainId: unknown) {
       isAddress(address, { strict: false })
     ) {
       const tokenMapByChain = tokenAddressMap[chainId as ChainId];
-      const addr = address.toLowerCase();
+      const addr = checksumAddress(address);
 
       if (addr in tokenMapByChain) {
         return tokenMapByChain[

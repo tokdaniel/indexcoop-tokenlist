@@ -1,4 +1,4 @@
-import tokenlist from '@/indexcoop.tokenlist.json';
+import tokenlist from '../indexcoop.tokenlist.json';
 
 export default {
   name: 'IndexCoop Token List',
@@ -25,6 +25,10 @@ export default {
       name: 'Yield Token',
       description: 'This is a token that accrues yield.',
     },
+    component: {
+      name: 'Component Token',
+      description: 'This token is a component of some index product token.',
+    },
     currency: {
       name: 'Currency Token',
       description: 'This token is used to pay for index tokens.',
@@ -36,7 +40,7 @@ export default {
   },
   tokens: [
     {
-      address: '0x0954906da0bf32d5479e25f46056d22f08464cab',
+      address: '0x0954906da0Bf32d5479e25f46056d22f08464cab',
       name: 'Index Token',
       symbol: 'INDEX',
       decimals: 18,
@@ -50,7 +54,7 @@ export default {
     },
     // --------------- Sector Tokens ---------------
     {
-      address: '0x1494ca1f11d487c2bbe4543e90080aeba4ba3c2b',
+      address: '0x1494CA1F11D487c2bBe4543E90080AeBa4BA3C2b',
       name: 'DeFi Pulse Index',
       symbol: 'DPI',
       decimals: 18,
@@ -66,7 +70,7 @@ export default {
       tags: ['index', 'sector'],
     },
     {
-      address: '0x9737c658272e66faad39d7ad337789ee6d54f500',
+      address: '0x9737C658272e66Faad39D7AD337789Ee6D54F500',
       name: 'DeFi Pulse Index',
       symbol: 'DPI',
       decimals: 18,
@@ -82,7 +86,7 @@ export default {
       tags: ['index', 'sector'],
     },
     {
-      address: '0xc6955b85b622369a54cc8c6dbecb8e03c0885bd8',
+      address: '0xc6955B85b622369a54Cc8C6DBeCb8e03c0885BD8',
       name: 'DeFi Pulse Index',
       symbol: 'DPI',
       decimals: 18,
@@ -98,7 +102,7 @@ export default {
       tags: ['index', 'sector'],
     },
     {
-      address: '0x72e364f2abdc788b7e918bc238b21f109cd634d7',
+      address: '0x72e364F2ABdC788b7E918bc238B21f109Cd634D7',
       name: 'Metaverse Index',
       symbol: 'MVI',
       decimals: 18,
@@ -114,7 +118,7 @@ export default {
       tags: ['index', 'sector'],
     },
     {
-      address: '0x0104a6fa30540dc1d9f45d2797f05eea79304525',
+      address: '0x0104a6FA30540DC1d9F45D2797F05eEa79304525',
       name: 'Metaverse Index',
       symbol: 'MVI',
       decimals: 18,
@@ -130,7 +134,7 @@ export default {
       tags: ['index', 'sector'],
     },
     {
-      address: '0xea8954de7607b90f5ec81a5e2e673d0f60bb7596',
+      address: '0xEA8954dE7607b90F5ec81A5e2e673D0f60BB7596',
       name: 'Metaverse Index',
       symbol: 'MVI',
       decimals: 18,
@@ -146,7 +150,7 @@ export default {
       tags: ['index', 'sector'],
     },
     {
-      address: '0x2af1df3ab0ab157e1e2ad8f88a7d04fbea0c7dc6',
+      address: '0x2aF1dF3AB0ab157e1E2Ad8F88A7D04fbea0c7dc6',
       name: 'Bankless BED Index',
       symbol: 'BED',
       decimals: 18,
@@ -162,7 +166,7 @@ export default {
       tags: ['index', 'sector'],
     },
     {
-      address: '0x1b5e16c5b20fb5ee87c61fe9afe735cca3b21a65',
+      address: '0x1B5E16C5b20Fb5EE87C61fE9Afe735Cca3B21A65',
       name: 'Index Coop Large Cap Index',
       symbol: 'ic21',
       decimals: 18,
@@ -178,7 +182,7 @@ export default {
       tags: ['index', 'sector', 'dangerous'],
     },
     {
-      address: '0x7f5f1a44dd6f88ccb54fe879e144df644a4ada24',
+      address: '0x7f5f1A44dd6f88cCb54Fe879e144dF644A4aDa24',
       name: 'Real World Asset Index',
       symbol: 'RWA',
       decimals: 18,
@@ -195,7 +199,7 @@ export default {
     },
     // --------------- Leverage Tokens ---------------
     {
-      address: '0xaa6e8127831c9de45ae56bb1b0d4d4da6e5665bd',
+      address: '0xAa6E8127831c9DE45ae56bB1b0d4D4Da6e5665BD',
       name: 'ETH 2x Flexible Leverage Index',
       symbol: 'ETH2x-FLI',
       decimals: 18,
@@ -211,7 +215,7 @@ export default {
       tags: ['index', 'leverage', 'dangerous'],
     },
     {
-      address: '0xccdae12162566e3f29fefa7bf7f5b24c644493b5',
+      address: '0xcCdAE12162566E3f29fEfA7Bf7F5b24C644493b5',
       name: 'Leveraged rETH Staking Yield',
       symbol: 'icRETH',
       decimals: 18,
@@ -227,7 +231,7 @@ export default {
       tags: ['index', 'leverage', 'dangerous'],
     },
     {
-      address: '0x0b498ff89709d3838a063f1dfa463091f9801c2b',
+      address: '0x0B498ff89709d3838a063f1dFA463091F9801c2b',
       name: 'BTC 2x Flexible Leverage Index',
       symbol: 'BTC2x-FLI',
       decimals: 18,
@@ -243,7 +247,7 @@ export default {
       tags: ['index', 'leverage', 'dangerous'],
     },
     {
-      address: '0x65c4c0517025ec0843c9146af266a2c5a2d148a2',
+      address: '0x65c4C0517025Ec0843C9146aF266A2C5a2D148A2',
       name: 'Index Coop Ethereum 2x Index',
       symbol: 'ETH2X',
       decimals: 18,
@@ -259,7 +263,7 @@ export default {
       tags: ['index', 'leverage', 'dangerous'],
     },
     {
-      address: '0xd2ac55ca3bbd2dd1e9936ec640dcb4b745fde759',
+      address: '0xD2AC55cA3Bbd2Dd1e9936eC640dCb4b745fDe759',
       name: 'Index Coop Bitcoin 2x Index',
       symbol: 'BTC2X',
       decimals: 18,
@@ -275,8 +279,8 @@ export default {
       tags: ['index', 'leverage', 'dangerous'],
     },
     {
-      address: '0x26d7d3728c6bb762a5043a1d0cef660988bca43c',
-      name: 'Index Coop Bitcoin 2x Index',
+      address: '0x26d7D3728C6bb762a5043a1d0CeF660988Bca43C',
+      name: 'Index Coop Ethereum 2x Index',
       symbol: 'ETH2X',
       decimals: 18,
       chainId: 42161,
@@ -291,7 +295,7 @@ export default {
       tags: ['index', 'leverage', 'dangerous'],
     },
     {
-      address: '0xa0a17b2a015c14be846c5d309d076379ccdfa543',
+      address: '0xA0A17b2a015c14BE846C5d309D076379cCDfa543',
       name: 'Index Coop Ethereum 3x Index',
       symbol: 'ETH3X',
       decimals: 18,
@@ -307,7 +311,7 @@ export default {
       tags: ['index', 'leverage', 'dangerous'],
     },
     {
-      address: '0x749654601a286833ad30357246400d2933b1c89b',
+      address: '0x749654601a286833aD30357246400D2933b1C89b',
       name: 'Index Coop Inverse Ethereum Index',
       symbol: 'iETH1X',
       decimals: 18,
@@ -323,7 +327,7 @@ export default {
       tags: ['index', 'leverage', 'dangerous'],
     },
     {
-      address: '0xeb5be62e6770137beaa0cc712741165c594f59d7',
+      address: '0xeb5bE62e6770137beaA0cC712741165C594F59D7',
       name: 'Index Coop Bitcoin 2x Index',
       symbol: 'BTC2X',
       decimals: 18,
@@ -339,7 +343,7 @@ export default {
       tags: ['index', 'leverage'],
     },
     {
-      address: '0x3bdd0d5c0c795b2bf076f5c8f177c58e42bec0e6',
+      address: '0x3bDd0d5c0C795b2Bf076F5C8F177c58e42beC0E6',
       name: 'Index Coop Bitcoin 3x Index',
       symbol: 'BTC3X',
       decimals: 18,
@@ -355,7 +359,7 @@ export default {
       tags: ['index', 'leverage', 'dangerous'],
     },
     {
-      address: '0x80e58aea88bccaae19bca7f0e420c1387cc087fc',
+      address: '0x80e58AEA88BCCaAE19bCa7f0e420C1387Cc087fC',
       name: 'Index Coop Inverse Bitcoin Index',
       symbol: 'iBTC1X',
       decimals: 18,
@@ -371,7 +375,7 @@ export default {
       tags: ['index', 'leverage', 'dangerous'],
     },
     {
-      address: '0xc884646e6c88d9b172a23051b38b0732cc3e35a6',
+      address: '0xC884646E6C88d9b172a23051b38B0732Cc3E35a6',
       name: 'Index Coop Bitcoin 2x Index',
       symbol: 'ETH2X',
       decimals: 18,
@@ -387,7 +391,7 @@ export default {
       tags: ['index', 'leverage'],
     },
     {
-      address: '0x329f6656792c7d34d0fbb9762fa9a8f852272acb',
+      address: '0x329f6656792c7d34D0fBB9762FA9A8F852272acb',
       name: 'Index Coop Ethereum 3x Index',
       symbol: 'ETH3X',
       decimals: 18,
@@ -404,7 +408,7 @@ export default {
     },
     // --------------- Yield Tokens ---------------
     {
-      address: '0x7c07f7abe10ce8e33dc6c5ad68fe033085256a84',
+      address: '0x7C07F7aBe10CE8e33DC6C5aD68FE033085256A84',
       name: 'Interest Compounding ETH Index',
       symbol: 'icETH',
       decimals: 18,
@@ -420,7 +424,7 @@ export default {
       tags: ['index', 'yield'],
     },
     {
-      address: '0x341c05c0e9b33c0e38d64de76516b2ce970bb3be',
+      address: '0x341c05c0E9b33C0E38d64de76516b2Ce970bB3BE',
       name: 'Diversified Staked ETH Index',
       symbol: 'dsETH',
       decimals: 18,
@@ -436,7 +440,7 @@ export default {
       tags: ['index', 'yield'],
     },
     {
-      address: '0x95b11aca35d35ac8b8a88e1f7792873bbea7cebb',
+      address: '0x95b11aca35D35Ac8B8A88E1F7792873BBea7CeBb',
       name: 'Diversified Staked ETH Index',
       symbol: 'dsETH',
       decimals: 18,
@@ -452,7 +456,7 @@ export default {
       tags: ['index', 'yield'],
     },
     {
-      address: '0x37e7c051dc5a24313ceec581222882648ba537aa',
+      address: '0x37E7C051Dc5A24313cEEC581222882648ba537aa',
       name: 'Diversified Staked ETH Index',
       symbol: 'dsETH',
       decimals: 18,
@@ -468,7 +472,7 @@ export default {
       tags: ['index', 'yield'],
     },
     {
-      address: '0x36c833eed0d376f75d1ff9dfdee260191336065e',
+      address: '0x36c833Eed0D376f75D1ff9dFDeE260191336065e',
       name: 'Gitcoin Staked ETH Index',
       symbol: 'gtcETH',
       decimals: 18,
@@ -484,7 +488,7 @@ export default {
       tags: ['index', 'yield', 'dangerous'],
     },
     {
-      address: '0xc4506022fb8090774e8a628d5084eed61d9b99ee',
+      address: '0xc4506022Fb8090774E8A628d5084EED61D9B99Ee',
       name: 'High Yield ETH Index',
       symbol: 'hyETH',
       decimals: 18,
@@ -500,7 +504,7 @@ export default {
       tags: ['index', 'yield', 'dangerous'],
     },
     {
-      address: '0x8b5d1d8b3466ec21f8ee33ce63f319642c026142',
+      address: '0x8b5D1d8B3466eC21f8eE33cE63F319642c026142',
       name: 'High Yield ETH Index',
       symbol: 'hyETH',
       decimals: 18,
@@ -516,7 +520,7 @@ export default {
       tags: ['index', 'yield', 'dangerous'],
     },
     {
-      address: '0xc73e76aa9f14c1837cdb49bd028e8ff5a0a71dad',
+      address: '0xC73e76Aa9F14C1837CDB49bd028E8Ff5a0a71dAD',
       name: 'High Yield ETH Index',
       symbol: 'hyETH',
       decimals: 18,
@@ -532,7 +536,7 @@ export default {
       tags: ['index', 'yield', 'dangerous'],
     },
     {
-      address: '0x55b2cfcfe99110c773f00b023560dd9ef6c8a13b',
+      address: '0x55b2CFcfe99110C773f00b023560DD9ef6C8A13B',
       name: 'CoinDesk ETH Trend Index',
       symbol: 'cdETI',
       decimals: 18,
@@ -548,7 +552,7 @@ export default {
       tags: ['index', 'yield', 'dangerous'],
     },
     {
-      address: '0x54ee8a49155f701f0d5ff088cd36fbbf1a5b9f44',
+      address: '0x54EE8A49155F701F0d5Ff088CD36fbBF1a5B9f44',
       chainId: 1,
       name: 'The USDC Yield Index',
       symbol: 'icUSD',
@@ -564,7 +568,7 @@ export default {
       tags: ['index', 'yield'],
     },
     {
-      address: '0x098471190d131d9e6215dd195fedf4bcc0426c8a',
+      address: '0x098471190D131d9E6215dd195feDf4bcC0426c8a',
       chainId: 8453,
       name: 'The USDC Yield Index',
       symbol: 'icUSD',
@@ -579,10 +583,80 @@ export default {
       },
       tags: ['index', 'yield'],
     },
+    // --------------- Component Tokens ---------------
+    {
+      chainId: 1,
+      address: '0xC18360217D8F7Ab5e7c516566761Ea12Ce7F9D72',
+      name: 'Ethereum Name Service',
+      symbol: 'ENS',
+      decimals: 18,
+      logoURI:
+        'https://assets.coingecko.com/coins/images/19785/thumb/acatxTm8_400x400.jpg?1635850140',
+      extensions: {
+        status: 'Active',
+        coingeckoId: 'ethereum-name-service',
+        bridgeInfo: {
+          '10': {
+            tokenAddress: '0x65559aA14915a70190438eF90104769e5E890A00',
+          },
+          '42161': {
+            tokenAddress: '0xfeA31d704DEb0975dA8e77Bf13E04239e70d7c28',
+          },
+        },
+      },
+      tags: ['component'],
+    },
+    {
+      chainId: 42161,
+      address: '0xfeA31d704DEb0975dA8e77Bf13E04239e70d7c28',
+      name: 'Ethereum Name Service',
+      symbol: 'ENS',
+      decimals: 18,
+      logoURI:
+        'https://assets.coingecko.com/coins/images/19785/thumb/acatxTm8_400x400.jpg?1635850140',
+      extensions: {
+        status: 'Active',
+        coingeckoId: 'ethereum-name-service',
+        bridgeInfo: {
+          '1': {
+            tokenAddress: '0xC18360217D8F7Ab5e7c516566761Ea12Ce7F9D72',
+          },
+        },
+      },
+      tags: ['component'],
+    },
+    {
+      address: '0x4Ddc2D193948926D02f9B1fE9e1daa0718270ED5',
+      chainId: 1,
+      name: 'CompoundETH',
+      symbol: 'cETH',
+      decimals: 8,
+      logoURI:
+        'https://tokens.1inch.io/0x4ddc2d193948926d02f9b1fe9e1daa0718270ed5.png',
+      extensions: {
+        status: 'Active',
+        coingeckoId: 'compound-ether',
+      },
+      tags: ['component'],
+    },
+    {
+      address: '0xC11b1268C1A384e55C48c2391d8d480264A3A7F4',
+      chainId: 1,
+      name: 'CompoundWrappedBTC',
+      symbol: 'cWBTC',
+      decimals: 8,
+      logoURI:
+        'https://tokens.1inch.io/0xc11b1268c1a384e55c48c2391d8d480264a3a7f4.png',
+      extensions: {
+        status: 'Active',
+        coingeckoId: 'compound-wrapped-btc',
+      },
+      tags: ['component'],
+    },
     // --------------- Currency Tokens ---------------
     {
       name: 'Dai Stablecoin',
-      address: '0x6b175474e89094c44da98b954eedeac495271d0f',
+      address: '0x6B175474E89094C44Da98b954EedeAC495271d0F',
       symbol: 'DAI',
       decimals: 18,
       chainId: 1,
@@ -593,7 +667,7 @@ export default {
         coingeckoId: 'dai',
         bridgeInfo: {
           '8453': {
-            tokenAddress: '0x50c5725949a6f0c72e6c4a641f24049a917db0cb',
+            tokenAddress: '0x50c5725949A6F0c72E6C4a641F24049A917DB0Cb',
           },
         },
       },
@@ -601,7 +675,7 @@ export default {
     },
     {
       name: 'Dai Stablecoin',
-      address: '0x50c5725949a6f0c72e6c4a641f24049a917db0cb',
+      address: '0x50c5725949A6F0c72E6C4a641F24049A917DB0Cb',
       symbol: 'DAI',
       decimals: 18,
       chainId: 8453,
@@ -611,7 +685,7 @@ export default {
         coingeckoId: 'dai',
         bridgeInfo: {
           '1': {
-            tokenAddress: '0x6b175474e89094c44da98b954eedeac495271d0f',
+            tokenAddress: '0x6B175474E89094C44Da98b954EedeAC495271d0F',
           },
         },
       },
@@ -619,7 +693,7 @@ export default {
     },
     {
       name: 'USDCoin',
-      address: '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
+      address: '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
       symbol: 'USDC',
       decimals: 6,
       chainId: 1,
@@ -630,10 +704,10 @@ export default {
         coingeckoId: 'usd-coin',
         bridgeInfo: {
           '8453': {
-            tokenAddress: '0x833589fcd6edb6e08f4c7c32d4f71b54bda02913',
+            tokenAddress: '0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913',
           },
           '42161': {
-            tokenAddress: '0xaf88d065e77c8cc2239327c5edb3a432268e5831',
+            tokenAddress: '0xaf88d065e77c8cC2239327C5EDb3A432268e5831',
           },
         },
       },
@@ -641,7 +715,7 @@ export default {
     },
     {
       name: 'USD Coin',
-      address: '0x833589fcd6edb6e08f4c7c32d4f71b54bda02913',
+      address: '0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913',
       symbol: 'USDC',
       decimals: 6,
       chainId: 8453,
@@ -651,7 +725,7 @@ export default {
         coingeckoId: 'usd-coin',
         bridgeInfo: {
           '1': {
-            tokenAddress: '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
+            tokenAddress: '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
           },
         },
       },
@@ -659,7 +733,7 @@ export default {
     },
     {
       name: 'USDCoin',
-      address: '0xaf88d065e77c8cc2239327c5edb3a432268e5831',
+      address: '0xaf88d065e77c8cC2239327C5EDb3A432268e5831',
       symbol: 'USDC',
       decimals: 6,
       chainId: 42161,
@@ -670,7 +744,7 @@ export default {
         coingeckoId: 'usd-coin',
         bridgeInfo: {
           '1': {
-            tokenAddress: '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
+            tokenAddress: '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
           },
         },
       },
@@ -678,7 +752,7 @@ export default {
     },
     {
       name: 'Tether USD',
-      address: '0xdac17f958d2ee523a2206206994597c13d831ec7',
+      address: '0xdAC17F958D2ee523a2206206994597C13D831ec7',
       symbol: 'USDT',
       decimals: 6,
       chainId: 1,
@@ -689,7 +763,7 @@ export default {
         coingeckoId: 'tether',
         bridgeInfo: {
           '42161': {
-            tokenAddress: '0xfd086bc7cd5c481dcc9c85ebe478a1c0b69fcbb9',
+            tokenAddress: '0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9',
           },
         },
       },
@@ -697,7 +771,7 @@ export default {
     },
     {
       name: 'Tether USD',
-      address: '0xfd086bc7cd5c481dcc9c85ebe478a1c0b69fcbb9',
+      address: '0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9',
       symbol: 'USDT',
       decimals: 6,
       chainId: 42161,
@@ -708,7 +782,7 @@ export default {
         coingeckoId: 'tether',
         bridgeInfo: {
           '1': {
-            tokenAddress: '0xdac17f958d2ee523a2206206994597c13d831ec7',
+            tokenAddress: '0xdAC17F958D2ee523a2206206994597C13D831ec7',
           },
         },
       },
@@ -716,7 +790,7 @@ export default {
     },
     {
       name: 'Wrapped Ether',
-      address: '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2',
+      address: '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2',
       symbol: 'WETH',
       decimals: 18,
       chainId: 1,
@@ -730,7 +804,7 @@ export default {
             tokenAddress: '0x4200000000000000000000000000000000000006',
           },
           '42161': {
-            tokenAddress: '0x82af49447d8a07e3bd95bd0d56f35241523fbab1',
+            tokenAddress: '0x82aF49447D8a07e3bd95BD0d56f35241523fBab1',
           },
         },
       },
@@ -748,7 +822,7 @@ export default {
         coingeckoId: 'weth',
         bridgeInfo: {
           '1': {
-            tokenAddress: '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2',
+            tokenAddress: '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2',
           },
         },
       },
@@ -756,7 +830,7 @@ export default {
     },
     {
       name: 'Wrapped Ether',
-      address: '0x82af49447d8a07e3bd95bd0d56f35241523fbab1',
+      address: '0x82aF49447D8a07e3bd95BD0d56f35241523fBab1',
       symbol: 'WETH',
       decimals: 18,
       chainId: 42161,
@@ -767,7 +841,7 @@ export default {
         coingeckoId: 'weth',
         bridgeInfo: {
           '1': {
-            tokenAddress: '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2',
+            tokenAddress: '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2',
           },
         },
       },
@@ -775,7 +849,7 @@ export default {
     },
     {
       name: 'Wrapped BTC',
-      address: '0x2260fac5e5542a773aa44fbcfedf7c193bc2c599',
+      address: '0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599',
       symbol: 'WBTC',
       decimals: 8,
       chainId: 1,
@@ -786,7 +860,7 @@ export default {
         coingeckoId: 'wrapped-bitcoin',
         bridgeInfo: {
           '42161': {
-            tokenAddress: '0x2f2a2543b76a4166549f7aab2e75bef0aefc5b0f',
+            tokenAddress: '0x2f2a2543B76A4166549F7aaB2e75Bef0aefC5B0f',
           },
         },
       },
@@ -794,7 +868,7 @@ export default {
     },
     {
       name: 'Wrapped BTC',
-      address: '0x2f2a2543b76a4166549f7aab2e75bef0aefc5b0f',
+      address: '0x2f2a2543B76A4166549F7aaB2e75Bef0aefC5B0f',
       symbol: 'WBTC',
       decimals: 8,
       chainId: 42161,
@@ -805,7 +879,7 @@ export default {
         coingeckoId: 'wrapped-bitcoin',
         bridgeInfo: {
           '1': {
-            tokenAddress: '0x2260fac5e5542a773aa44fbcfedf7c193bc2c599',
+            tokenAddress: '0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599',
           },
         },
       },
@@ -813,7 +887,7 @@ export default {
     },
     {
       chainId: 1,
-      address: '0x056fd409e1d7a124bd7017459dfea2f387b6d5cd',
+      address: '0x056Fd409E1d7A124BD7017459dFEa2F387b6d5Cd',
       name: 'Gemini Dollar',
       symbol: 'GUSD',
       decimals: 2,
@@ -826,7 +900,7 @@ export default {
       tags: ['currency', 'stablecoin'],
     },
     {
-      address: '0xae78736cd615f374d3085123a210448e74fc6393',
+      address: '0xae78736Cd615f374D3085123A210448E74Fc6393',
       chainId: 1,
       name: 'Rocket Pool ETH',
       symbol: 'rETH',
@@ -840,7 +914,7 @@ export default {
       tags: ['currency'],
     },
     {
-      address: '0xae7ab96520de3a18e5e111b5eaab095312d7fe84',
+      address: '0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84',
       chainId: 1,
       name: 'Lido Staked Ether',
       symbol: 'stETH',
@@ -854,9 +928,9 @@ export default {
       tags: ['currency'],
     },
     {
-      address: '0xfe2e637202056d30016725477c5da089ab0a043a',
+      address: '0xFe2e637202056d30016725477c5da089Ab0A043A',
       chainId: 1,
-      name: 'sETH2',
+      name: 'StakeWise Staked ETH2',
       symbol: 'sETH2',
       decimals: 18,
       logoURI:
@@ -868,9 +942,9 @@ export default {
       tags: ['currency'],
     },
     {
-      address: '0x7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0',
+      address: '0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0',
       chainId: 1,
-      name: 'WrappedliquidstakedEther2.0',
+      name: 'Wrapped liquid staked Ether 2.0',
       symbol: 'wstETH',
       decimals: 18,
       logoURI:

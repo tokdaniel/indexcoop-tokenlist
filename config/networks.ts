@@ -8,7 +8,7 @@ if (!alchemyId) {
   throw new Error('ALCHEMY_ID is not set');
 }
 
-const chains = [mainnet, arbitrum, base];
+export const chains = [mainnet, arbitrum, base];
 
 export const rpcUrls: Record<ChainId, string> = {
   [mainnet.id]: `https://eth-mainnet.g.alchemy.com/v2/${alchemyId}`,
