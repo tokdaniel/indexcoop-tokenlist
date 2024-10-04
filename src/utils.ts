@@ -17,6 +17,7 @@ import type {
   AddressByChain,
   ProductToken,
   CurrencyToken,
+  ComponentToken,
 } from './types';
 import tokenlist from './tokenlist.json';
 import { Chain, isAddress, checksumAddress } from 'viem';
@@ -136,6 +137,15 @@ export const isProductToken = (token: unknown): token is ProductToken => {
  */
 export const isCurrencyToken = (token: unknown): token is CurrencyToken => {
   return isListedToken(token) && token.tags.some((tag) => tag === 'currency');
+};
+
+/**
+ * Checks if the token is a {@link ComponentToken}.
+ * @param token - Token to check.
+ * @returns True if the token is a ComponentToken.
+ */
+export const isComponentToken = (token: unknown): token is ComponentToken => {
+  return isListedToken(token) && token.tags.some((tag) => tag === 'component');
 };
 
 /**
@@ -459,6 +469,28 @@ export function getChainCurrencyTokenList(chainId: unknown): CurrencyToken[] {
     return tokenlist.tokens.filter(
       (t) => t.chainId === chainId && isCurrencyToken(t),
     ) as CurrencyToken[];
+  }
+  return [];
+}
+
+/**
+ * Returns the list of all component tokens for a specific chain.
+ * @param chainId - The {@link ChainId} to filter tokens.
+ * @returns - {@link ComponentToken}[]
+ * @example
+ * getChainComponentTokenList(1)
+ * // Returns all component tokens for Ethereum chain.
+ */
+export function getChainComponentTokenList<C extends ChainId>(
+  chainId: C,
+): TokensByChain<ComponentToken, C>[];
+
+export function getChainComponentTokenList(chainId: unknown): ComponentToken[];
+export function getChainComponentTokenList(chainId: unknown): ComponentToken[] {
+  if (typeof chainId === 'number' && chainId in tokenSymbolMap) {
+    return tokenlist.tokens.filter(
+      (t) => t.chainId === chainId && isComponentToken(t),
+    ) as ComponentToken[];
   }
   return [];
 }

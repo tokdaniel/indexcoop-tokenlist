@@ -128,6 +128,14 @@ export type CurrencyToken = Extract<
   ListedToken,
   { tags: readonly ['currency', ...Tags[]] }
 >;
+
+/**
+ * {@link ComponentToken} - A union of all tokens that are currency tokens
+ */
+export type ComponentToken = Extract<
+  ListedToken,
+  { tags: readonly ['component', ...Tags[]] }
+>;
 /**
  * {@link TokensByChain}<{@link ChainId}> - A union of all tokens in the tokenlist for a given chainId
  */
