@@ -36,6 +36,22 @@ export const matchTokens = async (tokenlist: IndexTokenList) => {
   return result;
 };
 
+export const matchLogoUris = async (tokenlist: IndexTokenList) => {
+  const result = await Promise.all(
+    tokenlist.tokens.map(async (token) => {
+      const response = await fetch(token.logoURI);
+
+      if (response.status === 200) {
+        return { [token.symbol]: 'success' };
+      }
+
+      return { [`${token.chainId}:${token.symbol}`]: 'error' };
+    }),
+  );
+
+  return result;
+};
+
 export const validateSchema = (tokenlist: IndexTokenList) => {
   const ajv = new Ajv({ verbose: true, allErrors: true });
   addFormats(ajv);
@@ -60,16 +76,29 @@ export const validate = async (tokenlist: IndexTokenList) => {
     console.log('✅ Tokenlist schema is valid.');
     const result = await matchTokens(tokenlist);
 
-    const invalid = result.filter(
+    const invalidSymbols = result.filter(
       ([localSymbol, remoteSymbol]) => localSymbol !== remoteSymbol,
     );
 
-    if (invalid.length > 0) {
+    if (invalidSymbols.length > 0) {
       throw new Error(
-        `Mismatching symbols found.\n ${JSON.stringify(invalid, null, 2)}`,
+        `Mismatching symbols found.\n ${JSON.stringify(invalidSymbols, null, 2)}`,
       );
     }
     console.log('✅ All token contracts found, symbols match.');
+
+    const invalidLogoURIs = await matchLogoUris(tokenlist);
+    const invalidLogos = invalidLogoURIs.filter(
+      (result) => Object.values(result)[0] === 'error',
+    );
+
+    if (invalidLogos.length > 0) {
+      throw new Error(
+        `Invalid logoURIs found.\n ${JSON.stringify(invalidLogos, null, 2)}`,
+      );
+    }
+
+    console.log("✅ All token logoURI's fetched, and available.");
 
     console.log('✅ Tokenlist is valid.');
   } catch (error) {
