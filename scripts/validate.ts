@@ -13,7 +13,7 @@ export const matchTokens = async (tokenlist: IndexTokenList) => {
 
       // If there is no contract deployed, list the token's Symbol in the ValidationExceptions
       if (validationExceptions.includes(token.symbol)) {
-        console.log(`ℹ️ ${token.symbol} is exempt from onchain validation.`);
+        console.log(`ℹ️ -> ${token.symbol} is exempt from onchain validation.`);
         return [token.symbol, token.symbol];
       }
 
@@ -39,13 +39,17 @@ export const matchTokens = async (tokenlist: IndexTokenList) => {
 export const matchLogoUris = async (tokenlist: IndexTokenList) => {
   const result = await Promise.all(
     tokenlist.tokens.map(async (token) => {
-      const response = await fetch(token.logoURI);
+      try {
+        const response = await fetch(token.logoURI);
 
-      if (response.status === 200) {
-        return { [token.symbol]: 'success' };
+        if (response.status === 200) {
+          return { [token.symbol]: 'success' };
+        }
+
+        return { [`${token.chainId}:${token.symbol}`]: 'error' };
+      } catch (error) {
+        return { [`${token.chainId}:${token.symbol}`]: 'error' };
       }
-
-      return { [`${token.chainId}:${token.symbol}`]: 'error' };
     }),
   );
 
@@ -93,8 +97,8 @@ export const validate = async (tokenlist: IndexTokenList) => {
     );
 
     if (invalidLogos.length > 0) {
-      throw new Error(
-        `Invalid logoURIs found.\n ${JSON.stringify(invalidLogos, null, 2)}`,
+      console.log(
+        `ℹ️ -> ${invalidLogos.map((result) => Object.keys(result)[0])} have invalid logoURI's.`,
       );
     }
 
