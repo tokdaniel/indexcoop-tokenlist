@@ -1,3 +1,4 @@
+import { chain } from 'lodash';
 import tokenlist from '../indexcoop.tokenlist.json';
 
 export default {
@@ -651,6 +652,233 @@ export default {
         status: 'Active',
         coingeckoId: 'compound-wrapped-btc',
       },
+      tags: ['component'],
+    },
+    {
+      address: '0x3f67093dfFD4F0aF4f2918703C92B60ACB7AD78b',
+      chainId: 1,
+      name: '21.co Wrapped Bitcoin',
+      symbol: '21BTC',
+      decimals: 8,
+      logoURI: 'https://index-app.vercel.app/assets/21btc.png',
+      extensions: {
+        status: null,
+        coingeckoId: 'bitcoin',
+      },
+      tags: ['component'],
+    },
+    {
+      address: '0x1bE9d03BfC211D83CFf3ABDb94A75F9Db46e1334',
+      chainId: 1,
+      name: '21.co Wrapped BNB',
+      symbol: '21BNB',
+      decimals: 8,
+      logoURI: 'https://index-app.vercel.app/assets/21bnb.png',
+      extensions: {
+        status: null,
+        coingeckoId: 'binancecoin',
+      },
+      tags: ['component'],
+    },
+    {
+      address: '0xFf4927e04c6a01868284F5C3fB9cba7F7ca4aeC0',
+      chainId: 1,
+      name: '21.co Wrapped BitcoinCash',
+      symbol: '21BCH',
+      decimals: 8,
+      logoURI: 'https://index-app.vercel.app/assets/21bch.png',
+      extensions: {
+        status: null,
+        coingeckoId: 'bitcoin-cash',
+      },
+      tags: ['component'],
+    },
+    {
+      address: '0x9c05d54645306d4C4EAd6f75846000E1554c0360',
+      chainId: 1,
+      name: '21.co Wrapped Cardano',
+      symbol: '21ADA',
+      decimals: 6,
+      logoURI: 'https://index-app.vercel.app/assets/21ada.png',
+      extensions: {
+        status: null,
+        coingeckoId: 'cardano',
+      },
+      tags: ['component'],
+    },
+    {
+      address: '0x9F2825333aa7bC2C98c061924871B6C016e385F3',
+      chainId: 1,
+      name: '21.co Wrapped Litecoin',
+      symbol: '21LTC',
+      decimals: 8,
+      logoURI: 'https://index-app.vercel.app/assets/21ltc.png',
+      extensions: {
+        status: null,
+        coingeckoId: 'litecoin',
+      },
+      tags: ['component'],
+    },
+    {
+      address: '0xF4ACCD20bFED4dFFe06d4C85A7f9924b1d5dA819',
+      chainId: 1,
+      name: '21.co Wrapped Polkadot',
+      symbol: '21DOT',
+      decimals: 10,
+      logoURI: 'https://index-app.vercel.app/assets/21dot.png',
+      extensions: {
+        status: null,
+        coingeckoId: 'polkadot',
+      },
+      tags: ['component'],
+    },
+    {
+      address: '0xb80a1d87654BEf7aD8eB6BBDa3d2309E31D4e598',
+      chainId: 1,
+      name: '21.co Wrapped Solana',
+      symbol: '21SOL',
+      decimals: 9,
+      logoURI: 'https://index-app.vercel.app/assets/21sol.png',
+      extensions: {
+        status: null,
+        coingeckoId: 'solana',
+      },
+      tags: ['component'],
+    },
+    {
+      address: '0x0d3bd40758dF4F79aaD316707FcB809CD4815Ffe',
+      chainId: 1,
+      name: '21.co Wrapped XRP',
+      symbol: '21XRP',
+      decimals: 6,
+      logoURI: 'https://index-app.vercel.app/assets/21xrp.png',
+      extensions: {
+        status: null,
+        coingeckoId: 'ripple',
+      },
+      tags: ['component'],
+    },
+    {
+      address: '0x399508A43d7E2b4451cd344633108b4d84b33B03',
+      chainId: 1,
+      name: '21.co Wrapped AVAX',
+      symbol: '21AVAX',
+      decimals: 18,
+      logoURI: 'https://index-app.vercel.app/assets/21avax.png',
+      extensions: {
+        status: null,
+        coingeckoId: 'avalanche-2',
+      },
+      tags: ['component'],
+    },
+    {
+      address: '0x1c085195437738d73d75DC64bC5A3E098b7f93b1',
+      chainId: 1,
+      name: 'PT ether.fi weETH 26SEP2024',
+      symbol: 'PT-weETH-26SEP2024',
+      decimals: 18,
+      logoURI:
+        'https://assets.coingecko.com/coins/images/15069/large/Pendle_Logo_Normal-03.png?1696514728',
+      extensions: {
+        status: null,
+        coingeckoId: null,
+      },
+      tags: ['component'],
+    },
+    {
+      address: '0x6ee2b5E19ECBa773a352E5B21415Dc419A700d1d',
+      chainId: 1,
+      name: 'PT ether.fi weETH 26DEC2024',
+      symbol: 'PT-weETH-26DEC2024',
+      decimals: 18,
+      logoURI:
+        'https://assets.coingecko.com/coins/images/15069/large/Pendle_Logo_Normal-03.png?1696514728',
+      extensions: {
+        status: null,
+        coingeckoId: null,
+      },
+      tags: ['component'],
+    },
+    {
+      address: '0xf7906F274c174A52d444175729E3fa98f9bde285',
+      chainId: 1,
+      name: 'PT Renzo ezETH 26DEC2024',
+      symbol: 'PT-ezETH-26DEC2024',
+      decimals: 18,
+      logoURI:
+        'https://assets.coingecko.com/coins/images/15069/large/Pendle_Logo_Normal-03.png?1696514728',
+      extensions: {
+        status: null,
+        coingeckoId: null,
+      },
+      tags: ['component'],
+    },
+    {
+      address: '0x78Fc2c2eD1A4cDb5402365934aE5648aDAd094d0',
+      chainId: 1,
+      name: 'Re7 WETH',
+      symbol: 'Re7WETH',
+      decimals: 18,
+      logoURI:
+        'https://assets.coingecko.com/coins/images/29837/large/2022-official-morpho-token.png',
+      extensions: {
+        status: null,
+        coingeckoId: null,
+      },
+      tags: ['component'],
+    },
+    {
+      address: '0x078f358208685046a11C85e8ad32895DED33A249',
+      chainId: 42161,
+      name: 'Aave Arbitrum WBTC',
+      symbol: 'aArbWBTC',
+      decimals: 8,
+      extensions: {
+        status: null,
+        coingeckoId: 'aave-wbtc',
+      },
+      logoURI:
+        'ipfs://QmaznB5PRhMC696u8yZuzN6Uwrnp7Zmfa5CydVUMvLJc9i/aWBTC.svg',
+      tags: ['component'],
+    },
+    {
+      address: '0xe50fA9b3c56FfB159cB0FCA61F5c9D750e8128c8',
+      chainId: 42161,
+      name: 'Aave Arbitrum WETH',
+      symbol: 'aArbWETH',
+      decimals: 18,
+      extensions: {
+        status: null,
+        coingeckoId: 'aave-weth',
+      },
+      logoURI: 'ipfs://QmUDc7LQN6zKHon9FChTqZc7WGFvGPZe698Bq5HbSYtfk9',
+      tags: ['component'],
+    },
+    {
+      address: '0x724dc807b04555b71ed48a6896b6F41593b8C637',
+      chainId: 42161,
+      name: 'Aave Arbitrum USDCn',
+      symbol: 'aArbUSDCn',
+      decimals: 6,
+      extensions: {
+        status: null,
+        coingeckoId: 'aave-usdc',
+      },
+      logoURI:
+        'ipfs://QmaznB5PRhMC696u8yZuzN6Uwrnp7Zmfa5CydVUMvLJc9i/aUSDC.svg',
+      tags: ['component'],
+    },
+    {
+      address: '0xD4a0e0b9149BCee3C920d2E00b5dE09138fd8bb7',
+      chainId: 8453,
+      name: 'Aave Base WETH',
+      symbol: 'aBasWETH',
+      decimals: 18,
+      extensions: {
+        status: null,
+        coingeckoId: 'aave-weth',
+      },
+      logoURI: 'ipfs://QmUDc7LQN6zKHon9FChTqZc7WGFvGPZe698Bq5HbSYtfk9',
       tags: ['component'],
     },
     // --------------- Currency Tokens ---------------
