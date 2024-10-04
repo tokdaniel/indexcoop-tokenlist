@@ -42,6 +42,8 @@ const result = (await fetchComponents())
   .flat()
   .filter(({ components }) => Boolean(components));
 
+console.log(result);
+
 const out = result.flatMap(({ components, chainId }) =>
   components.map((component) => `${chainId}-${component.toLowerCase()}`),
 );
