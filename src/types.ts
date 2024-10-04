@@ -34,6 +34,14 @@ export type Tags = keyof typeof InternalTokenList.tags;
  * {@link ListedToken} - A union of all tokens in the tokenlist
  */
 export type ListedToken = (typeof InternalTokenList.tokens)[number];
+
+/**
+ * {@link Status} - A union of all possible status extensions in the tokenlist
+ **/
+export type Status = ListedToken['extensions'] extends { status: infer S }
+  ? S
+  : never;
+
 /**
  * {@link ChainId} - A union of all possible chainIds in the tokenlist
  */
