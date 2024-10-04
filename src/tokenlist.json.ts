@@ -881,6 +881,20 @@ export default {
       logoURI: 'ipfs://QmUDc7LQN6zKHon9FChTqZc7WGFvGPZe698Bq5HbSYtfk9',
       tags: ['component'],
     },
+    {
+      chainId: 1,
+      address: '0x1982b2F5814301d4e9a8b0201555376e62F82428',
+      name: 'Aave Interest Bearing STETH',
+      symbol: 'aSTETH',
+      decimals: 18,
+      logoURI:
+        'https://assets.coingecko.com/coins/images/24163/small/steth.jpg?1646634315',
+      extensions: {
+        status: null,
+        coingeckoId: 'staave-interest-bearing-stetheth',
+      },
+      tags: ['component'],
+    },
     // --------------- Currency Tokens ---------------
     {
       name: 'Dai Stablecoin',
