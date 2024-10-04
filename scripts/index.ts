@@ -8,7 +8,9 @@ import { updateTokenListVersion } from './version';
 const run = async () => {
   await validate(tokenlistUpdate);
 
-  const updated = updateTokenListVersion(tokenlistBase, tokenlistUpdate);
+  const updated = updateTokenListVersion(tokenlistBase, tokenlistUpdate, {
+    patch: true,
+  });
 
   fs.writeFileSync(
     path.resolve(__dirname, '../indexcoop.tokenlist.json'),

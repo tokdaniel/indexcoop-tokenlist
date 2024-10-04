@@ -5,13 +5,14 @@ import isEmpty from 'lodash/isEmpty';
 export const updateTokenListVersion = (
   tokenlistBase: TokenList,
   tokenlistUpdate: IndexTokenList,
+  force: Partial<{ major: boolean; minor: boolean; patch: boolean }> = {},
 ) => {
   const diff = diffTokenLists(
     JSON.parse(JSON.stringify(tokenlistBase.tokens)),
     JSON.parse(JSON.stringify(tokenlistUpdate.tokens)),
   );
 
-  if (!isEmpty(diff.removed)) {
+  if (!isEmpty(diff.removed) || force.major) {
     console.info('bump version: major');
 
     return Object.assign(tokenlistUpdate, {
@@ -23,7 +24,7 @@ export const updateTokenListVersion = (
     });
   }
 
-  if (!isEmpty(diff.added)) {
+  if (!isEmpty(diff.added) || force.minor) {
     console.info('bump version: minor');
 
     return Object.assign(tokenlistUpdate, {
@@ -39,7 +40,7 @@ export const updateTokenListVersion = (
     .flatMap((change) => Object.values(change).flat())
     .every((change) => change === 'extensions');
 
-  if (!isEmpty(diff.changed) && !onlyExtensionsChanged) {
+  if ((!isEmpty(diff.changed) && !onlyExtensionsChanged) || force.patch) {
     console.info('bump version: patch');
 
     return Object.assign(tokenlistUpdate, {
@@ -50,6 +51,6 @@ export const updateTokenListVersion = (
     });
   }
 
-  console.log('No changes detected');
-  return tokenlistBase;
+  console.log('No changes detected, returning the new.');
+  return tokenlistUpdate;
 };
