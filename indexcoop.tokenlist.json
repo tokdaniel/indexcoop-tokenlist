@@ -2,10 +2,10 @@
   "name": "IndexCoop Token List",
   "version": {
     "major": 2,
-    "minor": 0,
+    "minor": 1,
     "patch": 0
   },
-  "timestamp": "2024-10-04T18:38:22.949Z",
+  "timestamp": "2024-10-04T19:10:02.418Z",
   "tags": {
     "stablecoin": {
       "name": "Stablecoin",
@@ -72,7 +72,8 @@
       "logoURI": "https://cdn.indexcoop.com/dpi.svg",
       "tags": [
         "index",
-        "sector"
+        "sector",
+        "component"
       ]
     },
     {
@@ -306,7 +307,8 @@
       "tags": [
         "index",
         "leverage",
-        "dangerous"
+        "dangerous",
+        "component"
       ]
     },
     {
@@ -326,7 +328,8 @@
       "tags": [
         "index",
         "leverage",
-        "dangerous"
+        "dangerous",
+        "component"
       ]
     },
     {
@@ -522,7 +525,8 @@
       "logoURI": "https://cdn.indexcoop.com/dseth.svg",
       "tags": [
         "index",
-        "yield"
+        "yield",
+        "component"
       ]
     },
     {
@@ -1092,7 +1096,8 @@
       },
       "tags": [
         "currency",
-        "stablecoin"
+        "stablecoin",
+        "component"
       ]
     },
     {
@@ -1113,7 +1118,8 @@
       },
       "tags": [
         "currency",
-        "stablecoin"
+        "stablecoin",
+        "component"
       ]
     },
     {
@@ -1134,7 +1140,8 @@
       },
       "tags": [
         "currency",
-        "stablecoin"
+        "stablecoin",
+        "component"
       ]
     },
     {
@@ -1199,7 +1206,8 @@
         }
       },
       "tags": [
-        "currency"
+        "currency",
+        "component"
       ]
     },
     {
@@ -1239,7 +1247,8 @@
         }
       },
       "tags": [
-        "currency"
+        "currency",
+        "component"
       ]
     },
     {
@@ -1259,7 +1268,8 @@
         }
       },
       "tags": [
-        "currency"
+        "currency",
+        "component"
       ]
     },
     {
@@ -1279,7 +1289,8 @@
         }
       },
       "tags": [
-        "currency"
+        "currency",
+        "component"
       ]
     },
     {
@@ -1310,7 +1321,8 @@
         "coingeckoId": "rocket-pool-eth"
       },
       "tags": [
-        "currency"
+        "currency",
+        "component"
       ]
     },
     {
@@ -1355,7 +1367,8 @@
         "coingeckoId": "wrapped-steth"
       },
       "tags": [
-        "currency"
+        "currency",
+        "component"
       ]
     }
   ]
