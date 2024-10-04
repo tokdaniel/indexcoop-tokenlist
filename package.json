@@ -13,7 +13,7 @@
     "lint": "bunx @biomejs/biome lint",
     "format": "bunx @biomejs/biome format . --write",
     "list:build": "bun ./scripts/index.ts",
-    "list:bundle": "rimraf ./dist && bun tsup && bun copy-tokenlist",
+    "list:bundle": "bun tsup && bun copy-tokenlist",
     "copy-tokenlist": "shx cp ./*.tokenlist.json ./dist",
     "test": "jest",
     "coverage": "jest --coverage"
@@ -97,7 +97,6 @@
     "jest": "^29.7.0",
     "jest-junit": "^16.0.0",
     "lodash": "^4.17.21",
-    "rimraf": "^6.0.1",
     "semantic-release": "^24.1.1",
     "shx": "^0.3.4",
     "ts-jest": "^29.2.5",

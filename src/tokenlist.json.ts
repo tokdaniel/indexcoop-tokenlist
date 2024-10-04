@@ -152,7 +152,7 @@ export default {
       decimals: 18,
       chainId: 1,
       extensions: {
-        status: 'Hybernated',
+        status: 'Hibernated',
         coingeckoId: 'bankless-bed-index',
         sector: {
           theme: 'Metaverse',
@@ -168,7 +168,7 @@ export default {
       decimals: 18,
       chainId: 1,
       extensions: {
-        status: 'Hybernated',
+        status: 'Hibernated',
         coingeckoId: null,
         sector: {
           theme: 'LCap',
