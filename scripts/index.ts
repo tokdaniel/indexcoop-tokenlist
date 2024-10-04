@@ -9,7 +9,9 @@ const run = async () => {
   await validate(tokenlistUpdate);
 
   const updated = updateTokenListVersion(tokenlistBase, tokenlistUpdate, {
-    patch: true,
+    major: false,
+    minor: true,
+    patch: false,
   });
 
   fs.writeFileSync(
