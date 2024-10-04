@@ -3,15 +3,18 @@ import addressMap from './address-map.json';
 import componentList from './components-list.json';
 import { tokenlist } from '../../src';
 
-const out = componentList
+const out = Array.from(new Set(componentList))
+  .filter(
+    (component) =>
+      !tokenlist.tokens.find(
+        ({ address: tokenAddress, chainId }) =>
+          `${chainId}-${tokenAddress.toLowerCase()}` === component,
+      ),
+  )
   .map((component) => ({
     ...addressMap[component],
+    component,
     tags: ['component'],
-  }))
-  .filter(({ address }) =>
-    tokenlist.tokens.every(
-      ({ address: tokenAddress }) => tokenAddress !== address,
-    ),
-  );
+  }));
 
 fs.writeFileSync('./components-token-list.json', JSON.stringify(out, null, 2));
