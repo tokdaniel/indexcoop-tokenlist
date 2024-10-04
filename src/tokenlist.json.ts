@@ -68,7 +68,7 @@ export default {
         },
       },
       logoURI: 'https://cdn.indexcoop.com/dpi.svg',
-      tags: ['index', 'sector'],
+      tags: ['index', 'sector', 'component'],
     },
     {
       address: '0x9737C658272e66Faad39D7AD337789Ee6D54F500',
@@ -261,7 +261,7 @@ export default {
         },
       },
       logoURI: 'https://cdn.indexcoop.com/eth2x.svg',
-      tags: ['index', 'leverage', 'dangerous'],
+      tags: ['index', 'leverage', 'dangerous', 'component'],
     },
     {
       address: '0xD2AC55cA3Bbd2Dd1e9936eC640dCb4b745fDe759',
@@ -277,7 +277,7 @@ export default {
         },
       },
       logoURI: 'https://cdn.indexcoop.com/btc2x.svg',
-      tags: ['index', 'leverage', 'dangerous'],
+      tags: ['index', 'leverage', 'dangerous', 'component'],
     },
     {
       address: '0x26d7D3728C6bb762a5043a1d0CeF660988Bca43C',
@@ -438,7 +438,7 @@ export default {
         },
       },
       logoURI: 'https://cdn.indexcoop.com/dseth.svg',
-      tags: ['index', 'yield'],
+      tags: ['index', 'yield', 'component'],
     },
     {
       address: '0x95b11aca35D35Ac8B8A88E1F7792873BBea7CeBb',
@@ -939,7 +939,7 @@ export default {
           },
         },
       },
-      tags: ['currency', 'stablecoin'],
+      tags: ['currency', 'stablecoin', 'component'],
     },
     {
       name: 'USD Coin',
@@ -957,7 +957,7 @@ export default {
           },
         },
       },
-      tags: ['currency', 'stablecoin'],
+      tags: ['currency', 'stablecoin', 'component'],
     },
     {
       name: 'USDCoin',
@@ -976,7 +976,7 @@ export default {
           },
         },
       },
-      tags: ['currency', 'stablecoin'],
+      tags: ['currency', 'stablecoin', 'component'],
     },
     {
       name: 'Tether USD',
@@ -1036,7 +1036,7 @@ export default {
           },
         },
       },
-      tags: ['currency'],
+      tags: ['currency', 'component'],
     },
     {
       name: 'Wrapped Ether',
@@ -1073,7 +1073,7 @@ export default {
           },
         },
       },
-      tags: ['currency'],
+      tags: ['currency', 'component'],
     },
     {
       name: 'Wrapped BTC',
@@ -1092,7 +1092,7 @@ export default {
           },
         },
       },
-      tags: ['currency'],
+      tags: ['currency', 'component'],
     },
     {
       name: 'Wrapped BTC',
@@ -1111,7 +1111,7 @@ export default {
           },
         },
       },
-      tags: ['currency'],
+      tags: ['currency', 'component'],
     },
     {
       chainId: 1,
@@ -1139,7 +1139,7 @@ export default {
         status: 'Active',
         coingeckoId: 'rocket-pool-eth',
       },
-      tags: ['currency'],
+      tags: ['currency', 'component'],
     },
     {
       address: '0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84',
@@ -1181,7 +1181,7 @@ export default {
         status: 'Active',
         coingeckoId: 'wrapped-steth',
       },
-      tags: ['currency'],
+      tags: ['currency', 'component'],
     },
   ],
 } as const;
