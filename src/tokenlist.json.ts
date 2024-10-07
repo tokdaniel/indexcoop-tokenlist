@@ -814,6 +814,20 @@ export default {
       tags: ['component'],
     },
     {
+      address: '0x7aa68E84bCD8d1B4C9e10B1e565DB993f68a3E09',
+      chainId: 1,
+      name: 'PT Kelp Gain 26DEC2024',
+      symbol: 'PT-agETH-26DEC2024',
+      decimals: 18,
+      logoURI:
+        'https://assets.coingecko.com/coins/images/15069/large/Pendle_Logo_Normal-03.png?1696514728',
+      extensions: {
+        status: null,
+        coingeckoId: null,
+      },
+      tags: ['component'],
+    },
+    {
       address: '0x78Fc2c2eD1A4cDb5402365934aE5648aDAd094d0',
       chainId: 1,
       name: 'Re7 WETH',
