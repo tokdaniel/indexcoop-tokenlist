@@ -14,7 +14,15 @@ export const matchTokens = async (tokenlist: IndexTokenList) => {
       // If there is no contract deployed, list the token's Symbol in the ValidationExceptions
       if (validationExceptions.includes(token.symbol)) {
         console.log(`ℹ️ -> ${token.symbol} is exempt from onchain validation.`);
-        return [token.symbol, token.symbol];
+        return {
+          success: true,
+          values: {
+            localSymbol: token.symbol,
+            onchainSymbol: token.symbol,
+            localDecimals: token.decimals,
+            onchainDecimals: token.decimals,
+          },
+        };
       }
 
       const contract = getContract({
@@ -25,10 +33,27 @@ export const matchTokens = async (tokenlist: IndexTokenList) => {
 
       try {
         const symbol = await contract.read.symbol();
+        const decimals = await contract.read.decimals();
 
-        return [token.symbol, symbol];
+        return {
+          success: true,
+          values: {
+            localSymbol: token.symbol,
+            onchainSymbol: symbol,
+            localDecimals: token.decimals,
+            onchainDecimals: decimals,
+          },
+        };
       } catch (error) {
-        return [token.symbol, 'CONTRACT_NOT_FOUND'];
+        return {
+          success: false,
+          values: {
+            localSymbol: token.symbol,
+            onchainSymbol: undefined,
+            localDecimals: token.decimals,
+            onchainDecimals: undefined,
+          },
+        };
       }
     }),
   );
@@ -80,16 +105,32 @@ export const validate = async (tokenlist: IndexTokenList) => {
     console.log('✅ Tokenlist schema is valid.');
     const result = await matchTokens(tokenlist);
 
-    const invalidSymbols = result.filter(
-      ([localSymbol, remoteSymbol]) => localSymbol !== remoteSymbol,
+    const tokenContractsMissing = result.filter(
+      ({ success }) => success === false,
     );
 
-    if (invalidSymbols.length > 0) {
+    const invalidSymbols = result.filter(
+      ({ success, values }) =>
+        success === true && values.localSymbol !== values.onchainSymbol,
+    );
+
+    const invalidDecimals = result.filter(
+      ({ success, values }) =>
+        success === true && values.localDecimals !== values.onchainDecimals,
+    );
+
+    if (
+      tokenContractsMissing.concat(invalidSymbols, invalidDecimals).length > 0
+    ) {
+      const tokenContractsMissingMsg = `Missing token contracts: ${tokenContractsMissing.map(({ values }) => `${values.localSymbol}`).join(', ')}`;
+      const invalidSymbolsMsg = `Mismatching symbols: ${invalidSymbols.map(({ values }) => `${values.localSymbol} (local) vs. ${values.onchainSymbol} (onchain)`).join(', ')}`;
+      const invalidDecimalsMsg = `Mismatching decimals: ${invalidDecimals.map(({ values }) => `${values.localSymbol}:${values.localDecimals} (local) vs. ${values.onchainSymbol}:${values.onchainDecimals} (onchain)`).join(', ')}`;
+
       throw new Error(
-        `Mismatching symbols found.\n ${JSON.stringify(invalidSymbols, null, 2)}`,
+        `${tokenContractsMissingMsg}\n${invalidSymbolsMsg}\n${invalidDecimalsMsg}`,
       );
     }
-    console.log('✅ All token contracts found, symbols match.');
+    console.log('✅ All token contracts found, symbols, and decimals match.');
 
     const invalidLogoURIs = await matchLogoUris(tokenlist);
     const invalidLogos = invalidLogoURIs.filter(

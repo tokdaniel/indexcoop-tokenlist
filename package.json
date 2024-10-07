@@ -4,14 +4,12 @@
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "typings": "dist/index.d.ts",
-  "files": [
-    "dist",
-    "README.md"
-  ],
+  "files": ["dist", "README.md"],
   "type": "module",
   "scripts": {
     "lint": "bunx @biomejs/biome lint",
     "format": "bunx @biomejs/biome format . --write",
+    "list:validate": "bun ./scripts/validate.ts",
     "list:build": "bun ./scripts/index.ts",
     "list:bundle": "bun tsup && bun copy-tokenlist",
     "copy-tokenlist": "shx cp ./*.tokenlist.json ./dist",
@@ -19,9 +17,7 @@
     "coverage": "jest --coverage"
   },
   "release": {
-    "branches": [
-      "main"
-    ],
+    "branches": ["main"],
     "plugins": [
       [
         "@semantic-release/commit-analyzer",
