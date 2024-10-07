@@ -122,9 +122,9 @@ export const validate = async (tokenlist: IndexTokenList) => {
     if (
       tokenContractsMissing.concat(invalidSymbols, invalidDecimals).length > 0
     ) {
-      const tokenContractsMissingMsg = `Missing token contracts: ${tokenContractsMissing.map(({ values }) => `${values.localSymbol}`).join(', ')}`;
-      const invalidSymbolsMsg = `Mismatching symbols: ${invalidSymbols.map(({ values }) => `${values.localSymbol} (local) vs. ${values.onchainSymbol} (onchain)`).join(', ')}`;
-      const invalidDecimalsMsg = `Mismatching decimals: ${invalidDecimals.map(({ values }) => `${values.localSymbol}:${values.localDecimals} (local) vs. ${values.onchainSymbol}:${values.onchainDecimals} (onchain)`).join(', ')}`;
+      const tokenContractsMissingMsg = `\nMissing token contracts: ${tokenContractsMissing.map(({ values }) => `${values.localSymbol}`).join('\n-\t')}`;
+      const invalidSymbolsMsg = `Mismatching symbols:\n-\t${invalidSymbols.map(({ values }) => `${values.localSymbol} (local) vs. ${values.onchainSymbol} (onchain)`).join('\n-\t')}`;
+      const invalidDecimalsMsg = `Mismatching decimals:\n-\t${invalidDecimals.map(({ values }) => `${values.localSymbol}:${values.localDecimals} (local) vs. ${values.onchainSymbol}:${values.onchainDecimals} (onchain)`).join('\n-\t')}`;
 
       throw new Error(
         `${tokenContractsMissingMsg}\n${invalidSymbolsMsg}\n${invalidDecimalsMsg}`,
