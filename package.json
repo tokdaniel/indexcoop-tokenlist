@@ -1,6 +1,6 @@
 {
   "name": "@nsorcell/exp-tokenlist",
-  "version": "1.24.0",
+  "version": "1.25.0",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "typings": "dist/index.d.ts",
