@@ -52,5 +52,5 @@ export const updateTokenListVersion = (
   }
 
   console.log('No changes detected, returning the original tokenlist.');
-  return tokenlistUpdate;
+  return tokenlistBase;
 };
