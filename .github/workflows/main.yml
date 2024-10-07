@@ -14,7 +14,7 @@ permissions:
 jobs:
   build_and_publish:
     runs-on: ubuntu-latest
-    if: ${{ github.ref == 'refs/heads/main' }}
+    if: ${{ github.ref == 'refs/heads/main' && !startsWith(github.event.head_commit.message, 'ignore(') }}
     env:
       ALCHEMY_ID: ${{ secrets.ALCHEMY_ID }}
     steps:
@@ -49,7 +49,7 @@ jobs:
             Update indexcoop.tokenlist.json to latest
             Update package.json to latest
           signoff: true
-          branch: "auto/update-versions"
+          branch: "auto-update/versions"
           title: "Auto: Update versions to latest"
           token: ${{ secrets.GH_EXTENDED_TOKEN }}
       - uses: gaelgirodon/ci-badges-action@v1.5.0
