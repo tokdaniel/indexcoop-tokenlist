@@ -10,7 +10,7 @@ const run = async () => {
 
   const updated = updateTokenListVersion(tokenlistBase, tokenlistUpdate, {
     major: false,
-    minor: true,
+    minor: false,
     patch: false,
   });
 

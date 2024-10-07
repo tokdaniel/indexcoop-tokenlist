@@ -51,6 +51,6 @@ export const updateTokenListVersion = (
     });
   }
 
-  console.log('No changes detected, returning the new.');
+  console.log('No changes detected, returning the original tokenlist.');
   return tokenlistUpdate;
 };

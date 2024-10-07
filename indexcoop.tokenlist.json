@@ -2,10 +2,10 @@
   "name": "IndexCoop Token List",
   "version": {
     "major": 2,
-    "minor": 0,
-    "patch": 0
+    "minor": 4,
+    "patch": 1
   },
-  "timestamp": "2024-10-04T18:38:22.949Z",
+  "timestamp": "2024-10-07T11:21:46.899Z",
   "tags": {
     "stablecoin": {
       "name": "Stablecoin",
@@ -72,7 +72,8 @@
       "logoURI": "https://cdn.indexcoop.com/dpi.svg",
       "tags": [
         "index",
-        "sector"
+        "sector",
+        "component"
       ]
     },
     {
@@ -306,7 +307,8 @@
       "tags": [
         "index",
         "leverage",
-        "dangerous"
+        "dangerous",
+        "component"
       ]
     },
     {
@@ -326,7 +328,8 @@
       "tags": [
         "index",
         "leverage",
-        "dangerous"
+        "dangerous",
+        "component"
       ]
     },
     {
@@ -522,7 +525,8 @@
       "logoURI": "https://cdn.indexcoop.com/dseth.svg",
       "tags": [
         "index",
-        "yield"
+        "yield",
+        "component"
       ]
     },
     {
@@ -780,9 +784,9 @@
       "name": "21.co Wrapped Bitcoin",
       "symbol": "21BTC",
       "decimals": 8,
-      "logoURI": "https://index-app.vercel.app/assets/21btc.png",
+      "logoURI": "https://cdn.indexcoop.com/21btc.svg",
       "extensions": {
-        "status": null,
+        "status": "Deprecated",
         "coingeckoId": "bitcoin"
       },
       "tags": [
@@ -795,9 +799,9 @@
       "name": "21.co Wrapped BNB",
       "symbol": "21BNB",
       "decimals": 8,
-      "logoURI": "https://index-app.vercel.app/assets/21bnb.png",
+      "logoURI": "https://cdn.indexcoop.com/21bnb.svg",
       "extensions": {
-        "status": null,
+        "status": "Deprecated",
         "coingeckoId": "binancecoin"
       },
       "tags": [
@@ -810,9 +814,9 @@
       "name": "21.co Wrapped BitcoinCash",
       "symbol": "21BCH",
       "decimals": 8,
-      "logoURI": "https://index-app.vercel.app/assets/21bch.png",
+      "logoURI": "https://cdn.indexcoop.com/21bch.svg",
       "extensions": {
-        "status": null,
+        "status": "Deprecated",
         "coingeckoId": "bitcoin-cash"
       },
       "tags": [
@@ -825,9 +829,9 @@
       "name": "21.co Wrapped Cardano",
       "symbol": "21ADA",
       "decimals": 6,
-      "logoURI": "https://index-app.vercel.app/assets/21ada.png",
+      "logoURI": "https://cdn.indexcoop.com/21ada.svg",
       "extensions": {
-        "status": null,
+        "status": "Deprecated",
         "coingeckoId": "cardano"
       },
       "tags": [
@@ -840,9 +844,9 @@
       "name": "21.co Wrapped Litecoin",
       "symbol": "21LTC",
       "decimals": 8,
-      "logoURI": "https://index-app.vercel.app/assets/21ltc.png",
+      "logoURI": "https://cdn.indexcoop.com/21ltc.svg",
       "extensions": {
-        "status": null,
+        "status": "Deprecated",
         "coingeckoId": "litecoin"
       },
       "tags": [
@@ -855,9 +859,9 @@
       "name": "21.co Wrapped Polkadot",
       "symbol": "21DOT",
       "decimals": 10,
-      "logoURI": "https://index-app.vercel.app/assets/21dot.png",
+      "logoURI": "https://cdn.indexcoop.com/21dot.svg",
       "extensions": {
-        "status": null,
+        "status": "Deprecated",
         "coingeckoId": "polkadot"
       },
       "tags": [
@@ -870,9 +874,9 @@
       "name": "21.co Wrapped Solana",
       "symbol": "21SOL",
       "decimals": 9,
-      "logoURI": "https://index-app.vercel.app/assets/21sol.png",
+      "logoURI": "https://cdn.indexcoop.com/21sol.svg",
       "extensions": {
-        "status": null,
+        "status": "Deprecated",
         "coingeckoId": "solana"
       },
       "tags": [
@@ -885,9 +889,9 @@
       "name": "21.co Wrapped XRP",
       "symbol": "21XRP",
       "decimals": 6,
-      "logoURI": "https://index-app.vercel.app/assets/21xrp.png",
+      "logoURI": "https://cdn.indexcoop.com/21xrp.svg",
       "extensions": {
-        "status": null,
+        "status": "Deprecated",
         "coingeckoId": "ripple"
       },
       "tags": [
@@ -900,9 +904,9 @@
       "name": "21.co Wrapped AVAX",
       "symbol": "21AVAX",
       "decimals": 18,
-      "logoURI": "https://index-app.vercel.app/assets/21avax.png",
+      "logoURI": "https://cdn.indexcoop.com/21avax.svg",
       "extensions": {
-        "status": null,
+        "status": "Deprecated",
         "coingeckoId": "avalanche-2"
       },
       "tags": [
@@ -1030,6 +1034,21 @@
       ]
     },
     {
+      "chainId": 1,
+      "address": "0x1982b2F5814301d4e9a8b0201555376e62F82428",
+      "name": "Aave Interest Bearing STETH",
+      "symbol": "aSTETH",
+      "decimals": 18,
+      "logoURI": "https://assets.coingecko.com/coins/images/24163/small/steth.jpg?1646634315",
+      "extensions": {
+        "status": null,
+        "coingeckoId": "staave-interest-bearing-stetheth"
+      },
+      "tags": [
+        "component"
+      ]
+    },
+    {
       "name": "Dai Stablecoin",
       "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
       "symbol": "DAI",
@@ -1092,7 +1111,8 @@
       },
       "tags": [
         "currency",
-        "stablecoin"
+        "stablecoin",
+        "component"
       ]
     },
     {
@@ -1113,7 +1133,8 @@
       },
       "tags": [
         "currency",
-        "stablecoin"
+        "stablecoin",
+        "component"
       ]
     },
     {
@@ -1134,7 +1155,8 @@
       },
       "tags": [
         "currency",
-        "stablecoin"
+        "stablecoin",
+        "component"
       ]
     },
     {
@@ -1199,7 +1221,8 @@
         }
       },
       "tags": [
-        "currency"
+        "currency",
+        "component"
       ]
     },
     {
@@ -1239,7 +1262,8 @@
         }
       },
       "tags": [
-        "currency"
+        "currency",
+        "component"
       ]
     },
     {
@@ -1259,7 +1283,8 @@
         }
       },
       "tags": [
-        "currency"
+        "currency",
+        "component"
       ]
     },
     {
@@ -1279,7 +1304,8 @@
         }
       },
       "tags": [
-        "currency"
+        "currency",
+        "component"
       ]
     },
     {
@@ -1310,7 +1336,8 @@
         "coingeckoId": "rocket-pool-eth"
       },
       "tags": [
-        "currency"
+        "currency",
+        "component"
       ]
     },
     {
@@ -1355,7 +1382,8 @@
         "coingeckoId": "wrapped-steth"
       },
       "tags": [
-        "currency"
+        "currency",
+        "component"
       ]
     }
   ]

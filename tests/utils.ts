@@ -173,6 +173,18 @@ export const nonCurrencyTokenArbitrary = fc.constantFrom(
   ),
 );
 
+export const componentTokenArbitrary = fc.constantFrom(
+  ...tokenlist.tokens.filter((token) =>
+    token.tags.some((t) => t === 'component'),
+  ),
+);
+
+export const nonComponentTokenArbitrary = fc.constantFrom(
+  ...tokenlist.tokens.filter((token) =>
+    token.tags.every((t) => t !== 'component'),
+  ),
+);
+
 export const nonProductNonIndexTokenArbitrary = fc.constantFrom(
   tokenlist.tokens.filter((token) => token.tags.every((t) => t !== 'index')),
 );

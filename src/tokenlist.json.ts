@@ -68,7 +68,7 @@ export default {
         },
       },
       logoURI: 'https://cdn.indexcoop.com/dpi.svg',
-      tags: ['index', 'sector'],
+      tags: ['index', 'sector', 'component'],
     },
     {
       address: '0x9737C658272e66Faad39D7AD337789Ee6D54F500',
@@ -261,7 +261,7 @@ export default {
         },
       },
       logoURI: 'https://cdn.indexcoop.com/eth2x.svg',
-      tags: ['index', 'leverage', 'dangerous'],
+      tags: ['index', 'leverage', 'dangerous', 'component'],
     },
     {
       address: '0xD2AC55cA3Bbd2Dd1e9936eC640dCb4b745fDe759',
@@ -277,7 +277,7 @@ export default {
         },
       },
       logoURI: 'https://cdn.indexcoop.com/btc2x.svg',
-      tags: ['index', 'leverage', 'dangerous'],
+      tags: ['index', 'leverage', 'dangerous', 'component'],
     },
     {
       address: '0x26d7D3728C6bb762a5043a1d0CeF660988Bca43C',
@@ -438,7 +438,7 @@ export default {
         },
       },
       logoURI: 'https://cdn.indexcoop.com/dseth.svg',
-      tags: ['index', 'yield'],
+      tags: ['index', 'yield', 'component'],
     },
     {
       address: '0x95b11aca35D35Ac8B8A88E1F7792873BBea7CeBb',
@@ -660,9 +660,9 @@ export default {
       name: '21.co Wrapped Bitcoin',
       symbol: '21BTC',
       decimals: 8,
-      logoURI: 'https://index-app.vercel.app/assets/21btc.png',
+      logoURI: 'https://cdn.indexcoop.com/21btc.svg',
       extensions: {
-        status: null,
+        status: 'Deprecated',
         coingeckoId: 'bitcoin',
       },
       tags: ['component'],
@@ -673,9 +673,9 @@ export default {
       name: '21.co Wrapped BNB',
       symbol: '21BNB',
       decimals: 8,
-      logoURI: 'https://index-app.vercel.app/assets/21bnb.png',
+      logoURI: 'https://cdn.indexcoop.com/21bnb.svg',
       extensions: {
-        status: null,
+        status: 'Deprecated',
         coingeckoId: 'binancecoin',
       },
       tags: ['component'],
@@ -686,9 +686,9 @@ export default {
       name: '21.co Wrapped BitcoinCash',
       symbol: '21BCH',
       decimals: 8,
-      logoURI: 'https://index-app.vercel.app/assets/21bch.png',
+      logoURI: 'https://cdn.indexcoop.com/21bch.svg',
       extensions: {
-        status: null,
+        status: 'Deprecated',
         coingeckoId: 'bitcoin-cash',
       },
       tags: ['component'],
@@ -699,9 +699,9 @@ export default {
       name: '21.co Wrapped Cardano',
       symbol: '21ADA',
       decimals: 6,
-      logoURI: 'https://index-app.vercel.app/assets/21ada.png',
+      logoURI: 'https://cdn.indexcoop.com/21ada.svg',
       extensions: {
-        status: null,
+        status: 'Deprecated',
         coingeckoId: 'cardano',
       },
       tags: ['component'],
@@ -712,9 +712,9 @@ export default {
       name: '21.co Wrapped Litecoin',
       symbol: '21LTC',
       decimals: 8,
-      logoURI: 'https://index-app.vercel.app/assets/21ltc.png',
+      logoURI: 'https://cdn.indexcoop.com/21ltc.svg',
       extensions: {
-        status: null,
+        status: 'Deprecated',
         coingeckoId: 'litecoin',
       },
       tags: ['component'],
@@ -725,9 +725,9 @@ export default {
       name: '21.co Wrapped Polkadot',
       symbol: '21DOT',
       decimals: 10,
-      logoURI: 'https://index-app.vercel.app/assets/21dot.png',
+      logoURI: 'https://cdn.indexcoop.com/21dot.svg',
       extensions: {
-        status: null,
+        status: 'Deprecated',
         coingeckoId: 'polkadot',
       },
       tags: ['component'],
@@ -738,9 +738,9 @@ export default {
       name: '21.co Wrapped Solana',
       symbol: '21SOL',
       decimals: 9,
-      logoURI: 'https://index-app.vercel.app/assets/21sol.png',
+      logoURI: 'https://cdn.indexcoop.com/21sol.svg',
       extensions: {
-        status: null,
+        status: 'Deprecated',
         coingeckoId: 'solana',
       },
       tags: ['component'],
@@ -751,9 +751,9 @@ export default {
       name: '21.co Wrapped XRP',
       symbol: '21XRP',
       decimals: 6,
-      logoURI: 'https://index-app.vercel.app/assets/21xrp.png',
+      logoURI: 'https://cdn.indexcoop.com/21xrp.svg',
       extensions: {
-        status: null,
+        status: 'Deprecated',
         coingeckoId: 'ripple',
       },
       tags: ['component'],
@@ -764,9 +764,9 @@ export default {
       name: '21.co Wrapped AVAX',
       symbol: '21AVAX',
       decimals: 18,
-      logoURI: 'https://index-app.vercel.app/assets/21avax.png',
+      logoURI: 'https://cdn.indexcoop.com/21avax.svg',
       extensions: {
-        status: null,
+        status: 'Deprecated',
         coingeckoId: 'avalanche-2',
       },
       tags: ['component'],
@@ -881,6 +881,20 @@ export default {
       logoURI: 'ipfs://QmUDc7LQN6zKHon9FChTqZc7WGFvGPZe698Bq5HbSYtfk9',
       tags: ['component'],
     },
+    {
+      chainId: 1,
+      address: '0x1982b2F5814301d4e9a8b0201555376e62F82428',
+      name: 'Aave Interest Bearing STETH',
+      symbol: 'aSTETH',
+      decimals: 18,
+      logoURI:
+        'https://assets.coingecko.com/coins/images/24163/small/steth.jpg?1646634315',
+      extensions: {
+        status: null,
+        coingeckoId: 'staave-interest-bearing-stetheth',
+      },
+      tags: ['component'],
+    },
     // --------------- Currency Tokens ---------------
     {
       name: 'Dai Stablecoin',
@@ -939,7 +953,7 @@ export default {
           },
         },
       },
-      tags: ['currency', 'stablecoin'],
+      tags: ['currency', 'stablecoin', 'component'],
     },
     {
       name: 'USD Coin',
@@ -957,7 +971,7 @@ export default {
           },
         },
       },
-      tags: ['currency', 'stablecoin'],
+      tags: ['currency', 'stablecoin', 'component'],
     },
     {
       name: 'USDCoin',
@@ -976,7 +990,7 @@ export default {
           },
         },
       },
-      tags: ['currency', 'stablecoin'],
+      tags: ['currency', 'stablecoin', 'component'],
     },
     {
       name: 'Tether USD',
@@ -1036,7 +1050,7 @@ export default {
           },
         },
       },
-      tags: ['currency'],
+      tags: ['currency', 'component'],
     },
     {
       name: 'Wrapped Ether',
@@ -1073,7 +1087,7 @@ export default {
           },
         },
       },
-      tags: ['currency'],
+      tags: ['currency', 'component'],
     },
     {
       name: 'Wrapped BTC',
@@ -1092,7 +1106,7 @@ export default {
           },
         },
       },
-      tags: ['currency'],
+      tags: ['currency', 'component'],
     },
     {
       name: 'Wrapped BTC',
@@ -1111,7 +1125,7 @@ export default {
           },
         },
       },
-      tags: ['currency'],
+      tags: ['currency', 'component'],
     },
     {
       chainId: 1,
@@ -1139,7 +1153,7 @@ export default {
         status: 'Active',
         coingeckoId: 'rocket-pool-eth',
       },
-      tags: ['currency'],
+      tags: ['currency', 'component'],
     },
     {
       address: '0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84',
@@ -1181,7 +1195,7 @@ export default {
         status: 'Active',
         coingeckoId: 'wrapped-steth',
       },
-      tags: ['currency'],
+      tags: ['currency', 'component'],
     },
   ],
 } as const;

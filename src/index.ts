@@ -34,6 +34,7 @@ export {
   isSectorToken,
   isYieldToken,
   isCurrencyToken,
+  isComponentToken,
   isProductToken,
   tokenAddressMap,
   getTokenByChainAndAddress,
@@ -44,4 +45,5 @@ export {
   getChainTokenList,
   getChainProductTokenList,
   getChainCurrencyTokenList,
+  getChainComponentTokenList,
 } from './utils';
