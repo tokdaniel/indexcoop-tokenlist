@@ -18,6 +18,7 @@ import type {
   ProductToken,
   CurrencyToken,
   ComponentToken,
+  ProductRevenueToken,
 } from './types';
 import tokenlist from './tokenlist.json';
 import { Chain, isAddress, checksumAddress } from 'viem';
@@ -146,6 +147,17 @@ export const isCurrencyToken = (token: unknown): token is CurrencyToken => {
  */
 export const isComponentToken = (token: unknown): token is ComponentToken => {
   return isListedToken(token) && token.tags.some((tag) => tag === 'component');
+};
+
+/**
+ * Checks if the token is a {@link ComponentToken}.
+ * @param token - Token to check.
+ * @returns True if the token is a ComponentToken.
+ */
+export const isProductRevenueToken = (
+  token: unknown,
+): token is ProductRevenueToken => {
+  return isListedToken(token) && token.tags.some((tag) => tag === 'prt');
 };
 
 /**
@@ -494,3 +506,5 @@ export function getChainComponentTokenList(chainId: unknown): ComponentToken[] {
   }
   return [];
 }
+
+const x = getTokenByChainAndAddress(1, '0xbe');

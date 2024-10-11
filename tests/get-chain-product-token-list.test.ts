@@ -18,8 +18,7 @@ describe('getChainProductTokenList', () => {
         const expectedTokens = tokenlist.tokens.filter(
           (token) =>
             token.chainId === chainId &&
-            token.symbol !== 'INDEX' &&
-            token.tags.some((t) => t === 'index'),
+            token.tags.some((t) => t === 'product'),
         );
 
         const result = getChainProductTokenList(chainId);

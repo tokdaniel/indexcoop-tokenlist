@@ -137,6 +137,13 @@ export type ComponentToken = Extract<
   { tags: readonly ['component', ...Tags[]] }
 >;
 /**
+ * {@link ComponentToken} - A union of all tokens that are currency tokens
+ */
+export type ProductRevenueToken = Extract<
+  ListedToken,
+  { tags: readonly ['prt', ...Tags[]] }
+>;
+/**
  * {@link TokensByChain}<{@link ChainId}> - A union of all tokens in the tokenlist for a given chainId
  */
 export type TokensByChain<T, Id extends ChainId> = T extends { chainId: Id }

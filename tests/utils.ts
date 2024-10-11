@@ -185,6 +185,14 @@ export const nonComponentTokenArbitrary = fc.constantFrom(
   ),
 );
 
+export const productRevenueTokenArbitrary = fc.constantFrom(
+  ...tokenlist.tokens.filter((token) => token.tags.some((t) => t === 'prt')),
+);
+
+export const nonProductRevenueTokenArbitrary = fc.constantFrom(
+  ...tokenlist.tokens.filter((token) => token.tags.every((t) => t !== 'prt')),
+);
+
 export const nonProductNonIndexTokenArbitrary = fc.constantFrom(
   tokenlist.tokens.filter((token) => token.tags.every((t) => t !== 'index')),
 );

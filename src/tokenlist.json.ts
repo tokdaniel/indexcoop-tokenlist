@@ -6,26 +6,6 @@ export default {
   version: tokenlist.version,
   timestamp: new Date().toISOString(),
   tags: {
-    stablecoin: {
-      name: 'Stablecoin',
-      description: 'This is a stablecoin.',
-    },
-    index: {
-      name: 'Index Token',
-      description: 'This is an Index Coop token.',
-    },
-    sector: {
-      name: 'Sector Token',
-      description: 'This token represents a basket of tokens.',
-    },
-    leverage: {
-      name: 'Leverage Token',
-      description: 'This token provides leveraged exposure.',
-    },
-    yield: {
-      name: 'Yield Token',
-      description: 'This is a token that accrues yield.',
-    },
     component: {
       name: 'Component Token',
       description: 'This token is a component of some index product token.',
@@ -37,6 +17,36 @@ export default {
     dangerous: {
       name: 'Dangerous Token',
       description: 'This is a token that is considered risky or dangerous.',
+    },
+    index: {
+      name: 'Index Token',
+      description: 'This is an Index Coop token.',
+    },
+    leverage: {
+      name: 'Leverage Token',
+      description: 'This token provides leveraged exposure.',
+    },
+    product: {
+      name: 'Product Token',
+      description: 'This token is a product of Index Coop.',
+    },
+    prt: {
+      name: 'PRT',
+      description:
+        'Product Revenue Tokens, PRTs for short, distribute an Index products revenue amongst all PRT holders by staking PRTs in the respective IC product revenue pool.',
+    },
+    sector: {
+      name: 'Sector Token',
+      description: 'This token represents a basket of tokens.',
+    },
+    stablecoin: {
+      name: 'Stablecoin',
+      description: 'This is a stablecoin.',
+    },
+
+    yield: {
+      name: 'Yield Token',
+      description: 'This is a token that accrues yield.',
     },
   },
   tokens: [
@@ -68,7 +78,7 @@ export default {
         },
       },
       logoURI: 'https://cdn.indexcoop.com/dpi.svg',
-      tags: ['index', 'sector', 'component'],
+      tags: ['index', 'product', 'sector', 'component'],
     },
     {
       address: '0x9737C658272e66Faad39D7AD337789Ee6D54F500',
@@ -84,7 +94,7 @@ export default {
         },
       },
       logoURI: 'https://cdn.indexcoop.com/dpi.svg',
-      tags: ['index', 'sector'],
+      tags: ['index', 'product', 'sector'],
     },
     {
       address: '0xc6955B85b622369a54Cc8C6DBeCb8e03c0885BD8',
@@ -100,7 +110,7 @@ export default {
         },
       },
       logoURI: 'https://cdn.indexcoop.com/dpi.svg',
-      tags: ['index', 'sector'],
+      tags: ['index', 'product', 'sector'],
     },
     {
       address: '0x72e364F2ABdC788b7E918bc238B21f109Cd634D7',
@@ -116,7 +126,7 @@ export default {
         },
       },
       logoURI: 'https://cdn.indexcoop.com/mvi.svg',
-      tags: ['index', 'sector'],
+      tags: ['index', 'product', 'sector'],
     },
     {
       address: '0x0104a6FA30540DC1d9F45D2797F05eEa79304525',
@@ -132,7 +142,7 @@ export default {
         },
       },
       logoURI: 'https://cdn.indexcoop.com/mvi.svg',
-      tags: ['index', 'sector'],
+      tags: ['index', 'product', 'sector'],
     },
     {
       address: '0xEA8954dE7607b90F5ec81A5e2e673D0f60BB7596',
@@ -148,7 +158,7 @@ export default {
         },
       },
       logoURI: 'https://cdn.indexcoop.com/mvi.svg',
-      tags: ['index', 'sector'],
+      tags: ['index', 'product', 'sector'],
     },
     {
       address: '0x2aF1dF3AB0ab157e1E2Ad8F88A7D04fbea0c7dc6',
@@ -164,7 +174,7 @@ export default {
         },
       },
       logoURI: 'https://cdn.indexcoop.com/bed.svg',
-      tags: ['index', 'sector'],
+      tags: ['index', 'product', 'sector'],
     },
     {
       address: '0x1B5E16C5b20Fb5EE87C61fE9Afe735Cca3B21A65',
@@ -180,7 +190,7 @@ export default {
         },
       },
       logoURI: 'https://cdn.indexcoop.com/ic21.svg',
-      tags: ['index', 'sector', 'dangerous'],
+      tags: ['index', 'product', 'sector', 'dangerous'],
     },
     {
       address: '0x7f5f1A44dd6f88cCb54Fe879e144dF644A4aDa24',
@@ -196,7 +206,7 @@ export default {
         },
       },
       logoURI: 'https://cdn.indexcoop.com/rwa.svg',
-      tags: ['index', 'sector', 'dangerous'],
+      tags: ['index', 'product', 'sector', 'dangerous'],
     },
     // --------------- Leverage Tokens ---------------
     {
@@ -213,7 +223,7 @@ export default {
         },
       },
       logoURI: 'https://cdn.indexcoop.com/eth2x.svg',
-      tags: ['index', 'leverage', 'dangerous'],
+      tags: ['index', 'product', 'leverage', 'dangerous'],
     },
     {
       address: '0xcCdAE12162566E3f29fEfA7Bf7F5b24C644493b5',
@@ -229,7 +239,7 @@ export default {
         },
       },
       logoURI: 'https://cdn.indexcoop.com/icreth.svg',
-      tags: ['index', 'leverage', 'dangerous'],
+      tags: ['index', 'product', 'leverage', 'dangerous'],
     },
     {
       address: '0x0B498ff89709d3838a063f1dFA463091F9801c2b',
@@ -245,7 +255,7 @@ export default {
         },
       },
       logoURI: 'https://cdn.indexcoop.com/btc2x.svg',
-      tags: ['index', 'leverage', 'dangerous'],
+      tags: ['index', 'product', 'leverage', 'dangerous'],
     },
     {
       address: '0x65c4C0517025Ec0843C9146aF266A2C5a2D148A2',
@@ -261,7 +271,7 @@ export default {
         },
       },
       logoURI: 'https://cdn.indexcoop.com/eth2x.svg',
-      tags: ['index', 'leverage', 'dangerous', 'component'],
+      tags: ['index', 'product', 'leverage', 'dangerous', 'component'],
     },
     {
       address: '0xD2AC55cA3Bbd2Dd1e9936eC640dCb4b745fDe759',
@@ -277,7 +287,7 @@ export default {
         },
       },
       logoURI: 'https://cdn.indexcoop.com/btc2x.svg',
-      tags: ['index', 'leverage', 'dangerous', 'component'],
+      tags: ['index', 'product', 'leverage', 'dangerous', 'component'],
     },
     {
       address: '0x26d7D3728C6bb762a5043a1d0CeF660988Bca43C',
@@ -293,7 +303,7 @@ export default {
         },
       },
       logoURI: 'https://cdn.indexcoop.com/btc2x.svg',
-      tags: ['index', 'leverage', 'dangerous'],
+      tags: ['index', 'product', 'leverage', 'dangerous'],
     },
     {
       address: '0xA0A17b2a015c14BE846C5d309D076379cCDfa543',
@@ -309,7 +319,7 @@ export default {
         },
       },
       logoURI: 'https://cdn.indexcoop.com/eth3x.svg',
-      tags: ['index', 'leverage', 'dangerous'],
+      tags: ['index', 'product', 'leverage', 'dangerous'],
     },
     {
       address: '0x749654601a286833aD30357246400D2933b1C89b',
@@ -325,7 +335,7 @@ export default {
         },
       },
       logoURI: 'https://cdn.indexcoop.com/ieth1x.svg',
-      tags: ['index', 'leverage', 'dangerous'],
+      tags: ['index', 'product', 'leverage', 'dangerous'],
     },
     {
       address: '0xeb5bE62e6770137beaA0cC712741165C594F59D7',
@@ -341,7 +351,7 @@ export default {
         },
       },
       logoURI: 'https://cdn.indexcoop.com/btc2x.svg',
-      tags: ['index', 'leverage'],
+      tags: ['index', 'product', 'leverage'],
     },
     {
       address: '0x3bDd0d5c0C795b2Bf076F5C8F177c58e42beC0E6',
@@ -357,7 +367,7 @@ export default {
         },
       },
       logoURI: 'https://cdn.indexcoop.com/btc3x.svg',
-      tags: ['index', 'leverage', 'dangerous'],
+      tags: ['index', 'product', 'leverage', 'dangerous'],
     },
     {
       address: '0x80e58AEA88BCCaAE19bCa7f0e420C1387Cc087fC',
@@ -373,7 +383,7 @@ export default {
         },
       },
       logoURI: 'https://cdn.indexcoop.com/ibtc1x.svg',
-      tags: ['index', 'leverage', 'dangerous'],
+      tags: ['index', 'product', 'leverage', 'dangerous'],
     },
     {
       address: '0xC884646E6C88d9b172a23051b38B0732Cc3E35a6',
@@ -389,7 +399,7 @@ export default {
         },
       },
       logoURI: 'https://cdn.indexcoop.com/btc2x.svg',
-      tags: ['index', 'leverage'],
+      tags: ['index', 'product', 'leverage'],
     },
     {
       address: '0x329f6656792c7d34D0fBB9762FA9A8F852272acb',
@@ -405,7 +415,7 @@ export default {
         },
       },
       logoURI: 'https://cdn.indexcoop.com/eth3x.svg',
-      tags: ['index', 'leverage', 'dangerous'],
+      tags: ['index', 'product', 'leverage', 'dangerous'],
     },
     // --------------- Yield Tokens ---------------
     {
@@ -422,7 +432,7 @@ export default {
         },
       },
       logoURI: 'https://cdn.indexcoop.com/iceth.svg',
-      tags: ['index', 'yield'],
+      tags: ['index', 'product', 'yield'],
     },
     {
       address: '0x341c05c0E9b33C0E38d64de76516b2Ce970bB3BE',
@@ -438,7 +448,7 @@ export default {
         },
       },
       logoURI: 'https://cdn.indexcoop.com/dseth.svg',
-      tags: ['index', 'yield', 'component'],
+      tags: ['index', 'product', 'yield', 'component'],
     },
     {
       address: '0x95b11aca35D35Ac8B8A88E1F7792873BBea7CeBb',
@@ -454,7 +464,7 @@ export default {
         },
       },
       logoURI: 'https://cdn.indexcoop.com/dseth.svg',
-      tags: ['index', 'yield'],
+      tags: ['index', 'product', 'yield'],
     },
     {
       address: '0x37E7C051Dc5A24313cEEC581222882648ba537aa',
@@ -470,7 +480,7 @@ export default {
         },
       },
       logoURI: 'https://cdn.indexcoop.com/dseth.svg',
-      tags: ['index', 'yield'],
+      tags: ['index', 'product', 'yield'],
     },
     {
       address: '0x36c833Eed0D376f75D1ff9dFDeE260191336065e',
@@ -486,7 +496,7 @@ export default {
         },
       },
       logoURI: 'https://cdn.indexcoop.com/gtceth.svg',
-      tags: ['index', 'yield', 'dangerous'],
+      tags: ['index', 'product', 'yield', 'dangerous'],
     },
     {
       address: '0xc4506022Fb8090774E8A628d5084EED61D9B99Ee',
@@ -502,7 +512,7 @@ export default {
         },
       },
       logoURI: 'https://cdn.indexcoop.com/hyeth.svg',
-      tags: ['index', 'yield', 'dangerous'],
+      tags: ['index', 'product', 'yield', 'dangerous'],
     },
     {
       address: '0x8b5D1d8B3466eC21f8eE33cE63F319642c026142',
@@ -518,7 +528,7 @@ export default {
         },
       },
       logoURI: 'https://cdn.indexcoop.com/hyeth.svg',
-      tags: ['index', 'yield', 'dangerous'],
+      tags: ['index', 'product', 'yield', 'dangerous'],
     },
     {
       address: '0xC73e76Aa9F14C1837CDB49bd028E8Ff5a0a71dAD',
@@ -534,7 +544,7 @@ export default {
         },
       },
       logoURI: 'https://cdn.indexcoop.com/hyeth.svg',
-      tags: ['index', 'yield', 'dangerous'],
+      tags: ['index', 'product', 'yield', 'dangerous'],
     },
     {
       address: '0x55b2CFcfe99110C773f00b023560DD9ef6C8A13B',
@@ -550,7 +560,7 @@ export default {
         },
       },
       logoURI: 'https://cdn.indexcoop.com/cdeti.svg',
-      tags: ['index', 'yield', 'dangerous'],
+      tags: ['index', 'product', 'yield', 'dangerous'],
     },
     {
       address: '0x54EE8A49155F701F0d5Ff088CD36fbBF1a5B9f44',
@@ -566,7 +576,7 @@ export default {
           theme: 'USDC',
         },
       },
-      tags: ['index', 'yield'],
+      tags: ['index', 'product', 'yield'],
     },
     {
       address: '0x098471190D131d9E6215dd195feDf4bcC0426c8a',
@@ -582,7 +592,42 @@ export default {
           theme: 'USDC',
         },
       },
-      tags: ['index', 'yield'],
+      tags: ['index', 'product', 'yield'],
+    },
+    // --------------- Product Revenue Tokens ---------------
+    {
+      address: '0x99F6539Df9840592a862ab916dDc3258a1D7a773',
+      chainId: 1,
+      name: 'High Yield ETH Index PRT',
+      symbol: 'prtHyETH',
+      decimals: 18,
+      logoURI: 'https://cdn.indexcoop.com/hyeth-prt.svg',
+      extensions: {
+        status: 'Active',
+        coingeckoId: null,
+        prt: {
+          rewardToken: '0xc4506022Fb8090774E8A628d5084EED61D9B99Ee',
+          stakedToken: '0x99F6539Df9840592a862ab916dDc3258a1D7a773',
+        },
+      },
+      tags: ['index', 'prt'],
+    },
+    {
+      address: '0xBe03026716a4D5E0992F22A3e6494b4F2809a9C6',
+      chainId: 1,
+      name: 'High Yield ETH Index Staked PRT',
+      symbol: 'sPrtHyETH',
+      decimals: 18,
+      logoURI: 'https://cdn.indexcoop.com/hyeth-prt.svg',
+      extensions: {
+        status: 'Active',
+        coingeckoId: null,
+        prt: {
+          rewardToken: '0xc4506022Fb8090774E8A628d5084EED61D9B99Ee',
+          stakedToken: '0x99F6539Df9840592a862ab916dDc3258a1D7a773',
+        },
+      },
+      tags: ['index', 'prt'],
     },
     // --------------- Component Tokens ---------------
     {
