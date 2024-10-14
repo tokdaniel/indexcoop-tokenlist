@@ -506,5 +506,3 @@ export function getChainComponentTokenList(chainId: unknown): ComponentToken[] {
   }
   return [];
 }
-
-const x = getTokenByChainAndAddress(1, '0xbe');
