@@ -977,7 +977,8 @@ export default {
         status: null,
         coingeckoId: 'decentraland',
       },
-      logoURI: '',
+      logoURI:
+        'https://assets.coingecko.com/coins/images/878/thumb/decentraland-mana.png?1550108745',
       tags: ['component'],
     },
     {
@@ -1089,7 +1090,7 @@ export default {
         coingeckoId: 'maker',
       },
       logoURI:
-        'https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2/logo.png',
+        'https://tokens.1inch.io/0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2.png',
       tags: ['component'],
     },
     {
@@ -1130,7 +1131,8 @@ export default {
         status: null,
         coingeckoId: 'lido-dao',
       },
-      logoURI: '',
+      logoURI:
+        'https://assets.coingecko.com/coins/images/13573/thumb/Lido_DAO.png?1609873644',
       tags: ['component'],
     },
     {
