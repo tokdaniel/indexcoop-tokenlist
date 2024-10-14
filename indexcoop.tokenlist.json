@@ -2,10 +2,10 @@
   "name": "IndexCoop Token List",
   "version": {
     "major": 2,
-    "minor": 6,
+    "minor": 7,
     "patch": 0
   },
-  "timestamp": "2024-10-11T09:08:02.208Z",
+  "timestamp": "2024-10-14T11:42:28.152Z",
   "tags": {
     "component": {
       "name": "Component Token",
@@ -1140,6 +1140,336 @@
         "status": null,
         "coingeckoId": "staave-interest-bearing-stetheth"
       },
+      "tags": [
+        "component"
+      ]
+    },
+    {
+      "chainId": 1,
+      "address": "0x767FE9EDC9E0dF98E07454847909b5E959D7ca0E",
+      "name": "Illuvium",
+      "symbol": "ILV",
+      "decimals": 18,
+      "extensions": {
+        "status": null,
+        "coingeckoId": "illuvium"
+      },
+      "logoURI": "https://assets.coingecko.com/coins/images/14468/large/ILV.JPG",
+      "tags": [
+        "component"
+      ]
+    },
+    {
+      "chainId": 1,
+      "address": "0x0F5D2fB29fb7d3CFeE444a200298f468908cC942",
+      "name": "Decentraland MANA",
+      "symbol": "MANA",
+      "decimals": 18,
+      "extensions": {
+        "status": null,
+        "coingeckoId": "decentraland"
+      },
+      "logoURI": "https://assets.coingecko.com/coins/images/878/thumb/decentraland-mana.png?1550108745",
+      "tags": [
+        "component"
+      ]
+    },
+    {
+      "chainId": 1,
+      "address": "0x3845badAde8e6dFF049820680d1F14bD3903a5d0",
+      "name": "The Sandbox",
+      "symbol": "SAND",
+      "decimals": 18,
+      "extensions": {
+        "status": null,
+        "coingeckoId": "the-sandbox"
+      },
+      "logoURI": "https://assets.coingecko.com/coins/images/12129/thumb/sandbox_logo.jpg?1597397942",
+      "tags": [
+        "component"
+      ]
+    },
+    {
+      "chainId": 1,
+      "address": "0xF57e7e7C23978C3cAEC3C3548E3D615c346e79fF",
+      "name": "Immutable X",
+      "symbol": "IMX",
+      "decimals": 18,
+      "extensions": {
+        "status": null,
+        "coingeckoId": "immutable-x"
+      },
+      "logoURI": "https://assets.coingecko.com/coins/images/17233/thumb/imx.png?1636691817",
+      "tags": [
+        "component"
+      ]
+    },
+    {
+      "chainId": 1,
+      "address": "0x4d224452801ACEd8B2F0aebE155379bb5D594381",
+      "name": "ApeCoin",
+      "symbol": "APE",
+      "decimals": 18,
+      "extensions": {
+        "status": null,
+        "coingeckoId": "apecoin"
+      },
+      "logoURI": "https://assets.coingecko.com/coins/images/24383/small/apecoin.jpg?1647476455",
+      "tags": [
+        "component"
+      ]
+    },
+    {
+      "chainId": 1,
+      "address": "0x62D0A8458eD7719FDAF978fe5929C6D342B0bFcE",
+      "name": "Beam",
+      "symbol": "BEAM",
+      "decimals": 18,
+      "extensions": {
+        "status": null,
+        "coingeckoId": "beam-2"
+      },
+      "logoURI": "https://assets.coingecko.com/coins/images/32417/standard/chain-logo.png?1698114384",
+      "tags": [
+        "component"
+      ]
+    },
+    {
+      "chainId": 1,
+      "address": "0x6De037ef9aD2725EB40118Bb1702EBb27e4Aeb24",
+      "name": "Render Token",
+      "symbol": "RNDR",
+      "decimals": 18,
+      "extensions": {
+        "status": null,
+        "coingeckoId": "render-token"
+      },
+      "logoURI": "https://assets.coingecko.com/coins/images/11636/thumb/rndr.png?1638840934",
+      "tags": [
+        "component"
+      ]
+    },
+    {
+      "chainId": 1,
+      "address": "0x0bc529c00C6401aEF6D220BE8C6Ea1667F6Ad93e",
+      "name": "yearn.finance",
+      "symbol": "YFI",
+      "decimals": 18,
+      "extensions": {
+        "status": null,
+        "coingeckoId": "yearn-finance"
+      },
+      "logoURI": "https://assets.coingecko.com/coins/images/11849/thumb/yfi-192x192.png?1598325330",
+      "tags": [
+        "component"
+      ]
+    },
+    {
+      "chainId": 1,
+      "address": "0xc00e94Cb662C3520282E6f5717214004A7f26888",
+      "name": "Compound",
+      "symbol": "COMP",
+      "decimals": 18,
+      "extensions": {
+        "status": null,
+        "coingeckoId": "compound-governance-token"
+      },
+      "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xc00e94Cb662C3520282E6f5717214004A7f26888/logo.png",
+      "tags": [
+        "component"
+      ]
+    },
+    {
+      "chainId": 1,
+      "address": "0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2",
+      "name": "Maker",
+      "symbol": "MKR",
+      "decimals": 18,
+      "extensions": {
+        "status": null,
+        "coingeckoId": "maker"
+      },
+      "logoURI": "https://tokens.1inch.io/0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2.png",
+      "tags": [
+        "component"
+      ]
+    },
+    {
+      "chainId": 1,
+      "address": "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984",
+      "name": "Uniswap",
+      "symbol": "UNI",
+      "decimals": 18,
+      "extensions": {
+        "status": null,
+        "coingeckoId": "uniswap"
+      },
+      "logoURI": "https://tokens.1inch.io/0x1f9840a85d5af5bf1d1762f925bdaddc4201f984.png",
+      "tags": [
+        "component"
+      ]
+    },
+    {
+      "chainId": 1,
+      "address": "0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9",
+      "name": "Aave Token",
+      "symbol": "AAVE",
+      "decimals": 18,
+      "extensions": {
+        "status": null,
+        "coingeckoId": "aave"
+      },
+      "logoURI": "https://assets.coingecko.com/coins/images/12467/thumb/ghst_200.png?1600750321",
+      "tags": [
+        "component"
+      ]
+    },
+    {
+      "chainId": 1,
+      "address": "0x5A98FcBEA516Cf06857215779Fd812CA3beF1B32",
+      "name": "Lido DAO Token",
+      "symbol": "LDO",
+      "decimals": 18,
+      "extensions": {
+        "status": null,
+        "coingeckoId": "lido-dao"
+      },
+      "logoURI": "https://assets.coingecko.com/coins/images/13573/thumb/Lido_DAO.png?1609873644",
+      "tags": [
+        "component"
+      ]
+    },
+    {
+      "chainId": 1,
+      "address": "0xD33526068D116cE69F19A9ee46F0bd304F21A51f",
+      "name": "Rocket Pool Protocol",
+      "symbol": "RPL",
+      "decimals": 18,
+      "extensions": {
+        "status": null,
+        "coingeckoId": "rocket-pool"
+      },
+      "logoURI": "https://tokens.1inch.io/0xb4efd85c19999d84251304bda99e90b92300bd93.png",
+      "tags": [
+        "component"
+      ]
+    },
+    {
+      "chainId": 1,
+      "address": "0x808507121B80c02388fAd14726482e061B8da827",
+      "name": "Pendle",
+      "symbol": "PENDLE",
+      "decimals": 18,
+      "extensions": {
+        "status": null,
+        "coingeckoId": "pendle"
+      },
+      "logoURI": "https://tokens.1inch.io/0x808507121b80c02388fad14726482e061b8da827.png",
+      "tags": [
+        "component"
+      ]
+    },
+    {
+      "chainId": 1,
+      "address": "0x57e114B691Db790C35207b2e685D4A43181e6061",
+      "name": "Ethena",
+      "symbol": "ENA",
+      "decimals": 18,
+      "extensions": {
+        "status": null,
+        "coingeckoId": "ethena"
+      },
+      "logoURI": "https://assets.coingecko.com/coins/images/36530/standard/ethena.png",
+      "tags": [
+        "component"
+      ]
+    },
+    {
+      "chainId": 1,
+      "address": "0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0",
+      "name": "Matic Token",
+      "symbol": "MATIC",
+      "decimals": 18,
+      "extensions": {
+        "status": null,
+        "coingeckoId": "matic-network"
+      },
+      "logoURI": "https://assets.coingecko.com/coins/images/4713/thumb/matic-token-icon.png?1624446912",
+      "tags": [
+        "component"
+      ]
+    },
+    {
+      "chainId": 1,
+      "address": "0x514910771AF9Ca656af840dff83E8264EcF986CA",
+      "name": "ChainLink Token",
+      "symbol": "LINK",
+      "decimals": 18,
+      "extensions": {
+        "status": null,
+        "coingeckoId": "chainlink"
+      },
+      "logoURI": "https://tokens.1inch.io/0x514910771af9ca656af840dff83e8264ecf986ca.png",
+      "tags": [
+        "component"
+      ]
+    },
+    {
+      "chainId": 1,
+      "address": "0xac3E018457B222d93114458476f3E3416Abbe38F",
+      "name": "Staked Frax Ether",
+      "symbol": "sfrxETH",
+      "decimals": 18,
+      "extensions": {
+        "status": null,
+        "coingeckoId": "staked-frax"
+      },
+      "logoURI": "https://assets.coingecko.com/coins/images/28285/large/sfrxETH_icon.png",
+      "tags": [
+        "component"
+      ]
+    },
+    {
+      "chainId": 1,
+      "address": "0xf1C9acDc66974dFB6dEcB12aA385b9cD01190E38",
+      "name": "StakeWise Staked ETH",
+      "symbol": "osETH",
+      "decimals": 18,
+      "extensions": {
+        "status": null,
+        "coingeckoId": "stakewise-v3-oseth"
+      },
+      "logoURI": "https://assets.coingecko.com/coins/images/33117/large/Frame_27513839.png",
+      "tags": [
+        "component"
+      ]
+    },
+    {
+      "chainId": 1,
+      "address": "0xA35b1B31Ce002FBF2058D22F30f95D405200A15b",
+      "name": "Stader ETHx",
+      "symbol": "ETHx",
+      "decimals": 18,
+      "extensions": {
+        "status": null,
+        "coingeckoId": "stader"
+      },
+      "logoURI": "https://assets.coingecko.com/coins/images/30870/large/staderx.png",
+      "tags": [
+        "component"
+      ]
+    },
+    {
+      "chainId": 1,
+      "address": "0xf951E335afb289353dc249e82926178EaC7DEd78",
+      "name": "Swell Ethereum",
+      "symbol": "swETH",
+      "decimals": 18,
+      "extensions": {
+        "status": null,
+        "coingeckoId": "sweth"
+      },
+      "logoURI": "https://assets.coingecko.com/coins/images/30326/large/_lB7zEtS_400x400.jpg",
       "tags": [
         "component"
       ]
